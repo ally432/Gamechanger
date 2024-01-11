@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      catFake3_0: 2583279538249688627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
