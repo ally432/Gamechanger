@@ -35,6 +35,7 @@ public class customerManage : MonoBehaviour
     int second;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -203,4 +204,8 @@ public class customerManage : MonoBehaviour
         date++;
     }
 
+    public static int getMoney()
+    {
+        return money;
+    }
 }
