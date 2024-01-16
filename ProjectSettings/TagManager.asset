@@ -8,6 +8,8 @@ TagManager:
   - putzone
   - leaf2
   - leaf3
+  - potiontag
+  - customertag
   layers:
   - Default
   - TransparentFX

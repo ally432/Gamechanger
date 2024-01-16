@@ -289,9 +289,14 @@ public class sellerManage : MonoBehaviour
         //약초할아버지 와서 말하고, 맞는 약초할아버지 이미지 나오고, 가고. endcursor를 부활해야 할듯 한데...
     }
 
-    public static List<string> getHerbList()
+    public static List<string> getTrueContractHerbList()
     {
         return finalTrueHerbList;
+    }
+
+    public static List<string> getHerbList()
+    {
+        return herbList;
     }
 
     public void openBtn()
