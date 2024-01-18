@@ -39,7 +39,7 @@ public class customerManage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        herbList = sellerManage.getHerbList();
+        herbList = sellerManage.getTrueContractHerbList();
         if (herbList.Count > 0)
         {
             for (int i = 0; i < herbList.Count; i++)
