@@ -10,6 +10,9 @@ TagManager:
   - leaf3
   - potiontag
   - customertag
+  - bottle
+  - cap
+  - trash
   layers:
   - Default
   - TransparentFX

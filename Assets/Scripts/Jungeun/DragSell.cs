@@ -1,27 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DragSell : MonoBehaviour
+public class DragSell: MonoBehaviour, IBeginDragHandler, IDragHandler
 {
-    private Vector3 mOffset;
-    private float mZCoord;
+    private Vector2 originalPosition;
 
-    void OnMouseDown()
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        mOffset = gameObject.transform.position - GetMouseWorldPos();
+        originalPosition = transform.position;
     }
 
-    void OnMouseDrag()
+    public void OnDrag(PointerEventData eventData)
     {
-        transform.position = GetMouseWorldPos() + mOffset;
-    }
-
-    private Vector3 GetMouseWorldPos()
-    {
-        Vector3 mousePoint = Input.mousePosition;
-        mousePoint.z = mZCoord;
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+        transform.position = eventData.position;
     }
 }
