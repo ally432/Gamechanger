@@ -1,10 +1,28 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using DG.Tweening;
+using System.Collections.Generic;
+using System;
 
-public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler     
+public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler     
 {
     public static Vector2 DefaultPos;   // 처음 위치
+    public static List<String> putgreds = new List<string>();    // 넣은 약초들 리스트
+    public GameObject leaf1, leaf2, leaf3;
+    public List<String> getherb;   // 해금된 약초 리스트
+
+    void Start()
+    {
+        leaf1.SetActive(false);
+        leaf2.SetActive(false);
+        leaf3.SetActive(false);
+
+        getherb = sellerManage.getHerbList();  // 계약한 진짜 약초들
+
+        foreach(string herbtag in getherb){
+            GameObject leaf = GameObject.FindGameObjectWithTag(herbtag);
+            leaf.SetActive(true);
+        }
+    }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)  // 드래그 시작
     {
@@ -32,19 +50,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     void OnTriggerEnter2D(Collider2D other) // 충돌 발생
     {
         if(other.gameObject.tag.Equals("putzone")){
-            if(gameObject.tag.Equals("leaf1")){
-                print("leaf1");
-            }
-
-            if(gameObject.tag.Equals("leaf2")){
-                print("leaf2");
-            }
-            
-            if(gameObject.tag.Equals("leaf3")){
-                print("leaf3");
-            }
-
+            putgreds.Add(gameObject.tag.ToString());
         }
     }
-
 }

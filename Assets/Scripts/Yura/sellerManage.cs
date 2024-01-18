@@ -364,4 +364,7 @@ public class sellerManage : MonoBehaviour
         SceneManager.LoadScene("customerScene");
     }
 
+    public void gopotion(){
+        SceneManager.LoadScene("Potionmaking");
+    }
 }
