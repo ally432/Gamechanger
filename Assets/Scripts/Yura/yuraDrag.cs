@@ -26,6 +26,7 @@ public class yuraDrag : MonoBehaviour,IBeginDragHandler, IEndDragHandler, IDragH
     void IEndDragHandler.OnEndDrag(PointerEventData eventData) // 드래그 끝
     {
         Invoke("Destroy", .5f);
+        Debug.Log("cdfsfd"); 
     }
 
     void Destroy()
