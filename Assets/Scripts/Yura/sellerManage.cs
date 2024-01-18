@@ -16,7 +16,7 @@ public class sellerManage : MonoBehaviour
 
     List<bool> sellerList = new List<bool>(); // 진짜 약초꾼, 가짜 약초꾼 오는 순서 저장 리스트 (true,false로 구분)
 
-    public Sprite[] sellerImgList = new Sprite[3]; // 약초꾼 이미지들 
+    public Sprite[] sellerImgList = new Sprite[4]; // 약초꾼 이미지들 
     public Image sellerImg;
 
     public Image day1HerbImg, day2HerbImg1, day2HerbImg2,day3HerbImg1,day3HerbImg2,day3HerbImg3; //일차에 따른 약초들 배치 위치- 이미지들..
@@ -36,12 +36,25 @@ public class sellerManage : MonoBehaviour
     bool noContracted = false; //모든 약초꾼과 계약하지 않은 상황에 true.
 
     public int addMoney; //재계약시 추가금
+    /**
+    public bool grandpa = false;
 
+    public int herbGranpaNum = 0;
+    **/
+
+    public List<int> specialPersonList = new List<int>(); //특별손님 리스트
 
     void Start()
     {
         finalTrueHerbList.Clear(); //최종 허브 리스트 초기화 
+        specialPersonList.Clear();
 
+        specialPerson();
+
+        for(int i=0; i<specialPersonList.Count; i++)
+        {
+            Debug.Log(specialPersonList[i]);
+        }
         day1HerbImg.enabled = false;
         day2HerbImg1.enabled = false;
         day2HerbImg2.enabled = false;
@@ -284,10 +297,57 @@ public class sellerManage : MonoBehaviour
 
     }
 
-    void herbGrandpa()
+    void specialPerson() //start때.
+    {
+        if (currentdate == 1) specialPersonList.Add(1);
+        else if (currentdate == 2) specialPersonList.Add(10);
+        else if (currentdate == 3)
+        {
+            specialPersonList.Add(16);
+            specialPersonList.Add(22);
+        }
+        
+    }
+
+    /*
+
+    void herbGrandpa(string herbname)
     {
         //약초할아버지 와서 말하고, 맞는 약초할아버지 이미지 나오고, 가고. endcursor를 부활해야 할듯 한데...
+        List<Dictionary<string, object>> herbGranpa_Dialog = CSVReader.Read("herbGranpaTalk");
+        herbGranpaNum = 0;
+        if(herbname == "catherb")
+        {
+            herbGranpaNum = 1;
+        }
+        else if(herbname == "minaeri")
+        {
+            herbGranpaNum = 10;
+        }
+        else if(herbname == "floating mushroom")
+        {
+            herbGranpaNum = 16;
+        }
+
+        sellerImg.sprite = sellerImgList[4];
+        while (herbGranpa_Dialog[herbGranpaNum]["stage"].ToString() != herbname)
+        {
+           string content = herbGranpa_Dialog[herbGranpaNum]["content"].ToString();
+           sellerText.SetMsg(content);
+            
+            
+        }
     }
+
+    void herbGrandpaTalk()
+    {
+        List<Dictionary<string, object>> herbGranpa_Dialog = CSVReader.Read("herbGranpaTalk");
+        string content = herbGranpa_Dialog[herbGranpaNum]["content"].ToString();
+        sellerText.SetMsg(content);
+    }
+    */
+
+
 
     public static List<string> getTrueContractHerbList()
     {

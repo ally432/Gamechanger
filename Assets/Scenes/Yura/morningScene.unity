@@ -2172,6 +2172,7 @@ MonoBehaviour:
   - {fileID: 527502203815234708, guid: a70a0e4fa56a648ae96dcdcc6fc798a1, type: 3}
   - {fileID: 2192020795508575673, guid: 74f8d20ef1d214378ab9afc36e486448, type: 3}
   - {fileID: 2430838605061216541, guid: 002c0d7eed9444bdebab737ed8a90397, type: 3}
+  - {fileID: -1830951190747792216, guid: 8ccc0ce5e1c944dd1b5f3317c965491c, type: 3}
   sellerImg: {fileID: 646102958}
   day1HerbImg: {fileID: 464276833}
   day2HerbImg1: {fileID: 988630831}
@@ -2201,6 +2202,7 @@ MonoBehaviour:
   - {fileID: 0}
   herbimg: {fileID: 343811929}
   addMoney: 0
+  specialPersonList: 
 --- !u!1 &2046386051
 GameObject:
   m_ObjectHideFlags: 0
