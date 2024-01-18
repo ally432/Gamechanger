@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Jiyun/Potionmaking.unity
+    guid: 93b379e4c21732c429cccd222efe78b1
+  - enabled: 1
+    path: Assets/Scenes/Yura/morningScene.unity
+    guid: b768b5e279a114594bd39d8498efe8d1
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
