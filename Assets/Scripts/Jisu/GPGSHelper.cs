@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 // Google Play Games Service
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using TMPro;
 
 public class GPGSHelper : MonoBehaviour
 {
