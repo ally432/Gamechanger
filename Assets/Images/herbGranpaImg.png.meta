@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      herbGranpaImg_0: -1830951190747792216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
