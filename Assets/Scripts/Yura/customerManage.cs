@@ -209,3 +209,5 @@ public class customerManage : MonoBehaviour
         return money;
     }
 }
+
+
