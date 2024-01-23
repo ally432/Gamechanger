@@ -2,25 +2,26 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System;
+using Microsoft.Unity.VisualStudio.Editor;
 
 public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler     
 {
     public static Vector2 DefaultPos;   // 처음 위치
-    public static List<String> putgreds = new List<string>();    // 넣은 약초들 리스트
-    public GameObject leaf1, leaf2, leaf3;
+    public static List<String> putgreds = new List<string>();    // 넣은 허브와 모든 부재료들 리스트
+    public static List<String> putherb = new List<string>();    // 넣은 허브(진짜인지 판별용)
+    public static List<String> specialherb = new List<String>();    // 넣은 약초와 스페셜 부재료 리스트
+    public GameObject leaf;
     public List<String> getherb;   // 해금된 약초 리스트
 
     void Start()
     {
-        leaf1.SetActive(false);
-        leaf2.SetActive(false);
-        leaf3.SetActive(false);
+        leaf.SetActive(false);
 
-        getherb = sellerManage.getHerbList();  // 계약한 진짜 약초들
+        getherb = sellerManage.getHerbList();  // 해금된 약초들
 
         foreach(string herbtag in getherb){
-            GameObject leaf = GameObject.FindGameObjectWithTag(herbtag);
-            leaf.SetActive(true);
+
+            GameObject.Find("leaf").transform.Find(herbtag).gameObject.SetActive(true);    // 해금된 약초
         }
     }
 
@@ -50,7 +51,18 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     void OnTriggerEnter2D(Collider2D other) // 충돌 발생
     {
         if(other.gameObject.tag.Equals("putzone")){
-            putgreds.Add(gameObject.tag.ToString());
+            putgreds.Add(gameObject.name);
+            if(gameObject.tag.Equals("herb")){  // 넣은게 허브라면..
+                putherb.Add(gameObject.name);
+                specialherb.Add(gameObject.name);   // catherb minaeri etc..
+                if(gameObject.tag.Equals("special")){
+                    specialherb.Add(gameObject.name);   // 스페셜 부재료(seasoning1, 2, 3, 4)
+                }
+            }
         }
+
+        /*foreach(string herb in putherb){
+            Debug.Log(herb);
+        }*/
     }
 }
