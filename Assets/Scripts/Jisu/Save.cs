@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
@@ -27,19 +28,21 @@ public class Save : MonoBehaviour
     void Nextday()
     {
         txtDate.text = "DAY " + customerManage.date;
-        Invoke("Saving", 0.5f);
+        txtSaveResult.text = "저장 중 ...";
+        Saving();
     }
 
-    void Saving()
+    public void Saving()        // 날짜, 소지금, 물약 도감, 호감도, 플래그(분기점)
     {
-        txtSaveResult.text = "저장 중 ...";
+        PlayerPrefs.SetInt("SavedDate", customerManage.date);
+        PlayerPrefs.SetInt("SavedMoney", customerManage.money);
         Invoke("Saved", 1.0f);
     }
 
     void Saved()
     {
         txtSaveResult.text = "저장 완료!";
-        Invoke("Next", 0.3f);
+        Invoke("Next", 0.5f);
     }
 
     void Next()

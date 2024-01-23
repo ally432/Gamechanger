@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 // Google Play Games Service
 using GooglePlayGames;
@@ -25,8 +26,10 @@ public class GPGSHelper : MonoBehaviour
    {
       PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptAlways, (success) =>
       {         
-         if (success == SignInStatus.Success)
+         if (success == SignInStatus.Success) {
             txtLoginResult.text = "로그인 성공!";
+            SceneManager.LoadScene("morningScene");
+         } 
          else
             txtLoginResult.text = "로그인 실패...";
       });
