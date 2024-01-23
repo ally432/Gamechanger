@@ -1,14 +1,21 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private RectTransform originalParent;
-    public RectTransform targetImage; // 이것은 Cap 이미지를 놓을 대상 이미지(Bottle 이미지)입니다. Unity 에디터에서 설정하세요.
+    public Image targetImage; // Bottle 이미지
+    public Image oneImage; // One 이미지
+    private Image selfImage; // Cap 이미지
+
+    private void Awake()
+    {
+        selfImage = GetComponent<Image>(); // Cap 이미지의 Image 컴포넌트를 가져옵니다.
+        oneImage.enabled = false; // One 이미지를 보이지 않게 설정합니다.
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        originalParent = transform as RectTransform;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -18,25 +25,21 @@ public class DragUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // Calculate the top quarter area of the target image.
         var topQuarterArea = new Rect(
-            targetImage.rect.x,
-            targetImage.rect.y + targetImage.rect.height * 0.75f,
-            targetImage.rect.width,
-            targetImage.rect.height * 0.25f
+            targetImage.rectTransform.rect.x,
+            targetImage.rectTransform.rect.y + targetImage.rectTransform.rect.height * 0.75f,
+            targetImage.rectTransform.rect.width,
+            targetImage.rectTransform.rect.height * 0.25f
         );
 
-        // Check if the mouse release position is within the top quarter area of the target image.
-        if (RectTransformUtility.RectangleContainsScreenPoint(targetImage, eventData.position) &&
-            topQuarterArea.Contains(targetImage.InverseTransformPoint(eventData.position)))
+        if (RectTransformUtility.RectangleContainsScreenPoint(targetImage.rectTransform, eventData.position) &&
+            topQuarterArea.Contains(targetImage.rectTransform.InverseTransformPoint(eventData.position)))
         {
-            transform.SetParent(targetImage); // Set the target image as the new parent.
-        }
-        else
-        {
-            // If the mouse release position is not within the top quarter area of the target image, revert to the original parent.
-            transform.SetParent(originalParent);
+            selfImage.enabled = false; // Cap 이미지를 보이지 않게 설정합니다.
+            targetImage.enabled = false; // Bottle 이미지를 보이지 않게 설정합니다.
+
+            oneImage.transform.position = targetImage.transform.position; // One 이미지의 위치를 Bottle 이미지의 위치로 설정합니다.
+            oneImage.enabled = true; // One 이미지를 보이게 설정합니다.
         }
     }
-
 }
