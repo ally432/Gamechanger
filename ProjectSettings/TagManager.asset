@@ -15,6 +15,7 @@ TagManager:
   - bottle
   - cap
   - trash
+  - one
   layers:
   - Default
   - TransparentFX
