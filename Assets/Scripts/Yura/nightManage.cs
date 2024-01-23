@@ -21,6 +21,6 @@ public class nightManage : MonoBehaviour
     public void nextBtn()
     {
         customerManage.dateIncrese();
-        SceneManager.LoadScene("morningScene");
+        SceneManager.LoadScene("SaveScene");
     }
 }
