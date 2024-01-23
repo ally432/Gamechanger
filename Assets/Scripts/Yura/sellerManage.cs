@@ -42,7 +42,7 @@ public class sellerManage : MonoBehaviour
     public int inum; // 특별손님수세기
     string kind;
     string whatperson;
-    bool isMouseClicked = false;
+    bool isMouseClicked = false; //ㄱㅣㅅㅎㅓㅂㅡㅊㅔㅋㅡ
     /**
     public bool grandpa = false;
 
