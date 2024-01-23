@@ -13,22 +13,10 @@ public class Potion : MonoBehaviour
     float currentValue; // 로딩바와 관련
     public float speed; // 로딩바와 관련
     bool isFilling = false; // 로딩바와 관련
+    public List<String> realherb;   // 진짜 약초
     public List<String> getherb;   // 해금된 약초 리스트
     public List<String> ingredients;    // 손님이 요구한 조미료 리스트
-
-    void Start(){
-        getherb = sellerManage.getHerbList();  // 계약한 진짜 약초들
-
-        foreach(string herbtag in getherb){
-            GameObject leaf = GameObject.FindGameObjectWithTag(herbtag);
-            leaf.SetActive(true);
-        }
-        if (getherb.Count > 0)
-        {
-            for (int i = 0; i < getherb.Count; i++)
-                Debug.Log(getherb[i]);
-        }
-    }
+    public static List<String> plist = new List<String>(); // 해금된 물약 리스트
 
     void Update()
     {
@@ -47,12 +35,10 @@ public class Potion : MonoBehaviour
         custominfo(5);
         currentValue = 0f;
         loadingbar.fillAmount = 0f;
-        //isFilling = true;   // 나중에 등급 판별 완성된 후에 작동되도록 옮기기
     }
 
     public void custominfo(int cusnum){ // 손님 번호로 엑셀 파일 읽고 내용과 일치하는지 확인하여 점수 매기기
         List<Dictionary<string, object>> data = CSVReader.Read("customerOrder");    // 손님번호-1 해야 알맞은 라인 읽어옴!
-
         if(data[cusnum-1]["fire"].ToString() == fire){    // 화력을 맞게 설정했는가
             potionnum += 1;
         }
@@ -64,9 +50,9 @@ public class Potion : MonoBehaviour
         ingredients = new List<string>();   // 리스트 초기화
         ingredlist(data, cusnum);   // 손님이 원한 조미료 리스트 가져오기
 
-        if((Dragp.putgreds != null) && (Dragp.putgreds.Count == ingredients.Count)){    // 두 리스트의 원소 개수가 같을 때
+        if((Dragp.putgreds != null) && (Dragp.putgreds.Count == ingredients.Count)){    // 내가 넣은 조미료의 개수와 손님이 원한 조미료의 개수가 같을 때
             for (int i = 0; i < Dragp.putgreds.Count; i++){
-                if(ingredients.Contains(Dragp.putgreds[i])){
+                if(ingredients.Contains(Dragp.putgreds[i])){    // 내가 넣은 조미료가 손님이 원한 조미료 리스트에 있을 때
                     if(i == Dragp.putgreds.Count - 1){
                         potionnum += 1;
                         break;
@@ -78,9 +64,26 @@ public class Potion : MonoBehaviour
             }
         }
 
+        realherb = sellerManage.getTrueContractHerbList();  // 진짜 허브리스트
+        
+        if(Dragp.putherb != null){      // 찐약초인지 판별
+            for (int i = 0; i < realherb.Count; i++){
+                if(Dragp.putherb.Contains(realherb[i])){
+                    if(i == realherb.Count - 1){
+                        potionnum += 1;
+                        break;
+                    }
+                }
+                else{
+                    break;
+                }
+            }    
+        }
 
+        Info(data, cusnum);   // 해금된 물약 리스트 제작
 
-        Debug.Log(potionnum);
+        //Debug.Log(potionnum);
+        isFilling = true;   // 제조
     }
 
     public List<String> ingredlist(List<Dictionary<string, object>> data, int cusnum){
@@ -115,7 +118,13 @@ public class Potion : MonoBehaviour
         else if(potionnum == 4){
             potiongrade = "A";
         }
-
         return potiongrade;
+    }
+    void Info(List<Dictionary<string, object>> data, int cusnum){    // 해금된 물약도감
+        string grade = Getpotiongrade();    // 등급 가져오기
+        if(grade == "A"){
+            string pname = data[cusnum-1]["name"].ToString();   // 물약 이름 저장
+            plist.Add(pname);   // 해금된 물약 저장
+        }
     }
 }

@@ -5,16 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - floating mushroom
-  - minaeri
-  - catherb
   - putzone
-  - leaf2
-  - leaf3
   - potiontag
   - customertag
   - bottle
   - cap
   - trash
+  - herb
+  - special
+  - simple
+  - one
   layers:
   - Default
   - TransparentFX
