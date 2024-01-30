@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class PotionBook : MonoBehaviour
 {
@@ -7,9 +8,10 @@ public class PotionBook : MonoBehaviour
     public GameObject plock;    // 잠금 이미지
     public GameObject[] potions;    // 해금된 물약 사진
     private int currentpage;    // 현재 페이지
+    public TextMeshProUGUI ptext;   // 페이지
 
     void Start() {
-        // Potion.plist.Add(2);      -> 확인 완료!!
+        Potion.plist.Add(2);      // -> 확인 완료!!
         ShowPage(currentpage);    
     }
     public void Open(){ // 노트 펼치기
@@ -19,6 +21,7 @@ public class PotionBook : MonoBehaviour
         panel.DOLocalMoveY(-554, 1f).SetEase(Ease.InBack);
     }
     void ShowPage(int page){
+        ptext.text = (page+1).ToString();
         plock.SetActive(false);
         foreach(GameObject potion in potions){
             potion.SetActive(false);
