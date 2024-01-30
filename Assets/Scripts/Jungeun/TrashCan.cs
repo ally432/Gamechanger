@@ -13,25 +13,17 @@ public class TrashCan : MonoBehaviour
     {
         Debug.Log("OnTriggerEnter2D called with " + other.gameObject.tag);
 
-        if (other.gameObject.CompareTag("cap"))
-        {
-            Destroy(other.gameObject);
-            Instantiate(capPrefab, capSpawnLocation.position, Quaternion.identity);
-        }
-        if (other.gameObject.CompareTag("bottle"))
-        {
-            Destroy(other.gameObject);
-            Instantiate(bottlePrefab, bottleSpawnLocation.position, Quaternion.identity);
-        }
         if (other.gameObject.CompareTag("one"))
         {
             Destroy(other.gameObject);
             Debug.Log("Destroying 'one' and creating 'cap' and 'bottle'...");
-            Instantiate(capPrefab, capSpawnLocation.position, Quaternion.identity);
-            Instantiate(bottlePrefab, bottleSpawnLocation.position, Quaternion.identity);
+            GameObject newCap = Instantiate(capPrefab, capSpawnLocation.position, Quaternion.identity);
+            GameObject newBottle = Instantiate(bottlePrefab, bottleSpawnLocation.position, Quaternion.identity);
             Debug.Log("'cap' and 'bottle' created.");
+
+            // Make sure newCap and newBottle are visible
+            newCap.SetActive(true);
+            newBottle.SetActive(true);
         }
-
     }
-
 }
