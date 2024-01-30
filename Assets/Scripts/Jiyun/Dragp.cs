@@ -60,9 +60,5 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 }
             }
         }
-
-        /*foreach(string herb in putherb){
-            Debug.Log(herb);
-        }*/
     }
 }

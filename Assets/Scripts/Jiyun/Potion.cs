@@ -16,7 +16,7 @@ public class Potion : MonoBehaviour
     public List<String> realherb;   // 진짜 약초
     public List<String> getherb;   // 해금된 약초 리스트
     public List<String> ingredients;    // 손님이 요구한 조미료 리스트
-    public static List<String> plist = new List<String>(); // 해금된 물약 리스트
+    public static List<int> plist = new List<int>(); // 해금된 물약 리스트
 
     void Update()
     {
@@ -120,11 +120,18 @@ public class Potion : MonoBehaviour
         }
         return potiongrade;
     }
+    
     void Info(List<Dictionary<string, object>> data, int cusnum){    // 해금된 물약도감
         string grade = Getpotiongrade();    // 등급 가져오기
         if(grade == "A"){
-            string pname = data[cusnum-1]["name"].ToString();   // 물약 이름 저장
-            plist.Add(pname);   // 해금된 물약 저장
+            int pnum = int.Parse(data[cusnum-1]["num"].ToString());   // 물약 번호 저장(손님 번호 임시 사용)
+            plist.Add(pnum);   // 해금된 물약 번호 저장
         }
+    }
+
+    void Remove(){
+        Dragp.putgreds.Clear(); // 넣은 모든 재료들 초기화
+        Dragp.putherb.Clear();  // 허브들 초기화
+        Dragp.specialherb.Clear();  // 허브들과 부재료 리스트 초기화
     }
 }
