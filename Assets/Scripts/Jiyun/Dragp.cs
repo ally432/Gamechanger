@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System;
-using Microsoft.Unity.VisualStudio.Editor;
 
 public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler     
 {
