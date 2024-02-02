@@ -8,6 +8,7 @@ public class Potion : MonoBehaviour
     public static string fire; // 불의 강도
     public static string time; // 시간
     public static string potiongrade;   // 물약 등급
+    public static string potionname;    // 물약 이름
     public static int potionnum = 0;   // 물약 점수
     public Image loadingbar;    // 제조 완료 시 넘어가는 물약
     float currentValue; // 로딩바와 관련
@@ -16,6 +17,7 @@ public class Potion : MonoBehaviour
     public List<String> realherb;   // 진짜 약초
     public List<String> getherb;   // 해금된 약초 리스트
     public List<String> ingredients;    // 손님이 요구한 조미료 리스트
+    public List<String> potionrecipe;    // 물약 레시피 
     public static List<int> plist = new List<int>(); // 해금된 물약 리스트
 
     void Update()
@@ -32,13 +34,14 @@ public class Potion : MonoBehaviour
     }
 
     public void End(){  // 제조 버튼 클릭
-        custominfo(5);
+        gradenum(5);
         currentValue = 0f;
         loadingbar.fillAmount = 0f;
     }
 
-    public void custominfo(int cusnum){ // 손님 번호로 엑셀 파일 읽고 내용과 일치하는지 확인하여 점수 매기기
+    public void gradenum(int cusnum){ // 손님 번호로 엑셀 파일 읽고 내용과 일치하는지 확인하여 점수 매기기
         List<Dictionary<string, object>> data = CSVReader.Read("customerOrder");    // 손님번호-1 해야 알맞은 라인 읽어옴!
+
         if(data[cusnum-1]["fire"].ToString() == fire){    // 화력을 맞게 설정했는가
             potionnum += 1;
         }
@@ -80,10 +83,76 @@ public class Potion : MonoBehaviour
             }    
         }
 
-        Info(data, cusnum);   // 해금된 물약 리스트 제작
+        potionstr(data, cusnum);    // 유저가 만든 물약이름 찾기
 
-        //Debug.Log(potionnum);
-        isFilling = true;   // 제조
+        string grade = Getpotiongrade();
+        if(grade == "A"){
+            Info();   // 만든 물약 리스트 제작(물약 노트)
+        }
+
+        isFilling = true;   // 제조(로딩바)
+    }
+
+    void potionstr(List<Dictionary<string, object>> data, int cusnum){
+        List<Dictionary<string, object>> potioninfo = CSVReader.Read("potioninfo");     // 물약 레시피 
+        for (int i = 0; i < 18; i++){
+            if(i == 17){    // 레시피에 없다면
+                    potionnum = 0;
+                    return;
+            }
+
+            potionrecipe = new List<string>();
+            recipe(potioninfo, i);  // 물약 레시피 재료 리스트
+            if(potionrecipe.Count == Dragp.specialherb.Count){  // 개수 같음
+                for (int j = 0; j < potionrecipe.Count; j++){
+                    if(potionrecipe.Contains(Dragp.specialherb[j])){    // 본 레시피에 있는 재료들인지
+                        if(j == potionrecipe.Count - 1){    
+                            if(potioninfo[i]["name"].ToString() == data[cusnum-1]["name"].ToString()){  // 내가 만든 물약과 손님이 원한 물약이 같다면
+                                potionname = potioninfo[i]["name"].ToString();
+                                return;
+                            }
+                            else{   // 내가 만든 물약과 손님이 원한 물약이 다르다면
+                                if (potionnum < 2){ // 등급 f로 바로 하락
+                                    potionnum = 0;
+                                    return;
+                                }
+                                else{   // 등급 두 단계 하락
+                                    potionnum -= 2;
+                                    if(potionnum == 2){ // 두 단계 하락해도 C등급일 때
+                                        potionname = potioninfo[i]["name"].ToString();
+                                    }
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    else{   // 본 레시피에 없는 재료를 넣었다면
+                        break;
+                    }                    
+                }
+                continue;   // 다음 i번째줄 실행
+            }
+            else{   // 다음 i번째줄 실행
+                continue;
+            }
+        }
+    }
+
+    public List<String> recipe(List<Dictionary<string, object>> potioninfo, int num){   // 물약 레시피 리스트
+        if(potioninfo[num]["ingred1"] != null && !string.IsNullOrEmpty(potioninfo[num]["ingred1"].ToString())){
+            potionrecipe.Add(potioninfo[num]["ingred1"].ToString());
+            if(potioninfo[num]["ingred2"] != null && !string.IsNullOrEmpty(potioninfo[num]["ingred2"].ToString())){
+                potionrecipe.Add(potioninfo[num]["ingred2"].ToString());
+                if(potioninfo[num]["ingred3"] != null && !string.IsNullOrEmpty(potioninfo[num]["ingred3"].ToString())){
+                    potionrecipe.Add(potioninfo[num]["ingred3"].ToString());
+                    if(potioninfo[num]["ingred4"] != null && !string.IsNullOrEmpty(potioninfo[num]["ingred4"].ToString())){
+                        potionrecipe.Add(potioninfo[num]["ingred4"].ToString());
+                    }
+                }
+            }
+        }
+
+        return potionrecipe;
     }
 
     public List<String> ingredlist(List<Dictionary<string, object>> data, int cusnum){
@@ -121,15 +190,15 @@ public class Potion : MonoBehaviour
         return potiongrade;
     }
     
-    void Info(List<Dictionary<string, object>> data, int cusnum){    // 해금된 물약도감
-        string grade = Getpotiongrade();    // 등급 가져오기
-        if(grade == "A"){
-            int pnum = int.Parse(data[cusnum-1]["num"].ToString());   // 물약 번호 저장(손님 번호 임시 사용)
-            plist.Add(pnum);   // 해금된 물약 번호 저장
+    void Info(){    // 해금된 물약도감
+        List<Dictionary<string, object>> potionimg = CSVReader.Read("potioninfo");
+        for (int i = 0; i < 17; i++){
+            if(potionname == potionimg[i]["name"].ToString()){
+                    plist.Add(i + 1);   // 게임 오브젝트 배열은 1~17
+            }
         }
     }
-
-    void Remove(){
+    public void Remove(){
         Dragp.putgreds.Clear(); // 넣은 모든 재료들 초기화
         Dragp.putherb.Clear();  // 허브들 초기화
         Dragp.specialherb.Clear();  // 허브들과 부재료 리스트 초기화
