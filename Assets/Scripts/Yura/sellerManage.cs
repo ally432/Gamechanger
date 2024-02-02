@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
+using DG.Tweening;
+using TMPro;
+
 
 public class sellerManage : MonoBehaviour
 {
@@ -11,6 +14,10 @@ public class sellerManage : MonoBehaviour
 
     public TypeEffect sellerText; // 약초꾼 텍스트 말풍선.
     public GameObject gamecursor;
+
+    public GameObject contractBtn, denyBtn, choice1,choice2,choice3;
+    public Button choiceBtn1, choiceBtn2, choiceBtn3;
+    public TextMeshProUGUI choice1Text, choice2Text, choice3Text;
 
     public static List<string> herbList = new List<string>(); //현재 해금된 허브 리스트.
 
@@ -38,11 +45,15 @@ public class sellerManage : MonoBehaviour
     bool specialSituation = false;
     public int addMoney; //재계약시 추가금
 
-    public int excelnum;
+    static public int excelnum;
     public int inum; // 특별손님수세기
     string kind;
-    string whatperson;
+    public string whatperson;
     bool isMouseClicked = false; //ㄱㅣㅅㅎㅓㅂㅡㅊㅔㅋㅡ
+
+    bool choiceClicked = false;
+
+    public bool isChoiceDisplayed = false;
     /**
     public bool grandpa = false;
 
@@ -58,6 +69,11 @@ public class sellerManage : MonoBehaviour
         specialPersonList.Clear();
         inum = 0;
 
+        contractBtn.SetActive(false);
+        denyBtn.SetActive(false);
+        choice1.SetActive(false);
+        choice2.SetActive(false);
+        choice3.SetActive(false);
 
         day1HerbImg.enabled = false;
         day2HerbImg1.enabled = false;
@@ -105,11 +121,19 @@ public class sellerManage : MonoBehaviour
             specialDone = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && specialSituation && !isMouseClicked)
+        if ((Input.GetMouseButtonDown(0) && specialSituation && !isMouseClicked) || choiceClicked)
         {
-            isMouseClicked = true;
-            showSpecialTalk(whatperson);
-            Debug.Log("다음 대사");
+            if (!isChoiceDisplayed)
+            {
+                Debug.Log("업데이트문"+whatperson);
+                isMouseClicked = true;
+                choiceClicked = false;
+                showSpecialTalk(whatperson);
+                excelnum++;
+                Debug.Log("다음 대사");
+                
+            }
+            
         }
 
         if (nextperson)
@@ -130,14 +154,15 @@ public class sellerManage : MonoBehaviour
         whatperson = special_Dialog[specialPersonList[inum]]["person"].ToString();
         showImg(kind);
         showSpecialTalk(whatperson);
-            
+        excelnum++;
+
     }
 
     void showSpecialTalk(string person)
     {
         List<Dictionary<string, object>> special_Dialog = CSVReader.Read("specialPerson");
         
-        if (person != special_Dialog[excelnum]["person"].ToString())
+        if (person != special_Dialog[excelnum]["person"].ToString() || person == "none")
         {
             inum++;
             if (inum < specialPersonList.Count)
@@ -151,24 +176,97 @@ public class sellerManage : MonoBehaviour
             }
 
         }
-        //만약 person이 i번째랑 같지 않으면? 스페셜에 다음 사람 있는지 확인
-        //다음 사람 있으면 코루틴 실행 or 다음스페셜손님함수 실행
-        //ㅇ없으면 specialDone true, specialSituation false.
+        
 
         string content = special_Dialog[excelnum]["content"].ToString();
         sellerText.SetMsg(content);
-        excelnum++;
-        Debug.Log("엑셀넘버"+excelnum);
+
+        if (special_Dialog[excelnum]["choice"].ToString() == "y")
+        {
+            choiceDisplay(excelnum);
+        }
+
+        
+        
         isMouseClicked = false;
+    }
+
+    void choiceDisplay(int excelnum)
+    {
+
+        List<Dictionary<string, object>> special_Dialog = CSVReader.Read("specialPerson");
+
+        Debug.Log(excelnum + "선택지 엑셀넘버");
+
+        choice1Text.text = special_Dialog[excelnum]["choice1"].ToString();
+        choice1.SetActive(true);
+
+        choice2Text.text = special_Dialog[excelnum]["choice2"].ToString();
+        choice2.SetActive(true);
+
+        if(special_Dialog[excelnum]["choice3"].ToString() != "none")
+        {
+            choice3Text.text = special_Dialog[excelnum]["choice3"].ToString();
+            choice3.SetActive(true);
+        }
+
+        isChoiceDisplayed = true;
+
+
+   
+
+       
+    }
+
+    public void Btn1()
+    {
+        if (excelnum == 20)
+        {
+            excelnum = 21;
+            whatperson = "goArmy1-1";
+            BtnClear();
+        }
+        else
+            BtnClear();
+        
+    }
+    public void Btn2()
+    {
+        if (excelnum == 20)
+        {
+            excelnum = 24;
+            whatperson = "goArmy1-2";
+            BtnClear();
+        }
+        else
+            BtnClear();
 
 
     }
 
+    void Btn3()
+    {
+
+
+    }
+
+    void BtnClear()
+    {
+        choice1.SetActive(false);
+        choice2.SetActive(false);
+        choice3.SetActive(false);
+        isChoiceDisplayed=false;
+        choiceClicked = true;
+    }
+
+
     public void contractBtnClicked()
         {
             finalTrueHerbList.Clear();
+            contractBtn.SetActive(false);
+            denyBtn.SetActive(false);
 
-            if (isContracted)
+        if (isContracted)
             {
                 reactionNum = 15;
                 showSellerTalk();
@@ -200,7 +298,8 @@ public class sellerManage : MonoBehaviour
                 noContracted = true;
                 Debug.Log("계약안함");
             }
-
+            contractBtn.SetActive(false);
+            denyBtn.SetActive(false);
             reactionNum = 10;
             showSellerTalk();
             nextperson = true;
@@ -222,7 +321,9 @@ public class sellerManage : MonoBehaviour
             {
                 int randomIndex = Random.Range(0, 3);
                 sellerImg.sprite = sellerImgList[randomIndex];
-            }
+                contractBtn.SetActive(true);
+                denyBtn.SetActive(true);
+        }
 
             else if (person == "granpa")
             {
@@ -392,8 +493,8 @@ public class sellerManage : MonoBehaviour
             else if (currentdate == 3)
             {
 
-                specialPersonList.Add(21); // 약초할아버지는 항상 맨 마지막에 넣도록 하기.
-                specialPersonList.Add(15);
+                specialPersonList.Add(15); // 약초할아버지는 항상 맨 마지막에 넣도록 하기.
+                specialPersonList.Add(27);
             }
 
         }

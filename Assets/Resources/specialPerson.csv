@@ -1,31 +1,35 @@
-﻿num,choice,person,content,kind
-1,n,herbGranpaA,새롭게 문을 열었구만. 반갑네.,granpa
-2,n,herbGranpaA,"흠..처음이라 하니, 몇가지 주의할 점을 알려주겠네.",granpa
-3,n,herbGranpaA,"여기 약초꾼들은 사기꾼들이 많아. 항상 약초가 진짜인지, 가짜인지 잘 확인하고 계약을 해야 하지.",granpa
-4,n,herbGranpaA,"만약에 다른 약초꾼과 계약했음에도, 다른 사람과 재계약 한다면 값을 올려받을테니 조심하게.",granpa
-5,n,herbGranpaA,지금은 고양이풀이 철이야.,granpa
-6,n,herbGranpaA,고양이풀은 애완동물과 깊은 대화를 나눌 수 있는 약물을 만들 수 있게 하지.,granpa
-7,n,herbGranpaA,음? 어떻게 진짜 가짜를 구분하냐고?,granpa
-8,n,herbGranpaA,아마 전임자가 준 약초 노트에 잘 써져 있을게야. 그걸 참고해.,granpa
-9,n,herbGranpaA,무운을 비네!,granpa
-10,n,herbGranpaB,안녕하신가!,granpa
-11,n,herbGranpaB,오랜만이네. 가게가 잘 운영되고 있는 것 같은데..,granpa
-12,n,herbGranpaB,"아, 내가 온 이유는.. 이번에 서대륙과의 무역을 활성화한다는 정부 소식이 있었어.",granpa
-13,n,herbGranpaB,자네같은 촌뜨기는 모를 귀한 소식이지.,granpa
-14,n,herbGranpaB,"그 덕분에, ""미내리"" 라는 약초가 이제 거래된다구. 수도에서는 이미 거래된지 한참이야!",granpa
-15,n,herbGranpaB,미내리로 또 다른 약물을 만들 수 있을거야. 잘 해보라고! 약초 노트도 꼭 좀 잘 보고.,granpa
-16,n,herbGranpaC,주인장! 또 보네!,granpa
-17,n,herbGranpaC,굉장히 엄청난 놀라운 대박 소식이여! ,granpa
-18,n,herbGranpaC,여기 뒷산에서 약초꾼들이 둥둥버섯 자생지를 발견했다더네!,granpa
-19,n,herbGranpaC,응? 둥둥버섯을 몰라?,granpa
-20,n,herbGranpaC,참…뭐어… 약초 노트나 잘 보고… 잘 해보게나… ,granpa
-21,n,herbGranpaC,쯧쯧…이정도로 무식해서야…떼잉!,granpa
-22,n,goArmy1,흠.,army
-23,n,goArmy1,"이 가게 주인장, 맞습니까?",army
-24,n,goArmy1,저는 육군 제 21집단군 대령 정민수입니다. ,army
-25,y,goArmy1,현재 가게를 연 이 지역은 근처에 징집을 거부한 채로 모여있는 불순분자들의 요충지가 있는 것으로 예상됩니다.,army
-26,n,goArmy1,"따라서, 수상한 인물이나  군 증명서를 가지지 않은 마법사, 마녀를 보았다면.. 저에게 말씀해주십쇼.",army
-27,n,goArmy1,협조를 부탁드립니다. ,army
-28,n,goArmy1,"만약 거짓을 말하거나, 반란군에 협력하신다면…",army
-29,n,goArmy1,저를 다른 곳에서 보게 될 겁니다.,army
-30,n,goArmy1,그럼 이만.,army
+﻿num,choice,person,content,kind,choice1,choice2,choice3,,
+1,n,herbGranpaA,새롭게 문을 열었구만. 반갑네.,granpa,,
+2,n,herbGranpaA,"흠..처음이라 하니, 몇가지 주의할 점을 알려주겠네.",granpa,,
+3,n,herbGranpaA,"여기 약초꾼들은 사기꾼들이 많아. 항상 약초가 진짜인지, 가짜인지 잘 확인하고 계약을 해야 하지.",granpa,,
+4,n,herbGranpaA,"만약에 다른 약초꾼과 계약했음에도, 다른 사람과 재계약 한다면 값을 올려받을테니 조심하게.",granpa,,
+5,n,herbGranpaA,지금은 고양이풀이 철이야.,granpa,,
+6,n,herbGranpaA,고양이풀은 애완동물과 깊은 대화를 나눌 수 있는 약물을 만들 수 있게 하지.,granpa,,
+7,n,herbGranpaA,음? 어떻게 진짜 가짜를 구분하냐고?,granpa,,
+8,n,herbGranpaA,아마 전임자가 준 약초 노트에 잘 써져 있을게야. 그걸 참고해.,granpa,,
+9,n,herbGranpaA,무운을 비네!,granpa,,
+10,n,herbGranpaB,안녕하신가!,granpa,,
+11,n,herbGranpaB,오랜만이네. 가게가 잘 운영되고 있는 것 같은데..,granpa,,
+12,n,herbGranpaB,"아, 내가 온 이유는.. 이번에 서대륙과의 무역을 활성화한다는 정부 소식이 있었어.",granpa,,
+13,n,herbGranpaB,자네같은 촌뜨기는 모를 귀한 소식이지.,granpa,,
+14,n,herbGranpaB,"그 덕분에, ""미내리"" 라는 약초가 이제 거래된다구. 수도에서는 이미 거래된지 한참이야!",granpa,,
+15,n,herbGranpaB,미내리로 또 다른 약물을 만들 수 있을거야. 잘 해보라고! 약초 노트도 꼭 좀 잘 보고.,granpa,,
+16,n,goArmy1,흠.,army,,
+17,n,goArmy1,"이 가게 주인장, 맞습니까?",army,,
+18,n,goArmy1,저는 육군 제 21집단군 대령 정민수입니다. ,army,,
+19,y,goArmy1,현재 가게를 연 이 지역은 근처에 징집을 거부한 채로 모여있는 불순분자들의 요충지가 있는 것으로 예상됩니다.,army,진짜요?,우오ㅏ.,none
+20,n,goArmy1,"따라서, 수상한 인물이나  군 증명서를 가지지 않은 마법사, 마녀를 보았다면.. 저에게 말씀해주십쇼.",army,,
+21,y,goArmy1,협조를 부탁드립니다. ,army,싫어요!,좋아요.,none
+22,,goArmy1-1,뭐?,army,,
+23,,goArmy1-1,그런 언행은 굉장히 부적절하군.,army,,
+24,,goArmy1-1,좋게 말할때 협조하는게 좋을거야. 이건 경고야.,army,,
+25,n,goArmy1-2,"만약 거짓을 말하거나, 반란군에 협력하신다면…",army,,
+26,n,goArmy1-2,저를 다른 곳에서 보게 될 겁니다.,army,,
+27,n,goArmy1-2,그럼 이만.,army,,
+28,n,herbGranpaC,주인장! 또 보네!,granpa,,
+29,n,herbGranpaC,굉장히 엄청난 놀라운 대박 소식이여! ,granpa,,
+30,n,herbGranpaC,여기 뒷산에서 약초꾼들이 둥둥버섯 자생지를 발견했다더네!,granpa,,
+31,n,herbGranpaC,응? 둥둥버섯을 몰라?,granpa,,
+32,n,herbGranpaC,참…뭐어… 약초 노트나 잘 보고… 잘 해보게나… ,granpa,,
+33,n,herbGranpaC,쯧쯧…이정도로 무식해서야…떼잉!,granpa,,
+34,n,none,0,0,,
