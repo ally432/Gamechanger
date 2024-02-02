@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class TrashCan : MonoBehaviour
@@ -12,6 +13,15 @@ public class TrashCan : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("OnTriggerEnter2D called with " + other.gameObject.tag);
+
+        if (other.gameObject.CompareTag("cap"))
+        {
+            other.transform.position = capSpawnLocation.position;
+        }
+        if (other.gameObject.CompareTag("bottle"))
+        {
+            other.transform.position = bottleSpawnLocation.position;
+        }
 
         if (other.gameObject.CompareTag("one"))
         {
@@ -26,4 +36,21 @@ public class TrashCan : MonoBehaviour
             newBottle.SetActive(true);
         }
     }
+/*    public string csvFileName;  // CSV 파일 이름
+    void Start()
+    {
+        ResetCSVFile(csvFileName);
+    }
+
+    void ResetCSVFile(string fileName)
+    {
+        string filePath = Path.Combine(Application.dataPath, fileName);
+
+        using (var writer = new StreamWriter(filePath))
+        {
+            writer.WriteLine("Drug grade,Drug type");  // CSV 파일의 헤더
+            // 이 시점에서 CSV 파일은 헤더만 남고 모든 데이터가 초기화됩니다.
+        }
+    }
+*/
 }
