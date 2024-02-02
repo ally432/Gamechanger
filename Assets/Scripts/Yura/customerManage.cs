@@ -73,7 +73,7 @@ public class customerManage : MonoBehaviour
 
     private void Awake()
     {
-        time = 10;
+        time = 1;
         StartCoroutine(StartTimer());
     }
 
@@ -182,8 +182,8 @@ public class customerManage : MonoBehaviour
                 money += int.Parse(strMoney);
                 ranNumRe += 15;
                 break;
-            case "E":
-                strMoney = customerOrder_Dialog[customerNum]["e"].ToString();
+            case "F":
+                strMoney = customerOrder_Dialog[customerNum]["f"].ToString();
                 money += int.Parse(strMoney);
                 ranNumRe += 20;
                 break;

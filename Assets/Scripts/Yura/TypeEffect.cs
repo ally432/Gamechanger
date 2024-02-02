@@ -34,7 +34,7 @@ public class TypeEffect : MonoBehaviour
         index = 0;
         EndCursor.SetActive(false);
 
-        interval = 1.0f / CharperSeconds;
+        interval = 0.5f / CharperSeconds;
         Invoke("Effecting", interval);
     }
     void Effecting()
