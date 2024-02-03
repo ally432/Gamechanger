@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d61cc0eabb22f1646ab41ba6617be51f
+guid: 1dee412f6cc087b4e893abab57004add
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8788120047598053791
-    second: normalBottle_0
+      213: -5992862399598632171
+    second: InvisibilityP_B_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: normalBottle_0
+      name: InvisibilityP_B_0
       rect:
         serializedVersion: 2
         x: 2182
         y: 0
         width: 5306
-        height: 8426
+        height: 9050
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9922903f9ca5f970800000000000000
-      internalID: 8788120047598053791
+      spriteID: 513e02c266315dca0800000000000000
+      internalID: -5992862399598632171
       vertices: []
       indices: 
       edges: []

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7160193b6d2451f4aa1a1b819f877847
+guid: 10fc4f906b4ae674e962f7cb08ec0b05
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8633809598001207065
-    second: FreezingP_A_0
+      213: -8709883243967132772
+    second: IllusionP_C_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FreezingP_A_0
+      name: IllusionP_C_0
       rect:
         serializedVersion: 2
         x: 2182
         y: 0
-        width: 5618
-        height: 9674
+        width: 5306
+        height: 9050
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e8a7cc1aeb8e2880800000000000000
-      internalID: -8633809598001207065
+      spriteID: c9b46382657402780800000000000000
+      internalID: -8709883243967132772
       vertices: []
       indices: 
       edges: []
