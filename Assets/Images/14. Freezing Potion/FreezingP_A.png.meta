@@ -5,12 +5,6 @@ TextureImporter:
   - first:
       213: -8633809598001207065
     second: FreezingP_A_0
-  - first:
-      213: 7270600487654591638
-    second: FreezingP_A_1
-  - first:
-      213: 5512515413387888244
-    second: FreezingP_A_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,7 +119,7 @@ TextureImporter:
         x: 2182
         y: 0
         width: 5618
-        height: 9050
+        height: 9674
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,48 +129,6 @@ TextureImporter:
       bones: []
       spriteID: 7e8a7cc1aeb8e2880800000000000000
       internalID: -8633809598001207065
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FreezingP_A_1
-      rect:
-        serializedVersion: 2
-        x: 2806
-        y: 9048
-        width: 938
-        height: 936
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 69c0f6a4f9c56e460800000000000000
-      internalID: 7270600487654591638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FreezingP_A_2
-      rect:
-        serializedVersion: 2
-        x: 5926
-        y: 8736
-        width: 938
-        height: 938
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 476c9d9df83608c40800000000000000
-      internalID: 5512515413387888244
       vertices: []
       indices: 
       edges: []
