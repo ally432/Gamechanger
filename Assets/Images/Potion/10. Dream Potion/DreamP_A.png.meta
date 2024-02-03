@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 23a1950d1f749c94cbbbbe5f10f7ce76
+guid: f4186db95fbb2b84383dcb7a760131a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8521944754863514423
-    second: HealingP_A_0
+      213: 6945206292465525946
+    second: DreamP_A_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealingP_A_0
+      name: DreamP_A_0
       rect:
         serializedVersion: 2
         x: 2182
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9cc5bda8568fbb980800000000000000
-      internalID: -8521944754863514423
+      spriteID: ab427326354526060800000000000000
+      internalID: 6945206292465525946
       vertices: []
       indices: 
       edges: []

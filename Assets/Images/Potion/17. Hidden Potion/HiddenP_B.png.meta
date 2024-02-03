@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c404cdbf11fc10940b56105917c17d5b
+guid: 47444dd99d9d18145a33fbc4b4c51a54
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1714533787757198992
-    second: BlastP_A_0
+      213: -3272019838947816880
+    second: HiddenP_B_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlastP_A_0
+      name: HiddenP_B_0
       rect:
         serializedVersion: 2
         x: 2182
         y: 0
-        width: 5618
-        height: 9674
+        width: 5306
+        height: 9050
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09e3cae556f3bc710800000000000000
-      internalID: 1714533787757198992
+      spriteID: 05a0c79da437792d0800000000000000
+      internalID: -3272019838947816880
       vertices: []
       indices: 
       edges: []
