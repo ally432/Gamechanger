@@ -5,12 +5,6 @@ TextureImporter:
   - first:
       213: 1714533787757198992
     second: BlastP_A_0
-  - first:
-      213: -6629308784394092212
-    second: BlastP_A_1
-  - first:
-      213: -1361329401164902695
-    second: BlastP_A_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,7 +119,7 @@ TextureImporter:
         x: 2182
         y: 0
         width: 5618
-        height: 9050
+        height: 9674
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,48 +129,6 @@ TextureImporter:
       bones: []
       spriteID: 09e3cae556f3bc710800000000000000
       internalID: 1714533787757198992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlastP_A_1
-      rect:
-        serializedVersion: 2
-        x: 2806
-        y: 9048
-        width: 938
-        height: 936
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c4140dfb8c6fff3a0800000000000000
-      internalID: -6629308784394092212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlastP_A_2
-      rect:
-        serializedVersion: 2
-        x: 5926
-        y: 8736
-        width: 938
-        height: 938
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9de454d4f169b1de0800000000000000
-      internalID: -1361329401164902695
       vertices: []
       indices: 
       edges: []

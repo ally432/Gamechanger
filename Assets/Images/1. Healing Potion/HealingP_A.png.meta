@@ -5,12 +5,6 @@ TextureImporter:
   - first:
       213: -8521944754863514423
     second: HealingP_A_0
-  - first:
-      213: -4934447187525989675
-    second: HealingP_A_1
-  - first:
-      213: -1347023154136048299
-    second: HealingP_A_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,7 +119,7 @@ TextureImporter:
         x: 2182
         y: 0
         width: 5618
-        height: 9050
+        height: 9674
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,48 +129,6 @@ TextureImporter:
       bones: []
       spriteID: 9cc5bda8568fbb980800000000000000
       internalID: -8521944754863514423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealingP_A_1
-      rect:
-        serializedVersion: 2
-        x: 2806
-        y: 9048
-        width: 938
-        height: 936
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5da86904d62558bb0800000000000000
-      internalID: -4934447187525989675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealingP_A_2
-      rect:
-        serializedVersion: 2
-        x: 5926
-        y: 8736
-        width: 938
-        height: 938
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55d9e7104996e4de0800000000000000
-      internalID: -1347023154136048299
       vertices: []
       indices: 
       edges: []
