@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IllusionP_C_0: -8709883243967132772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

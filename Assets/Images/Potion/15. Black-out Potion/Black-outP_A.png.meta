@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 31d4ca8530ac9ba46abca14bb7f04ccd
+guid: fda7569033d75cc4986c95c37e1f3a36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8844524290516411730
-    second: UnknownPotion_0
+      213: -6956822504175106588
+    second: Black-outP_A_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UnknownPotion_0
+      name: Black-outP_A_0
       rect:
         serializedVersion: 2
         x: 2182
         y: 0
-        width: 5306
-        height: 8426
+        width: 5618
+        height: 9674
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2556b8f5bff0eba70800000000000000
-      internalID: 8844524290516411730
+      spriteID: 4e503319ac6647f90800000000000000
+      internalID: -6956822504175106588
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      UnknownPotion_0: 8844524290516411730
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
