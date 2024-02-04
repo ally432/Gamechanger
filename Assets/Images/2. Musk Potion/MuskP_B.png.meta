@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MuskP_B_0: 772611148850866375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
