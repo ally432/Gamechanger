@@ -41,22 +41,29 @@ public class Save : MonoBehaviour
         PlayerPrefs.SetInt("SavedMoney", customerManage.money);
 
         // 물약 도감 저장
-        List<int> potionList = new List<int>();
-        potionList = Potion.plist.ToList();         // 해금된 물약 도감 리스트 복제
-        string str = "";
-        for(int i = 0; i < 17; i++)
+        if(Potion.plist != null)
         {
-            str = str + potionList[i];
-            if(i < 16)
+            List<int> potionList = new List<int>();
+            potionList = Potion.plist.ToList();         // 해금된 물약 도감 리스트 복제
+            string str = "";
+            for(int i = 0; i < Potion.plist.Count; i++)
             {
-                str = str + ",";
+                str = str + potionList[i];
+                if(i < 16)
+                {
+                    str = str + ",";
+                }
             }
+            PlayerPrefs.SetString("SavedPotionList", str);      // 배열을 ','으로 이어 문자열로 저장
         }
-        PlayerPrefs.SetString("SavedPotionList", str);      // 배열을 ','으로 이어 문자열로 저장
-
+        
         // 호감도 저장
+        // PlayerPrefs.SetInt("SavedGFavor", gFavor);
+        // PlayerPrefs.SetInt("SavedRFavor", rFavor);
 
         // 플래그 저장
+        // PlayerPrefs.SetInt("SavedFlag1", System.Convert.ToInt16(flag1));
+        // ...
 
         Invoke("Saved", 1.0f);
     }
