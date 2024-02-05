@@ -500,7 +500,7 @@ public class sellerManage : MonoBehaviour
         if (currentdate == 1) herbList.Add("waterBerry"); // 나중에 그랜파가 와서 대사 말하고, 더하는걸로 변경.
 
         else if (currentdate == 4) herbList.Add("sliverFlame");
-
+            
         else if (currentdate == 6) herbList.Add("wadadakPepper");
 
         else if (currentdate == 8) herbList.Add("shadowHerb");
@@ -609,16 +609,33 @@ public class sellerManage : MonoBehaviour
 
     public static List<string> getHerbList()
     {
+        for(int i=0; i < herbList.Count; i++){
+                Debug.Log("Yura"+herbList[i]);
+        }
+        
         return herbList;
     }
 
     public void openBtn()
     {
-        SceneManager.LoadScene("customerScene");
+        SceneManager.LoadScene("Potionmaking");
     }
 
     public void gopotion()
-    {
+    {   // 다시 제조실로 갈 때 리스트 비우기
+        if(Dragp.putgreds.Count > 0){
+            Dragp.putgreds.Clear();
+        }
+        if(Dragp.putherb.Count > 0){
+            Dragp.putherb.Clear();
+        }
+        if(Dragp.specialherb.Count > 0){
+            Dragp.specialherb.Clear();
+        }
+        if(Potion.potionnum > -1){
+            Potion.potionnum = 0;
+        }
+
         SceneManager.LoadScene("Potionmaking");
     }
 
