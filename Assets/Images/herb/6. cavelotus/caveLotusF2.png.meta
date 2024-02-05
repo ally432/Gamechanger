@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      caveLotusF2_0: 4708544550877379066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

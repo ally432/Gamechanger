@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      obsidianSpoon_0: 484958436847700623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
