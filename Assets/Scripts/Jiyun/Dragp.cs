@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System;
+using TMPro;
 
 public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler     
 {
@@ -11,6 +12,8 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public static List<String> specialherb = new List<String>();    // 넣은 약초와 스페셜 부재료 리스트
     public GameObject leaf;
     public List<String> getherb;   // 해금된 약초 리스트
+    public TextMeshProUGUI ctext;   // 소지금 텍스트
+    public int cost;    // 소지금
 
     void Start()
     {
@@ -22,6 +25,12 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
 
             GameObject.Find("leaf").transform.Find(herbtag).gameObject.SetActive(true);    // 해금된 약초
         }
+
+        cost = customerManage.getMoney();
+
+        //cost = 100; // 예시
+
+        ctext.text = cost.ToString();   // 초기금 보여주기
     }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)  // 드래그 시작
@@ -52,6 +61,14 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         if(other.gameObject.tag.Equals("putzone")){
             putgreds.Add(gameObject.name);
             if(gameObject.tag.Equals("herb")){  // 넣은게 허브라면..
+                List<Dictionary<string, object>> data = CSVReader.Read("herbcost");
+                for (int i = 0; i < 6; i++){
+                    if(data[i]["name"].ToString() == gameObject.name){  // 부딪힌 약초 이름을 엑셀에서 찾기
+                        cost -= int.Parse(data[i]["cost"].ToString());  // 잔액에서 약초값 빼기
+                    }
+                } 
+                ctext.text = cost.ToString();   // 바뀐 금액 갱신
+
                 putherb.Add(gameObject.name);
                 specialherb.Add(gameObject.name);   // catherb minaeri etc..
                 if(gameObject.tag.Equals("special")){
