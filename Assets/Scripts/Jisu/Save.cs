@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
+using System.Linq;
 
 public class Save : MonoBehaviour
 {
@@ -34,8 +36,28 @@ public class Save : MonoBehaviour
 
     public void Saving()        // 날짜, 소지금, 물약 도감, 호감도, 플래그(분기점)
     {
+        // 날짜, 소지금 저장
         PlayerPrefs.SetInt("SavedDate", customerManage.date);
         PlayerPrefs.SetInt("SavedMoney", customerManage.money);
+
+        // 물약 도감 저장
+        List<int> potionList = new List<int>();
+        potionList = Potion.plist.ToList();         // 해금된 물약 도감 리스트 복제
+        string str = "";
+        for(int i = 0; i < 17; i++)
+        {
+            str = str + potionList[i];
+            if(i < 16)
+            {
+                str = str + ",";
+            }
+        }
+        PlayerPrefs.SetString("SavedPotionList", str);      // 배열을 ','으로 이어 문자열로 저장
+
+        // 호감도 저장
+
+        // 플래그 저장
+
         Invoke("Saved", 1.0f);
     }
 
