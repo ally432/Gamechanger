@@ -11,7 +11,7 @@ public class customerManage : MonoBehaviour
     public static int date = 1;
     public static int maxindex = 0;
     public TypeEffect customerText;
-    public GameObject gamecursor, bottle, cap;
+    public GameObject gamecursor;
 
     public Image customerImg;
     public Sprite[] customerImgList = new Sprite[3];
@@ -38,6 +38,8 @@ public class customerManage : MonoBehaviour
 
     public static bool isfirst = false; // 제조실에 갔다왔는지
 
+    public Canvas customer, making; // 손님오는 캔버스, 만드는 캔버스
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,12 +58,15 @@ public class customerManage : MonoBehaviour
         showCustomerImg();
         printOrderScript();
 
-        bottle.SetActive(false);
+        /*bottle.SetActive(false);
         cap.SetActive(false);
         if (isfirst){   // 제조실에 갔다왔다면
             bottle.SetActive(true);
             cap.SetActive(true);
-        }        
+        } */       
+
+        making.gameObject.SetActive(false);
+        customer.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -82,7 +87,7 @@ public class customerManage : MonoBehaviour
 
     private void Awake()
     {
-        time = 120;
+        time = 10;
         StartCoroutine(StartTimer());
     }
 
@@ -134,6 +139,8 @@ public class customerManage : MonoBehaviour
             maxindex += 10;
         else if (date == 16)
             maxindex += 50;
+        
+        Debug.Log(maxindex);
     }
 
     public void customerBtn() //물약을 주면 등급에 맞는 반응, 손님 가고 다음손님옴. 나중에 물약 드래그되면 실행되는 함수로 변경하기
@@ -238,7 +245,8 @@ public class customerManage : MonoBehaviour
         return money;
     }
     public void potionmaking(){
-        SceneManager.LoadScene("Potionmaking");
+        making.gameObject.SetActive(!making.gameObject.activeSelf);
+        customer.gameObject.SetActive(!customer.gameObject.activeSelf);
     }
 }
 
