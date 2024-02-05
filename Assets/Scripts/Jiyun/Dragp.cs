@@ -10,10 +10,11 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public static List<String> putgreds = new List<string>();    // 넣은 허브와 모든 부재료들 리스트
     public static List<String> putherb = new List<string>();    // 넣은 허브(진짜인지 판별용)
     public static List<String> specialherb = new List<String>();    // 넣은 약초와 스페셜 부재료 리스트
-    public GameObject leaf;
+    public GameObject leaf, spec1, spec2, spec3, spec4;
     public List<String> getherb;   // 해금된 약초 리스트
     public TextMeshProUGUI ctext;   // 소지금 텍스트
     public int cost;    // 소지금
+    public int day; // 날짜
 
     void Start()
     {
@@ -26,9 +27,32 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             GameObject.Find("leaf").transform.Find(herbtag).gameObject.SetActive(true);    // 해금된 약초
         }
 
-        cost = customerManage.getMoney();
+        spec1.SetActive(false);
+        spec2.SetActive(false);
+        spec3.SetActive(false);
+        spec4.SetActive(false);
 
-        //cost = 100; // 예시
+        day = customerManage.getDate();
+        if(day > 1){
+            spec1.SetActive(true);
+        }
+        if(day > 5){
+            spec1.SetActive(true);
+            spec2.SetActive(true);
+        }
+        if(day > 9){
+            spec1.SetActive(true);
+            spec2.SetActive(true);
+            spec3.SetActive(true);
+        }
+        if(day > 13){
+            spec1.SetActive(true);
+            spec2.SetActive(true);
+            spec3.SetActive(true);
+            spec4.SetActive(true);
+        }
+
+        cost = customerManage.getMoney();
 
         ctext.text = cost.ToString();   // 초기금 보여주기
     }
@@ -70,7 +94,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 ctext.text = cost.ToString();   // 바뀐 금액 갱신
 
                 putherb.Add(gameObject.name);
-                specialherb.Add(gameObject.name);   // catherb minaeri etc..
+                specialherb.Add(gameObject.name);   // 허브
                 if(gameObject.tag.Equals("special")){
                     specialherb.Add(gameObject.name);   // 스페셜 부재료(seasoning1, 2, 3, 4)
                 }

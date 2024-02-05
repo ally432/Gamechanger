@@ -41,7 +41,7 @@ public class Save : MonoBehaviour
         PlayerPrefs.SetInt("SavedMoney", customerManage.money);
 
         // 물약 도감 저장
-        if(Potion.plist != null)
+        if(Potion.plist.Count != 0)
         {
             List<int> potionList = new List<int>();
             potionList = Potion.plist.ToList();         // 해금된 물약 도감 리스트 복제
