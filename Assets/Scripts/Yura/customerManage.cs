@@ -25,6 +25,8 @@ public class customerManage : MonoBehaviour
 
     int ranNum;
 
+    int specialPeopleNum;
+
     private bool timeover = false;
 
     [SerializeField] private TMP_Text timeText;
@@ -39,6 +41,7 @@ public class customerManage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("현재 날짜"+date);
         herbList = sellerManage.getTrueContractHerbList();
         if (herbList.Count > 0)
         {
@@ -209,6 +212,10 @@ public class customerManage : MonoBehaviour
         customerText.SetMsg(reaction);
 
     }
+
+    void specialPeople()
+    {
+        if (date == 2) specialPeopleNum =10 ; } //
 
     public static int getDate()
     {
