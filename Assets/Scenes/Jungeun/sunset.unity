@@ -678,7 +678,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 646756434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &767657606
+--- !u!1 &854941726
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,22 +686,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 767657608}
-  - component: {fileID: 767657607}
+  - component: {fileID: 854941728}
+  - component: {fileID: 854941727}
   m_Layer: 0
-  m_Name: daywindow_0
+  m_Name: sunsetwindow_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &767657607
+--- !u!212 &854941727
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767657606}
+  m_GameObject: {fileID: 854941726}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -738,7 +738,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -5500226255746736491, guid: 81fd28a28487ab44cb9e4eade65d8856, type: 3}
+  m_Sprite: {fileID: 3453952157144431596, guid: 26c65e74ac4b3fd4a9c3188f4212265b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -749,15 +749,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &767657608
+--- !u!4 &854941728
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767657606}
+  m_GameObject: {fileID: 854941726}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.69, y: 3, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2440,7 +2440,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 276696401}
-  - {fileID: 767657608}
   - {fileID: 1678759213}
   - {fileID: 127677922}
   - {fileID: 985798342}
@@ -2455,3 +2454,4 @@ SceneRoots:
   - {fileID: 2087291663}
   - {fileID: 950508724}
   - {fileID: 646756434}
+  - {fileID: 854941728}
