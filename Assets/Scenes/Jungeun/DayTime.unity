@@ -405,6 +405,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154599325}
   m_CullTransparentMesh: 1
+--- !u!1 &176309809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176309811}
+  - component: {fileID: 176309810}
+  m_Layer: 0
+  m_Name: dispenser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &176309810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176309809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896fd7739528aaf40a7838606fcf6914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  open: {fileID: 527801890}
+  close: {fileID: 937649776}
+  openbtn: {fileID: 447642294}
+  closebtn: {fileID: 1266255248}
+--- !u!4 &176309811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176309809}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 185.75569, y: 206.75545, z: 8.358475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &176600955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1126,6 @@ GameObject:
   - component: {fileID: 447642298}
   - component: {fileID: 447642297}
   - component: {fileID: 447642296}
-  - component: {fileID: 447642299}
   m_Layer: 5
   m_Name: DoorBtn
   m_TagString: Untagged
@@ -1150,8 +1197,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 447642299}
-        m_TargetAssemblyTypeName: LiqChange, Assembly-CSharp
+      - m_Target: {fileID: 176309810}
+        m_TargetAssemblyTypeName: ImageChanger, Assembly-CSharp
         m_MethodName: ChangeImage
         m_Mode: 1
         m_Arguments:
@@ -1200,22 +1247,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447642294}
   m_CullTransparentMesh: 1
---- !u!114 &447642299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447642294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 896fd7739528aaf40a7838606fcf6914, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oldImageComponent: {fileID: 937649778}
-  newImageComponent: {fileID: 527801892}
-  doorButton: {fileID: 447642296}
-  openDoorButton: {fileID: 1266255251}
 --- !u!1 &527801890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,7 +2206,6 @@ GameObject:
   - component: {fileID: 1266255253}
   - component: {fileID: 1266255252}
   - component: {fileID: 1266255251}
-  - component: {fileID: 1266255250}
   m_Layer: 5
   m_Name: openDoorBtn
   m_TagString: Untagged
@@ -2203,22 +2233,6 @@ RectTransform:
   m_AnchoredPosition: {x: -80.4, y: -1.4765615}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1266255250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266255248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 896fd7739528aaf40a7838606fcf6914, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oldImageComponent: {fileID: 937649778}
-  newImageComponent: {fileID: 527801892}
-  doorButton: {fileID: 447642296}
-  openDoorButton: {fileID: 1266255251}
 --- !u!114 &1266255251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,7 +2277,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1266255250}
+      - m_Target: {fileID: 176309810}
         m_TargetAssemblyTypeName: ImageChanger, Assembly-CSharp
         m_MethodName: BackImage
         m_Mode: 1
@@ -3883,4 +3897,5 @@ SceneRoots:
   - {fileID: 2095718347}
   - {fileID: 2136773082}
   - {fileID: 1949738059}
+  - {fileID: 176309811}
   - {fileID: 180379928}
