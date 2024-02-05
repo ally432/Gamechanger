@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class SettleScript : MonoBehaviour
@@ -48,5 +49,15 @@ public class SettleScript : MonoBehaviour
     public void NextScene()
     {
         customerManage.money = nowMoney;
+
+        if(customerManage.money >= 0)        
+        {
+            customerManage.dateIncrese();
+            SceneManager.LoadScene("SaveScene");
+        }
+        else        // 파산 엔딩
+        {
+            SceneManager.LoadScene("BankruptcyEnding");
+        }
     }
 }

@@ -58,12 +58,12 @@ public class Save : MonoBehaviour
         }
         
         // 호감도 저장
-        // PlayerPrefs.SetInt("SavedGFavor", gFavor);
-        // PlayerPrefs.SetInt("SavedRFavor", rFavor);
+        PlayerPrefs.SetInt("SavedGLove", sellerManage.govermentLove);
+        PlayerPrefs.SetInt("SavedRLove", sellerManage.rebelLove);
 
         // 플래그 저장
-        // PlayerPrefs.SetInt("SavedFlag1", System.Convert.ToInt16(flag1));
-        // ...
+        PlayerPrefs.SetInt("SavedFlag1", System.Convert.ToInt16(sellerManage.rebelEvent));
+        PlayerPrefs.SetInt("SavedFlag2", System.Convert.ToInt16(sellerManage.rebelEvent2));
 
         Invoke("Saved", 1.0f);
     }
