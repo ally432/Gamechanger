@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wadadak_T1_0: 1501400988114299378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
