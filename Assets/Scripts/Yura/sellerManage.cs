@@ -63,9 +63,13 @@ public class sellerManage : MonoBehaviour
 
     public List<int> specialPersonList = new List<int>(); //특별손님 리스트
 
+    static public int govermentLove = 0; // +++=저장필요 =+++
+    static public int rebelLove = 0;
+    static public bool rebelEvent = false;
+
     void Start()
     {
-        
+        Debug.Log(currentdate);
         finalTrueHerbList.Clear(); //최종 허브 리스트 초기화 
         specialPersonList.Clear();
         inum = 0;
@@ -241,11 +245,30 @@ public class sellerManage : MonoBehaviour
 
     public void Btn1()
     {
-        if (excelnum == 21) //여긴 원래대로 
+        if (excelnum == 40) //여긴 원래대로 
         {
-            excelnum = 21; // 여긴 1 뺀 수로
+            excelnum = 40; // 여긴 1 뺀 수로
             whatperson = "goArmy1-1";
+            govermentLove -= 5;
             BtnClear();
+        }
+        else if (excelnum == 67)
+        {
+            excelnum = 67;
+            whatperson = "rebel1-1";
+            rebelLove += 5;
+            rebelEvent = true;
+            BtnClear();
+        }
+        else if (excelnum == 89)
+        {
+            excelnum = 89;
+            whatperson = "rebel2-1";
+        }
+        else if(excelnum == 99)
+        {
+            excelnum = 99;///
+            whatperson = "rebel2-2-1";
         }
         else
             BtnClear();
@@ -253,10 +276,19 @@ public class sellerManage : MonoBehaviour
     }
     public void Btn2()
     {
-        if (excelnum == 21)
+        if (excelnum == 40)
         {
-            excelnum = 24;
+            excelnum = 43;
             whatperson = "goArmy1-2";
+            govermentLove += 5;
+            BtnClear();
+        }
+        else if (excelnum == 67)
+        {
+            excelnum = 68;
+            whatperson = "rebel1-2";
+            rebelEvent = false;
+            rebelLove -= 5;
             BtnClear();
         }
         else
@@ -589,13 +621,31 @@ public class sellerManage : MonoBehaviour
         {
             specialPersonList.Add(0);
         }
-        else if (currentdate == 2) specialPersonList.Add(9);
-        else if (currentdate == 3)
+        else if (currentdate == 2) specialPersonList.Add(22);
+        else if (currentdate == 3) specialPersonList.Add(32); // 약초할아버지는 항상 맨 마지막에 넣도록 하기.
+        else if (currentdate == 4) specialPersonList.Add(46);
+        else if (currentdate == 6) specialPersonList.Add(54);
+        else if (currentdate == 8) specialPersonList.Add(71);
+        else if (currentdate == 9)
         {
-
-            specialPersonList.Add(15); // 약초할아버지는 항상 맨 마지막에 넣도록 하기.
-            specialPersonList.Add(27);
+            if (rebelEvent) specialPersonList.Add(81);
+            else specialPersonList.Add(93);
         }
+        else if (currentdate == 10) specialPersonList.Add(102);
+        else if (currentdate == 12)
+        {
+            specialPersonList.Add(111);
+            specialPersonList.Add(117);
+        }
+        else if (currentdate == 14) specialPersonList.Add(126);
+        else if (currentdate == 15) specialPersonList.Add(131);
+        else if (currentdate == 16) specialPersonList.Add(136);
+        else if (currentdate == 17) specialPersonList.Add(150);
+        else if (currentdate == 19) specialPersonList.Add(160);
+
+
+
+
         else return;
 
     }
