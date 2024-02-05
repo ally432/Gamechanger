@@ -18,6 +18,9 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
 
     void Start()
     {
+        day = customerManage.getDate();
+        Debug.Log("지윤=================changeday: " + day);
+
         leaf.SetActive(false);
 
         getherb = sellerManage.getHerbList();  // 해금된 약초들
@@ -36,8 +39,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         spec3.SetActive(false);
         spec4.SetActive(false);
 
-        day = customerManage.getDate();
-        Debug.Log("changeday: "+day);
+        
         if(day > 1){
             spec1.SetActive(true);
         }

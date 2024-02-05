@@ -53,8 +53,8 @@
 52,n,herbGranpaC,"아무튼 중요한 사실은, 그들이 은빛불꽃풀을 가져왔다는 거지.",granpa,,,
 53,n,herbGranpaC,자세한 정보는 자네 약초노트에 적어두었다네!,granpa,,,
 54,n,herbGranpaC,잘 해보게나.,granpa,,,
-55,y,herbGranpaD,쿨럭쿨럭! 케엑! 퀙!,granpa,괜찮으세요?,어머..,혹시..코로나?!
-56,n,herbGranpaD,크흠! 큼! 잘 지냈나?,granpa,,,
+55,n,herbGranpaD,쿨럭쿨럭! 케엑! 퀙!,granpa,,,
+56,y,herbGranpaD,크흠! 큼! 잘 지냈나?,granpa,괜찮으세요?,어머..,혹시..코로나?!
 57,n,herbGranpaD,"아, 기침은 내가 와다닥고추를 먹어서 그렇네.",granpa,,,
 58,n,herbGranpaD,"저기, 바다를 봐봐.",granpa,,,
 59,n,herbGranpaD,엄청나게 큰 무역상선 보이지?,granpa,,,
@@ -67,9 +67,9 @@
 66,n,rebel1,동료가 많이 다쳤습니다.,rebel1,,,
 67,y,rebel1,치료물약 하나만 주시면 안되겠습니까?,rebel1,알겠습니다.,싫습니다.,none
 68,n,rebel1-1,"감사합니다, 감사합니다…",rebel1,,,
-69,n,reblel1-2,….,rebel1,,,
-70,n,reblel1-2,………….,rebel1,,,
-71,n,reblel1-2,앞으로 각오해야 할거야. ,rebel1,,,
+69,n,rebel1-2,….,rebel1,,,
+70,n,rebel1-2,………….,rebel1,,,
+71,n,rebel1-2,앞으로 각오해야 할거야. ,rebel1,,,
 72,n,herbGranpaE,안녕하신가.,granpa,,,
 73,n,herbGranpaE,어제 밤에 몬스터 토벌대가 돌아왔다네.,granpa,,,
 74,n,herbGranpaE,"내 손녀딸이 마녀라, 정부군이 차출해서 데려갔는데..",granpa,,,
@@ -104,7 +104,7 @@
 103,n,herbGranpaF,음.,granpa,,,
 104,y,herbGranpaF,오랜만이구먼.,granpa,손녀딸은요?,괜찮으세요?,none
 105,n,herbGranpaF,손녀딸은 아직 오지 않았어.,granpa,,,
-106,n,herbGranpaF,길이 멀어서 오래 걸리는 모양이지..그렇지? ,granpa,,,
+106,n,herbGranpaF,길이 멀어서 오래 걸리는 모양이지. ,granpa,,,
 107,n,herbGranpaF,"아, 이번에도 작은 선물을 가져왔다네.",granpa,,,
 108,n,herbGranpaF,토벌대장이 뜬금없이 나에게 이 비싼 걸 주더라고.,granpa,,,
 109,n,herbGranpaF,흑요석 정령보석가루야.,granpa,,,
@@ -133,7 +133,7 @@
 132,n,rebel3,안녕. 오랜만이네.,rebel2,,,
 133,n,rebel3,"다름이 아니라, 도움이 필요해서.",rebel2,,,
 134,n,rebel3,"폭탄물약, 좀 만들어 줄 수 있어?",rebel2,,,
-135,y,rebel3,너라면 만들 수 있을 것 같은데.,rebel2,싫어요.,모르겠어요.,좋아
+135,y,rebel3,너라면 만들 수 있을 것 같은데.,rebel2,좋아요.,모르겠어요.,싫어요
 136,n,rebel3-2,실망이네.,rebel2,,,
 137,n,herbGranpaI,오도독!,granpa,,,
 138,y,herbGranpaI,와삭와삭.,granpa,뭘 먹고계세요?,뭐야?,none
