@@ -228,16 +228,18 @@ public class sellerManage : MonoBehaviour
 
         Debug.Log(excelnum + "선택지 엑셀넘버");
 
-        choice1Text.text = special_Dialog[excelnum]["choice1"].ToString();
         choice1.SetActive(true);
+        choice1Text.text = special_Dialog[excelnum]["choice1"].ToString();
 
-        choice2Text.text = special_Dialog[excelnum]["choice2"].ToString();
         choice2.SetActive(true);
+        choice2Text.text = special_Dialog[excelnum]["choice2"].ToString();
+        
 
         if(special_Dialog[excelnum]["choice3"].ToString() != "none")
         {
-            choice3Text.text = special_Dialog[excelnum]["choice3"].ToString();
             choice3.SetActive(true);
+            choice3Text.text = special_Dialog[excelnum]["choice3"].ToString();
+            
         }
 
         isChoiceDisplayed = true;
