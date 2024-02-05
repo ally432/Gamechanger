@@ -44,7 +44,7 @@ public class GameStart : MonoBehaviour
             // 물약 해금 상황 가져오기
             string[] dataArr = PlayerPrefs.GetString("SavedPotionList").Split(',');
             List<int> savedPotionList = new List<int>();
-            for(int i = 0; i < 17; i++)
+            for(int i = 0; i < dataArr.Length; i++)
             {
                 savedPotionList[i] = System.Convert.ToInt32(dataArr[i]);
             }

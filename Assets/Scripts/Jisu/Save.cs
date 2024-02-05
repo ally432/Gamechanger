@@ -44,7 +44,7 @@ public class Save : MonoBehaviour
         List<int> potionList = new List<int>();
         potionList = Potion.plist.ToList();         // 해금된 물약 도감 리스트 복제
         string str = "";
-        for(int i = 0; i < 17; i++)
+        for(int i = 0; i < Potion.plist.Count; i++)
         {
             str = str + potionList[i];
             if(i < 16)
