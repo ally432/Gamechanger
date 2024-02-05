@@ -107,8 +107,24 @@ public class customerManage : MonoBehaviour
 
     void maxcheck(int date)
     {
-        if (date % 1 == 0)
-            maxindex += 5;           
+        if (date == 1)
+            maxindex += 10;
+        else if (date == 2)
+            maxindex += 10;
+        else if (date == 4)
+            maxindex += 10;
+        else if (date == 6)
+            maxindex += 20;
+        else if (date == 8)
+            maxindex += 20;
+        else if (date == 10)
+            maxindex += 10;
+        else if (date == 12)
+            maxindex += 20;
+        else if (date == 14)
+            maxindex += 10;
+        else if (date == 16)
+            maxindex += 50;
     }
 
     public void customerBtn() //물약을 주면 등급에 맞는 반응, 손님 가고 다음손님옴. 나중에 물약 드래그되면 실행되는 함수로 변경하기
