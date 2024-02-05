@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.Linq;
 using GooglePlayGames.BasicApi;
+using System;
 
 public class GameStart : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class GameStart : MonoBehaviour
                 List<int> savedPotionList = new List<int>();
                 for(int i = 0; i < dataArr.Length; i++)
                 {
-                    savedPotionList[i] = System.Convert.ToInt32(dataArr[i]);
+                    savedPotionList[i] = Convert.ToInt32(dataArr[i]);
                 }
                 Potion.plist = savedPotionList.ToList();
             }
