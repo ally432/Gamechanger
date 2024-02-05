@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spoonSugar_0: -5479245585423812781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      darkPepper_0: 6882843714333004346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
