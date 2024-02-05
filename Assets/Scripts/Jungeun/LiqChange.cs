@@ -3,30 +3,25 @@ using UnityEngine.UI;
 
 public class ImageChanger : MonoBehaviour
 {
-    public Image oldImageComponent;
-    public Image newImageComponent;
-    public Button doorButton;  // Door ¹öÆ° ÂüÁ¶
-    public Button openDoorButton;
+    public GameObject open, close, openbtn, closebtn;  // ë‹«íŒ ì´ë¯¸ì§€, ì—´ë¦° ì´ë¯¸ì§€
 
     void Start()
     {
-        newImageComponent.enabled = false;
-        openDoorButton.gameObject.SetActive(false);
+        open.SetActive(false);  // ì—´ë¦° ì´ë¯¸ì§€ ì•ˆ ë³´ì´ê²Œ
+        closebtn.SetActive(false);  // ë‹«ëŠ” ë²„íŠ¼ ì•ˆ ë³´ì´ê²Œ
     }
 
-    public void ChangeImage()
+    public void ChangeImage()   // ì—´ë¦¼ ë²„íŠ¼ ëˆŒë €ì„ ë•Œ
     {
-        Debug.Log("ChangeImage ÇÔ¼ö°¡ È£ÃâµÇ¾ú½À´Ï´Ù.");
-        newImageComponent.enabled = true;
-        openDoorButton.gameObject.SetActive(true);  // Open Door ¹öÆ°À» È°¼ºÈ­
-        oldImageComponent.enabled = false;
-        doorButton.gameObject.SetActive(false);  // Door ¹öÆ°À» ºñÈ°¼ºÈ­
+        openbtn.SetActive(true);
+        open.SetActive(true);
+        closebtn.SetActive(true);
+        close.SetActive(false);
     }
-    public void BackImage()
+    public void BackImage() // ë‹«í˜ ë²„íŠ¼ ëˆŒë €ì„ ë•Œ
     {
-        oldImageComponent.enabled = true;
-        doorButton.gameObject.SetActive(true);  // Door ¹öÆ°À» È°¼ºÈ­
-        newImageComponent.enabled = false;
-        openDoorButton.gameObject.SetActive(false);  // Open Door ¹öÆ°À» ºñÈ°¼ºÈ­
+        close.SetActive(true);
+        open.SetActive(false);
+        closebtn.SetActive(false);
     }
 }
