@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FaintP_A_0: 3375382392840444964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
