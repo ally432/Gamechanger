@@ -34,8 +34,11 @@ public class Potion : MonoBehaviour
     }
 
     public void End(){  // 제조 버튼 클릭
-        int num = customerManage.customerNum;
+        int num = customerManage.customerNum + 1;
         gradenum(num);
+        Debug.Log(potionnum);
+        Debug.Log(Getpotiongrade().ToString());
+        Debug.Log(potionname);
         currentValue = 0f;
         loadingbar.fillAmount = 0f;
     }
@@ -53,6 +56,10 @@ public class Potion : MonoBehaviour
         
         ingredients = new List<string>();   // 리스트 초기화
         ingredlist(data, cusnum);   // 손님이 원한 조미료 리스트 가져오기
+
+        for(int j = 0; j < Dragp.putgreds.Count; j++){
+            Debug.Log(Dragp.putgreds[j]);
+        }
 
         if((Dragp.putgreds != null) && (Dragp.putgreds.Count == ingredients.Count)){    // 내가 넣은 조미료의 개수와 손님이 원한 조미료의 개수가 같을 때
             for (int i = 0; i < Dragp.putgreds.Count; i++){
@@ -90,6 +97,8 @@ public class Potion : MonoBehaviour
         if(grade == "A"){
             Info();   // 만든 물약 리스트 제작(물약 노트)
         }
+
+        potionrecipe.Clear();
 
         isFilling = true;   // 제조(로딩바)
     }
@@ -203,5 +212,7 @@ public class Potion : MonoBehaviour
         Dragp.putgreds.Clear(); // 넣은 모든 재료들 초기화
         Dragp.putherb.Clear();  // 허브들 초기화
         Dragp.specialherb.Clear();  // 허브들과 부재료 리스트 초기화
+        potionnum = 0;
+        potionname = null;
     }
 }

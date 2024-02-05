@@ -21,11 +21,8 @@ public class SettleScript : MonoBehaviour
     {
         txtDate.text = "DAY " + date;
         txtNowMoney.text = nowMoney + " 원";
-        if(date >= 5)
-        {
-            int plus = (date%5) * 200;
-            rent += plus;
-        }
+        int plus = (date/5) * 200;
+        rent += plus;
         Invoke("SettleMoney", 0.5f);
     }
 

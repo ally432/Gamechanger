@@ -11,7 +11,7 @@ public class customerManage : MonoBehaviour
     public static int date = 1;
     public static int maxindex = 0;
     public TypeEffect customerText;
-    public GameObject gamecursor;
+    public GameObject gamecursor, bottle, cap;
 
     public Image customerImg;
     public Sprite[] customerImgList = new Sprite[3];
@@ -36,7 +36,7 @@ public class customerManage : MonoBehaviour
     int minute;
     int second;
 
-
+    public static bool isfirst = false; // 제조실에 갔다왔는지
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +55,13 @@ public class customerManage : MonoBehaviour
         customerPick();
         showCustomerImg();
         printOrderScript();
-        
+
+        bottle.SetActive(false);
+        cap.SetActive(false);
+        if (isfirst){   // 제조실에 갔다왔다면
+            bottle.SetActive(true);
+            cap.SetActive(true);
+        }        
     }
 
     // Update is called once per frame
@@ -76,7 +82,7 @@ public class customerManage : MonoBehaviour
 
     private void Awake()
     {
-        time = 1;
+        time = 120;
         StartCoroutine(StartTimer());
     }
 
@@ -230,6 +236,9 @@ public class customerManage : MonoBehaviour
     public static int getMoney()
     {
         return money;
+    }
+    public void potionmaking(){
+        SceneManager.LoadScene("Potionmaking");
     }
 }
 

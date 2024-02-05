@@ -434,10 +434,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896fd7739528aaf40a7838606fcf6914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  addbottleliq: {fileID: 0}
+  adddoorbtn: {fileID: 0}
   open: {fileID: 527801890}
   close: {fileID: 937649776}
   openbtn: {fileID: 447642294}
   closebtn: {fileID: 1266255248}
+  bottle: {fileID: 0}
+  openimage: {fileID: 0}
 --- !u!4 &176309811
 Transform:
   m_ObjectHideFlags: 0
