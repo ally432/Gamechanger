@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lightmush_T1_0: -5578341286466700826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

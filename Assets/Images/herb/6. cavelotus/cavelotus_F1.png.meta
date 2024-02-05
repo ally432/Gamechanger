@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cavelotus_F1_0: 4198444988598764072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
