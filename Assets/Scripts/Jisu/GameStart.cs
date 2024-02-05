@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Linq;
+using GooglePlayGames.BasicApi;
 
 public class GameStart : MonoBehaviour
 {
@@ -43,31 +44,29 @@ public class GameStart : MonoBehaviour
             // 물약 해금 상황 가져오기
             string[] dataArr = PlayerPrefs.GetString("SavedPotionList").Split(',');
             List<int> savedPotionList = new List<int>();
-            for(int i = 0; i < 17; i++)
+            for(int i = 0; i < dataArr.Length; i++)
             {
                 savedPotionList[i] = System.Convert.ToInt32(dataArr[i]);
             }
 
             // 호감도 가져오기
-
+            // int gFavor = PlayerPrefs.GetInt("SavedGFavor");
+            // int rFavor = PlayerPrefs.GetInt("SavedRFavor");
 
             // 플래그 가져오기
-
+            // bool flag1 = System.Convert.ToBoolean(PlayerPrefs.GetInt("SavedFlag1"));
+            // ...
 
             // 저장된 정보 불러오기
             customerManage.date = savedDate;
             customerManage.money = savedMoney;
             Potion.plist = savedPotionList.ToList();
+
             SceneManager.LoadScene("morningScene");
         }
         else    // 저장된 기록이 없을 경우
         {
             conStartResult.text = "저장 기록이 없습니다.";
         }
-
-        /*
-        호감도
-        플래그(분기점)
-        */
     }
 }

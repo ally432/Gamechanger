@@ -13,14 +13,19 @@ public class SettleScript : MonoBehaviour
 
     int date = customerManage.getDate();
     int nowMoney = customerManage.getMoney();
-    int interest = 500;
-    int rent = 200;
+    int interest = 300;
+    int rent = 500;
 
     // Start is called before the first frame update
     void Start()
     {
         txtDate.text = "DAY " + date;
         txtNowMoney.text = nowMoney + " 원";
+        if(date >= 5)
+        {
+            int plus = (date%5) * 200;
+            rent += plus;
+        }
         Invoke("SettleMoney", 0.5f);
     }
 
