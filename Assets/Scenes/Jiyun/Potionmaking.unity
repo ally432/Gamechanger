@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 64893638}
   - component: {fileID: 64893644}
   m_Layer: 5
-  m_Name: floating mushroom
+  m_Name: wadadakPepper
   m_TagString: herb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 244544249}
   - component: {fileID: 244544251}
   m_Layer: 5
-  m_Name: minaeri
+  m_Name: silverFlame
   m_TagString: herb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,7 +1470,7 @@ GameObject:
   - component: {fileID: 300290674}
   - component: {fileID: 300290673}
   m_Layer: 5
-  m_Name: herb4
+  m_Name: shadowHerb
   m_TagString: herb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4054,7 +4054,7 @@ GameObject:
   - component: {fileID: 1077924122}
   - component: {fileID: 1077924126}
   m_Layer: 5
-  m_Name: catherb
+  m_Name: waterBerry
   m_TagString: herb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4407,7 +4407,7 @@ GameObject:
   - component: {fileID: 1164036458}
   - component: {fileID: 1164036457}
   m_Layer: 5
-  m_Name: herb5
+  m_Name: lightMush
   m_TagString: herb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4713,7 +4713,7 @@ GameObject:
   - component: {fileID: 1171402806}
   - component: {fileID: 1171402810}
   m_Layer: 5
-  m_Name: seasoning1
+  m_Name: aquamarine
   m_TagString: special
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5432,7 +5432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 140.09, y: -182.60002}
+  m_AnchoredPosition: {x: 140.09, y: -182.6}
   m_SizeDelta: {x: -181.02, y: -256.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265598974
@@ -5910,7 +5910,7 @@ GameObject:
   - component: {fileID: 1376340511}
   - component: {fileID: 1376340510}
   m_Layer: 5
-  m_Name: herb6
+  m_Name: caveLotus
   m_TagString: herb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6205,7 +6205,7 @@ GameObject:
   - component: {fileID: 1435588175}
   - component: {fileID: 1435588174}
   m_Layer: 0
-  m_Name: seasoning4
+  m_Name: obsidian
   m_TagString: special
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9298,7 +9298,7 @@ GameObject:
   - component: {fileID: 2041981749}
   - component: {fileID: 2041981748}
   m_Layer: 0
-  m_Name: seasoning3
+  m_Name: yellowdia
   m_TagString: special
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9842,7 +9842,7 @@ GameObject:
   - component: {fileID: 2135758417}
   - component: {fileID: 2135758416}
   m_Layer: 0
-  m_Name: seasoning2
+  m_Name: ruby
   m_TagString: special
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -34,7 +34,8 @@ public class Potion : MonoBehaviour
     }
 
     public void End(){  // 제조 버튼 클릭
-        gradenum(5);
+        int num = customerManage.customerNum;
+        gradenum(num);
         currentValue = 0f;
         loadingbar.fillAmount = 0f;
     }
