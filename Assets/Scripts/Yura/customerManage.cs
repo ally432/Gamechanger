@@ -5,6 +5,7 @@ using TMPro;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class customerManage : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class customerManage : MonoBehaviour
     public GameObject gamecursor;
 
     public Image customerImg;
-    public Sprite[] customerImgList = new Sprite[3];
+    public Sprite[] customerImgList = new Sprite[7];
     public static int customerNum = 0; // 손님 식별번(엑셀로 기타 요구조건들 확인가능)
     public static int money = 0;
     public TextMeshProUGUI moneyText;
@@ -25,7 +26,8 @@ public class customerManage : MonoBehaviour
 
     int ranNum;
 
-    int specialPeopleNum;
+    public int specialPeopleNum;
+    public Sprite[] specialImgList = new Sprite[4];
 
     private bool timeover = false;
 
@@ -40,9 +42,25 @@ public class customerManage : MonoBehaviour
 
     public Canvas customer, making; // 손님오는 캔버스, 만드는 캔버스
 
+    public string person;
+
+    public bool loadScene = false;
+    bool isMouseClicked = false;
+    bool choiceClicked = false;
+    public GameObject choice1, choice2, choice3;
+    public TextMeshProUGUI choice1Text, choice2Text, choice3Text;
+
+    bool isChoiceDisplayed = false;
+    bool specialcheck = true;
+    bool special = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        choice1.SetActive(false);
+        choice2.SetActive(false);
+        choice3.SetActive(false);
+
         Debug.Log("현재 날짜"+date);
         herbList = sellerManage.getTrueContractHerbList();
         if (herbList.Count > 0)
@@ -55,7 +73,7 @@ public class customerManage : MonoBehaviour
 
         maxcheck(date);
         customerPick();
-        showCustomerImg();
+        showCustomerImg(Random.Range(0, 3));
         printOrderScript();
 
         /*bottle.SetActive(false);
@@ -77,9 +95,27 @@ public class customerManage : MonoBehaviour
 
         if (timeover)
         {
-            Debug.Log("저녁씬 로드");
-            //if special 손님 없으면
-            SceneManager.LoadScene("nightScene");
+            if (specialcheck)
+            {
+                specialPeople();
+                specialcheck = false;
+            }
+    
+            
+
+            if ((Input.GetMouseButtonDown(0) && !isMouseClicked) || choiceClicked)
+            {
+                if (!isChoiceDisplayed)
+                {
+                    isMouseClicked = true;
+                    choiceClicked = false;
+                    printSpecialScript(person);
+                }
+                
+            }
+
+
+            if(loadScene) SceneManager.LoadScene("nightScene");
         }
 
 
@@ -112,10 +148,9 @@ public class customerManage : MonoBehaviour
     }
 
 
-    void showCustomerImg()
-    {
-        int randomIndex = Random.Range(0, 3);
-        customerImg.sprite = customerImgList[randomIndex];
+    void showCustomerImg(int num)
+    { 
+        customerImg.sprite = customerImgList[num];
     }
 
 
@@ -154,7 +189,7 @@ public class customerManage : MonoBehaviour
     IEnumerator nextCustomer()
     {
             yield return new WaitForSeconds(2.0f);
-        showCustomerImg();
+        showCustomerImg(Random.Range(0, 3));
         customerPick();
         printOrderScript();
     }
@@ -185,6 +220,121 @@ public class customerManage : MonoBehaviour
 
     }
 
+    public void printSpecialScript(string person) // 스페셜손님 말씀 하십니다.
+    {
+        List<Dictionary<string, object>> special_Dialog = CSVReader.Read("specialPerson");
+        if (person != special_Dialog[specialPeopleNum]["person"].ToString() || person == "none")
+        {
+            loadScene = true;
+            return;
+        }
+        string content = special_Dialog[specialPeopleNum]["content"].ToString();
+        customerText.SetMsg(content);
+
+        if (special_Dialog[specialPeopleNum]["choice"].ToString() == "y")
+        {
+            choiceDisplay(specialPeopleNum);
+        }
+
+        isMouseClicked = false;
+        specialPeopleNum++;
+    }
+
+    void choiceDisplay(int specialPeopleNum)
+    {
+
+        List<Dictionary<string, object>> special_Dialog = CSVReader.Read("specialPerson");
+
+        Debug.Log(specialPeopleNum + "선택지 엑셀넘버");
+
+        choice1Text.text = special_Dialog[specialPeopleNum]["choice1"].ToString();
+        choice1.SetActive(true);
+
+        choice2Text.text = special_Dialog[specialPeopleNum]["choice2"].ToString();
+        choice2.SetActive(true);
+
+        if (special_Dialog[specialPeopleNum]["choice3"].ToString() != "none")
+        {
+            choice3Text.text = special_Dialog[specialPeopleNum]["choice3"].ToString();
+            choice3.SetActive(true);
+        }
+
+        isChoiceDisplayed = true;
+
+    }
+
+    public void Btn1()
+    {
+        if (specialPeopleNum == 67)
+        {
+            specialPeopleNum = 67;
+            person = "rebel1-1";
+            sellerManage.rebelEvent = true;
+            sellerManage.rebelLove += 5;
+            //제조실 이동 버튼 넣어야됨.
+        }
+        else if (specialPeopleNum == 135)
+        {
+            sellerManage.rebelEvent = true;
+            sellerManage.rebelLove += 5;
+            //제조실 이동
+        }
+        else if (specialPeopleNum == 165)
+        {
+            specialPeopleNum = 165;
+            person = "goArmy3-1";
+            sellerManage.govermentLove += 5;
+            //
+        }
+        BtnClear();
+        
+    }
+    public void Btn2()
+    {
+        if (specialPeopleNum == 67)
+        {
+            specialPeopleNum = 68;
+            person = "rebel1-2";
+            sellerManage.rebelEvent2 = false;
+            sellerManage.rebelLove -= 5;
+        }
+        else if (specialPeopleNum == 135)
+        {
+            specialPeopleNum = 135;
+            person = "rebel3-2";
+            sellerManage.rebelEvent2 = true;
+            sellerManage.rebelLove -= 5;
+        }
+        else if (specialPeopleNum == 165)
+        {
+            specialPeopleNum = 166;
+            person = "goArmy3-2";
+            sellerManage.govermentLove -= 5;
+            //
+        }
+        BtnClear();
+
+    }
+    public void Btn3()
+    {
+        if (specialPeopleNum == 135)
+        {
+            specialPeopleNum = 135;
+            person = "rebel3-2";
+            sellerManage.rebelEvent2 = true;
+            sellerManage.rebelLove -= 5;
+        }
+        BtnClear();
+    }
+    void BtnClear()
+    {
+        choice1.SetActive(false);
+        choice2.SetActive(false);
+        choice3.SetActive(false);
+        isChoiceDisplayed = false;
+        choiceClicked = true;
+    }
+
     public void potionGradeCheck()
     {
         List<Dictionary<string, object>> customerOrder_Dialog = CSVReader.Read("customerOrder");
@@ -193,6 +343,54 @@ public class customerManage : MonoBehaviour
         string strMoney;
         int ranNumRe = Random.Range(0, 5);
 
+        if (special)
+        {
+            if(potionGrade == "A" || potionGrade == "B")
+            {
+                if (customerNum == 159)
+                {
+                    customerText.SetMsg("정말 고마워요!");
+                    sellerManage.rebelLove += 5;
+                    sellerManage.rebelEvent = true;
+                }
+                else if (customerNum == 160)
+                {
+                    customerText.SetMsg("아주 좋아!");
+                    sellerManage.rebelLove += 5;
+                    sellerManage.rebelEvent2 = false;
+                }
+                else if (customerNum == 161)
+                {
+                    customerText.SetMsg("협조에 감사드립니다.");
+                    sellerManage.govermentLove += 5;
+                }
+
+            }
+            else
+            {
+                if (customerNum == 159)
+                {
+                    customerText.SetMsg("이거 치유물약 맞아?!");
+                    sellerManage.rebelLove -= 5;
+                    sellerManage.rebelEvent = false;
+                }
+                else if (customerNum == 160)
+                {
+                    customerText.SetMsg("이게 뭔.. 날 놀리는건가?");
+                    sellerManage.rebelLove -= 5;
+                    sellerManage.rebelEvent2 = true;
+                }
+                else if (customerNum == 161)
+                {
+                    customerText.SetMsg("이런 엉터리 물약을 주다니.");
+                    sellerManage.govermentLove -= 5;
+                }
+
+            }
+
+            special = false;
+            return;
+        }
         switch (potionGrade)
         {
             case "A":
@@ -228,7 +426,45 @@ public class customerManage : MonoBehaviour
 
     void specialPeople()
     {
-        if (date == 2) specialPeopleNum =10 ; } //
+        List<Dictionary<string, object>> special_Dialog = CSVReader.Read("specialPerson");
+
+        if (date == 1)//6
+        {
+            specialPeopleNum = 63;
+            person = special_Dialog[specialPeopleNum]["person"].ToString();
+            customerNum = 159;
+            special = true;
+            showCustomerImg(3);
+            printSpecialScript(person);
+        }
+        else if (date == 2)//15
+        {
+            specialPeopleNum = 131;
+            person = special_Dialog[specialPeopleNum]["person"].ToString();
+            customerNum = 160;
+            special = true;
+            showCustomerImg(4);
+            printSpecialScript(person);
+        }
+        else if (date == 3)//17
+        {
+            specialPeopleNum = 154;
+            person = special_Dialog[specialPeopleNum]["person"].ToString();
+            showCustomerImg(5);
+            printSpecialScript(person);
+        }
+        else if (date == 4)//19
+        {
+            special = true;
+            specialPeopleNum = 161;
+            person = special_Dialog[specialPeopleNum]["person"].ToString();
+            customerNum = 163;
+            showCustomerImg(6);
+            printSpecialScript(person);
+        }
+        else loadScene = true;
+
+    } //
 
     public static int getDate()
     {
