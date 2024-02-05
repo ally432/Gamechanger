@@ -55,8 +55,12 @@ public class Save : MonoBehaviour
         PlayerPrefs.SetString("SavedPotionList", str);      // 배열을 ','으로 이어 문자열로 저장
 
         // 호감도 저장
+        // PlayerPrefs.SetInt("SavedGFavor", gFavor);
+        // PlayerPrefs.SetInt("SavedRFavor", rFavor);
 
         // 플래그 저장
+        // PlayerPrefs.SetInt("SavedFlag1", System.Convert.ToInt16(flag1));
+        // ...
 
         Invoke("Saved", 1.0f);
     }

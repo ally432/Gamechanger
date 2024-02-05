@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Linq;
+using GooglePlayGames.BasicApi;
 
 public class GameStart : MonoBehaviour
 {
@@ -49,25 +50,23 @@ public class GameStart : MonoBehaviour
             }
 
             // 호감도 가져오기
-
+            // int gFavor = PlayerPrefs.GetInt("SavedGFavor");
+            // int rFavor = PlayerPrefs.GetInt("SavedRFavor");
 
             // 플래그 가져오기
-
+            // bool flag1 = System.Convert.ToBoolean(PlayerPrefs.GetInt("SavedFlag1"));
+            // ...
 
             // 저장된 정보 불러오기
             customerManage.date = savedDate;
             customerManage.money = savedMoney;
             Potion.plist = savedPotionList.ToList();
+
             SceneManager.LoadScene("morningScene");
         }
         else    // 저장된 기록이 없을 경우
         {
             conStartResult.text = "저장 기록이 없습니다.";
         }
-
-        /*
-        호감도
-        플래그(분기점)
-        */
     }
 }
