@@ -20,6 +20,9 @@ public class Potion : MonoBehaviour
     public List<String> potionrecipe;    // 물약 레시피 
     public static List<int> plist = new List<int>(); // 해금된 물약 리스트
 
+    public Canvas customer, making; // 손님오는 캔버스, 만드는 캔버스
+
+
     void Update()
     {
         if (isFilling){
@@ -29,6 +32,7 @@ public class Potion : MonoBehaviour
             if (currentValue >= 100f)
             {
                 isFilling = false;
+                Invoke("Move", 2f);
             }
         }
     }
@@ -41,6 +45,11 @@ public class Potion : MonoBehaviour
         Debug.Log(potionname);
         currentValue = 0f;
         loadingbar.fillAmount = 0f;
+    }
+
+    void Move(){
+        making.gameObject.SetActive(false);
+        customer.gameObject.SetActive(true);
     }
 
     public void gradenum(int cusnum){ // 손님 번호로 엑셀 파일 읽고 내용과 일치하는지 확인하여 점수 매기기
