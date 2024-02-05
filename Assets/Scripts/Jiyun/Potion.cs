@@ -10,7 +10,7 @@ public class Potion : MonoBehaviour
     public static string potiongrade;   // 물약 등급
     public static string potionname;    // 물약 이름
     public static int potionnum = 0;   // 물약 점수
-    public Image loadingbar;    // 제조 완료 시 넘어가는 물약
+    public Image ploadingbar;    // 제조 완료 시 넘어가는 물약
     float currentValue; // 로딩바와 관련
     public float speed; // 로딩바와 관련
     bool isFilling = false; // 로딩바와 관련
@@ -21,13 +21,14 @@ public class Potion : MonoBehaviour
     public static List<int> plist = new List<int>(); // 해금된 물약 리스트
 
     public Canvas customer, making; // 손님오는 캔버스, 만드는 캔버스
+    public static bool makeover = false;    // 제조버튼 누르고 돌아왔을 때
 
 
     void Update()
     {
         if (isFilling){
             currentValue += speed * Time.deltaTime;
-            loadingbar.fillAmount = currentValue / 100;
+            ploadingbar.fillAmount = currentValue / 100;
 
             if (currentValue >= 100f)
             {
@@ -44,12 +45,14 @@ public class Potion : MonoBehaviour
         Debug.Log(Getpotiongrade().ToString());
         Debug.Log(potionname);
         currentValue = 0f;
-        loadingbar.fillAmount = 0f;
+        ploadingbar.fillAmount = 0f;
     }
 
     void Move(){
         making.gameObject.SetActive(false);
         customer.gameObject.SetActive(true);
+        makeover = true;
+        ploadingbar.fillAmount = 0f;
     }
 
     public void gradenum(int cusnum){ // 손님 번호로 엑셀 파일 읽고 내용과 일치하는지 확인하여 점수 매기기
@@ -213,7 +216,7 @@ public class Potion : MonoBehaviour
         List<Dictionary<string, object>> potionimg = CSVReader.Read("potioninfo");
         for (int i = 0; i < 17; i++){
             if(potionname == potionimg[i]["name"].ToString()){
-                    plist.Add(i + 1);   // 게임 오브젝트 배열은 1~17
+                    plist.Add(i);   // 게임 오브젝트 배열은 1~17
             }
         }
     }

@@ -414,7 +414,7 @@ public class sellerManage : MonoBehaviour
             day2HerbImg1.enabled = true;
             day2HerbImg2.enabled = true;
             day2HerbImg1.sprite = herbImgDecide("waterBerry");
-            day2HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day2HerbImg2.sprite = herbImgDecide("silverFlame");
         }
 
         else if (currentdate < 12)
@@ -423,7 +423,7 @@ public class sellerManage : MonoBehaviour
             day3HerbImg2.enabled = true;
             day3HerbImg3.enabled = true;
             day3HerbImg1.sprite = herbImgDecide("waterBerry");
-            day3HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day3HerbImg2.sprite = herbImgDecide("silverFlame");
             day3HerbImg3.sprite = herbImgDecide("wadadakPepper");
         }
 
@@ -434,7 +434,7 @@ public class sellerManage : MonoBehaviour
             day4HerbImg3.enabled = true;
             day4HerbImg4.enabled = true;
             day4HerbImg1.sprite = herbImgDecide("waterBerry");
-            day4HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day4HerbImg2.sprite = herbImgDecide("silverFlame");
             day4HerbImg3.sprite = herbImgDecide("wadadakPepper");
             day4HerbImg4.sprite = herbImgDecide("shadowHerb");
         }
@@ -446,7 +446,7 @@ public class sellerManage : MonoBehaviour
             day5HerbImg4.enabled = true;
             day5HerbImg5.enabled = true;
             day5HerbImg1.sprite = herbImgDecide("waterBerry");
-            day5HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day5HerbImg2.sprite = herbImgDecide("silverFlame");
             day5HerbImg3.sprite = herbImgDecide("wadadakPepper");
             day5HerbImg4.sprite = herbImgDecide("shadowHerb");
             day5HerbImg5.sprite = herbImgDecide("lightMush");
@@ -460,7 +460,7 @@ public class sellerManage : MonoBehaviour
             day6HerbImg5.enabled = true;
             day6HerbImg6.enabled = true;
             day6HerbImg1.sprite = herbImgDecide("waterBerry");
-            day6HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day6HerbImg2.sprite = herbImgDecide("silverFlame");
             day6HerbImg3.sprite = herbImgDecide("wadadakPepper");
             day6HerbImg4.sprite = herbImgDecide("shadowHerb");
             day6HerbImg5.sprite = herbImgDecide("lightMush");
@@ -486,9 +486,9 @@ public class sellerManage : MonoBehaviour
                 herbimg.sprite = fakeHerbImgList[ranNum];
             }
         }
-        else if (herbName == "sliverFlame")
+        else if (herbName == "silverFlame")
         {
-            if (realHerbList.Contains("sliverFlame"))
+            if (realHerbList.Contains("silverFlame"))
                 herbimg.sprite = trueHerbImgList[Random.Range(2, 4)];
             else
                 herbimg.sprite = fakeHerbImgList[Random.Range(4, 8)];
@@ -531,7 +531,7 @@ public class sellerManage : MonoBehaviour
     {
         if (currentdate == 1) herbList.Add("waterBerry"); // 나중에 그랜파가 와서 대사 말하고, 더하는걸로 변경.
 
-        else if (currentdate == 4) herbList.Add("sliverFlame");
+        else if (currentdate == 4) herbList.Add("silverFlame");
             
         else if (currentdate == 6) herbList.Add("wadadakPepper");
 

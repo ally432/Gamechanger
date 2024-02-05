@@ -6,7 +6,7 @@ using TMPro;
 
 public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler     
 {
-    public static Vector2 DefaultPos;   // 처음 위치
+    public Vector2 DefaultPos;   // 처음 위치
     public static List<String> putgreds = new List<string>();    // 넣은 허브와 모든 부재료들 리스트
     public static List<String> putherb = new List<string>();    // 넣은 허브(진짜인지 판별용)
     public static List<String> specialherb = new List<String>();    // 넣은 약초와 스페셜 부재료 리스트
@@ -19,25 +19,13 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     void Start()
     {
         leaf.SetActive(false);
-
-        getherb = sellerManage.getHerbList();  // 해금된 약초들
-
-        for(int i = 0; i < getherb.Count; i++){
-            Debug.Log("jiyun"+getherb[i]);
-        }
-
-        foreach(string herbtag in getherb){
-
-            GameObject.Find("leaf").transform.Find(herbtag).gameObject.SetActive(true);    // 해금된 약초
-        }
-
         spec1.SetActive(false);
         spec2.SetActive(false);
         spec3.SetActive(false);
         spec4.SetActive(false);
 
-        day = customerManage.getDate();
-        Debug.Log("changeday: "+day);
+        day = customerManage.date;
+        
         if(day > 1){
             spec1.SetActive(true);
         }
@@ -57,6 +45,11 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             spec4.SetActive(true);
         }
 
+        getherb = sellerManage.getHerbList();  // 해금된 약초들
+
+        foreach(string herbtag in getherb){
+            GameObject.Find("leaf").transform.Find(herbtag).gameObject.SetActive(true);    // 해금된 약초
+        }
         cost = customerManage.getMoney();
 
         ctext.text = cost.ToString();   // 초기금 보여주기
