@@ -47,12 +47,13 @@ public class customerManage : MonoBehaviour
     public bool loadScene = false;
     bool isMouseClicked = false;
     bool choiceClicked = false;
-    public GameObject choice1, choice2, choice3;
+    public GameObject choice1, choice2, choice3,moveBtn,nextBtn;
     public TextMeshProUGUI choice1Text, choice2Text, choice3Text;
 
     bool isChoiceDisplayed = false;
     bool specialcheck = true;
     bool special = false;
+    bool moving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,8 @@ public class customerManage : MonoBehaviour
         choice1.SetActive(false);
         choice2.SetActive(false);
         choice3.SetActive(false);
+        moveBtn.SetActive(false);
+        nextBtn.SetActive(false);
 
         Debug.Log("현재 날짜"+date);
         herbList = sellerManage.getTrueContractHerbList();
@@ -105,7 +108,7 @@ public class customerManage : MonoBehaviour
 
             if ((Input.GetMouseButtonDown(0) && !isMouseClicked) || choiceClicked)
             {
-                if (!isChoiceDisplayed)
+                if (!isChoiceDisplayed && !moving)
                 {
                     isMouseClicked = true;
                     choiceClicked = false;
@@ -114,13 +117,17 @@ public class customerManage : MonoBehaviour
                 
             }
 
-
-            if(loadScene) SceneManager.LoadScene("nightScene");
+            if (loadScene) nextBtn.SetActive(true);
+            
         }
 
 
     }
 
+    public void next()
+    {
+        SceneManager.LoadScene("nightScene");
+    }
     private void Awake()
     {
         time = 10;
@@ -267,24 +274,28 @@ public class customerManage : MonoBehaviour
     {
         if (specialPeopleNum == 67)
         {
-            specialPeopleNum = 67;
-            person = "rebel1-1";
             sellerManage.rebelEvent = true;
             sellerManage.rebelLove += 5;
             //제조실 이동 버튼 넣어야됨.
+            moving = true;
+            moveBtn.SetActive(true);
         }
         else if (specialPeopleNum == 135)
         {
             sellerManage.rebelEvent = true;
             sellerManage.rebelLove += 5;
+            sellerManage.govermentLove += 5;
+            moving = true;
+            moveBtn.SetActive(true);
             //제조실 이동
         }
         else if (specialPeopleNum == 165)
         {
-            specialPeopleNum = 165;
-            person = "goArmy3-1";
             sellerManage.govermentLove += 5;
-            //
+            sellerManage.govermentLove += 5;
+            moving = true;
+            moveBtn.SetActive(true);
+
         }
         BtnClear();
         
@@ -389,6 +400,7 @@ public class customerManage : MonoBehaviour
             }
 
             special = false;
+            moving = false;
             return;
         }
         switch (potionGrade)
