@@ -20,15 +20,14 @@ public class nightManage : MonoBehaviour
 
     public void nextBtn()
     {
-        if(customerManage.money < 0)        // 파산 엔딩
-        {
-            PlayerPrefs.DeleteAll();
-            // SceneManager.LoadScene("BadEnding1");
-        }
-        else
+        /* if(customerManage.money >= 0)        
         {
             customerManage.dateIncrese();
             SceneManager.LoadScene("SaveScene");
         }
+        else        
+        {
+            SceneManager.LoadScene("BankruptcyEnding");
+        } */
     }
 }

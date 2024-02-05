@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      waterberryR2_0: -7228514626789188080
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

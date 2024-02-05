@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      aquamarineSpoon_0: 6557141000159557444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
