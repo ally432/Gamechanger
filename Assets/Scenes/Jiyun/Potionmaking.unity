@@ -601,7 +601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -121.04, y: -102.2}
+  m_AnchoredPosition: {x: -110.32, y: -94}
   m_SizeDelta: {x: 83.37, y: 27.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157656657
@@ -1938,12 +1938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03e1d90a17112049870236c1ea1ddbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canva: {fileID: 326079855}
-  speed: 5
-  startpos: {x: 0, y: 0, z: 0}
-  endpos: {x: 0, y: 0, z: 0}
-  targetpos: {x: 0, y: 0, z: 0}
-  isSwiping: 0
 --- !u!1 &377784349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,7 +2847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -164, y: -293.36}
+  m_AnchoredPosition: {x: -147.2, y: -268.24}
   m_SizeDelta: {x: 169.3, y: 177.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539547727
@@ -5438,7 +5432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 140.09, y: -182.6}
+  m_AnchoredPosition: {x: 140.09, y: -182.60002}
   m_SizeDelta: {x: -181.02, y: -256.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265598974
@@ -5785,8 +5779,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 127, y: -280}
-  m_SizeDelta: {x: 71.97, y: 28.71}
+  m_AnchoredPosition: {x: 123.38, y: -256.13}
+  m_SizeDelta: {x: 57.235, y: 25.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305526575
 MonoBehaviour:
@@ -9544,7 +9538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.34, y: -280}
+  m_AnchoredPosition: {x: 4.34, y: -256.77}
   m_SizeDelta: {x: 125.13, y: 26.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2050026141

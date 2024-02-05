@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      InvisibilityP_B_0: -5992862399598632171
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
