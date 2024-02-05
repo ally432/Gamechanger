@@ -63,9 +63,14 @@ public class sellerManage : MonoBehaviour
 
     public List<int> specialPersonList = new List<int>(); //특별손님 리스트
 
+    static public int govermentLove = 0; // +++=저장필요 =+++
+    static public int rebelLove = 0;
+    static public bool rebelEvent = false;
+    static public bool rebelEvent2 = false;
+
     void Start()
     {
-        
+        Debug.Log(currentdate);
         finalTrueHerbList.Clear(); //최종 허브 리스트 초기화 
         specialPersonList.Clear();
         inum = 0;
@@ -241,33 +246,79 @@ public class sellerManage : MonoBehaviour
 
     public void Btn1()
     {
-        if (excelnum == 21) //여긴 원래대로 
+        if (excelnum == 40) //여긴 원래대로 
         {
-            excelnum = 21; // 여긴 1 뺀 수로
+            excelnum = 40; // 여긴 1 뺀 수로
             whatperson = "goArmy1-1";
-            BtnClear();
+            govermentLove -= 5;
         }
-        else
-            BtnClear();
+        else if (excelnum == 89)
+        {
+            excelnum = 89;
+            whatperson = "rebel2-1-1";
+        }
+        else if(excelnum == 99)
+        {
+            excelnum = 99;///
+            whatperson = "rebel2-2-1";
+        }
+        else if(excelnum == 120)
+        {
+            excelnum = 120;
+            whatperson = "goArmy2-1";
+            govermentLove -= 5;
+        }
+        
+        BtnClear();
         
     }
     public void Btn2()
     {
-        if (excelnum == 21)
+        if (excelnum == 40)
         {
-            excelnum = 24;
+            excelnum = 43;
             whatperson = "goArmy1-2";
-            BtnClear();
+            govermentLove += 5;
         }
-        else
-            BtnClear();
+        /*else if (excelnum == 67)
+        {
+            excelnum = 68;
+            whatperson = "rebel1-2";
+            rebelEvent = false;
+            rebelLove -= 5;
+        }*/
+        else if (excelnum == 89)
+        {
+            excelnum = 91;
+            whatperson = "rebel2-1-2";
+        }
+        else if(excelnum == 99)
+        {
+            excelnum = 100;
+            whatperson = "rebel2-2-2";
+        }
+        else if(excelnum == 120)
+        {
+            excelnum = 123;
+            whatperson = "goArmy2-2";
+            govermentLove += 5;
+        }
+        
+
+        BtnClear();
 
 
     }
 
     void Btn3()
     {
-
+        if(excelnum == 120)
+        {
+            excelnum = 125;
+            whatperson = "goArmy2-3";
+        }
+        
+        BtnClear();
 
     }
 
@@ -382,7 +433,7 @@ public class sellerManage : MonoBehaviour
             day2HerbImg1.enabled = true;
             day2HerbImg2.enabled = true;
             day2HerbImg1.sprite = herbImgDecide("waterBerry");
-            day2HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day2HerbImg2.sprite = herbImgDecide("silverFlame");
         }
 
         else if (currentdate < 12)
@@ -391,7 +442,7 @@ public class sellerManage : MonoBehaviour
             day3HerbImg2.enabled = true;
             day3HerbImg3.enabled = true;
             day3HerbImg1.sprite = herbImgDecide("waterBerry");
-            day3HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day3HerbImg2.sprite = herbImgDecide("silverFlame");
             day3HerbImg3.sprite = herbImgDecide("wadadakPepper");
         }
 
@@ -402,7 +453,7 @@ public class sellerManage : MonoBehaviour
             day4HerbImg3.enabled = true;
             day4HerbImg4.enabled = true;
             day4HerbImg1.sprite = herbImgDecide("waterBerry");
-            day4HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day4HerbImg2.sprite = herbImgDecide("silverFlame");
             day4HerbImg3.sprite = herbImgDecide("wadadakPepper");
             day4HerbImg4.sprite = herbImgDecide("shadowHerb");
         }
@@ -414,7 +465,7 @@ public class sellerManage : MonoBehaviour
             day5HerbImg4.enabled = true;
             day5HerbImg5.enabled = true;
             day5HerbImg1.sprite = herbImgDecide("waterBerry");
-            day5HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day5HerbImg2.sprite = herbImgDecide("silverFlame");
             day5HerbImg3.sprite = herbImgDecide("wadadakPepper");
             day5HerbImg4.sprite = herbImgDecide("shadowHerb");
             day5HerbImg5.sprite = herbImgDecide("lightMush");
@@ -428,7 +479,7 @@ public class sellerManage : MonoBehaviour
             day6HerbImg5.enabled = true;
             day6HerbImg6.enabled = true;
             day6HerbImg1.sprite = herbImgDecide("waterBerry");
-            day6HerbImg2.sprite = herbImgDecide("sliverFlame");
+            day6HerbImg2.sprite = herbImgDecide("silverFlame");
             day6HerbImg3.sprite = herbImgDecide("wadadakPepper");
             day6HerbImg4.sprite = herbImgDecide("shadowHerb");
             day6HerbImg5.sprite = herbImgDecide("lightMush");
@@ -454,9 +505,9 @@ public class sellerManage : MonoBehaviour
                 herbimg.sprite = fakeHerbImgList[ranNum];
             }
         }
-        else if (herbName == "sliverFlame")
+        else if (herbName == "silverFlame")
         {
-            if (realHerbList.Contains("sliverFlame"))
+            if (realHerbList.Contains("silverFlame"))
                 herbimg.sprite = trueHerbImgList[Random.Range(2, 4)];
             else
                 herbimg.sprite = fakeHerbImgList[Random.Range(4, 8)];
@@ -499,8 +550,8 @@ public class sellerManage : MonoBehaviour
     {
         if (currentdate == 1) herbList.Add("waterBerry"); // 나중에 그랜파가 와서 대사 말하고, 더하는걸로 변경.
 
-        else if (currentdate == 4) herbList.Add("sliverFlame");
-
+        else if (currentdate == 4) herbList.Add("silverFlame");
+            
         else if (currentdate == 6) herbList.Add("wadadakPepper");
 
         else if (currentdate == 8) herbList.Add("shadowHerb");
@@ -589,13 +640,35 @@ public class sellerManage : MonoBehaviour
         {
             specialPersonList.Add(0);
         }
-        else if (currentdate == 2) specialPersonList.Add(9);
-        else if (currentdate == 3)
+        else if (currentdate == 2) specialPersonList.Add(22);
+        else if (currentdate == 3) specialPersonList.Add(32); // 약초할아버지는 항상 맨 마지막에 넣도록 하기.
+        else if (currentdate == 4) specialPersonList.Add(46); // 뭔가 잘못. 
+        else if (currentdate == 6) specialPersonList.Add(54);
+        else if (currentdate == 8) specialPersonList.Add(71);
+        else if (currentdate == 9)
         {
-
-            specialPersonList.Add(15); // 약초할아버지는 항상 맨 마지막에 넣도록 하기.
-            specialPersonList.Add(27);
+            if (rebelEvent) specialPersonList.Add(81);
+            else specialPersonList.Add(93);
         }
+        else if (currentdate == 10) specialPersonList.Add(102);
+        else if (currentdate == 12)
+        {
+            specialPersonList.Add(111);
+            specialPersonList.Add(117);
+        }
+        else if (currentdate == 14) specialPersonList.Add(126);
+        
+        else if (currentdate == 16) specialPersonList.Add(136);
+        else if (currentdate == 17)
+        {
+            if (rebelEvent2) specialPersonList.Add(150);
+            else specialPersonList.Add(152);
+        }
+        else if (currentdate == 19) specialPersonList.Add(160);
+
+
+
+
         else return;
 
     }
@@ -609,16 +682,33 @@ public class sellerManage : MonoBehaviour
 
     public static List<string> getHerbList()
     {
+        for(int i=0; i < herbList.Count; i++){
+                Debug.Log("Yura"+herbList[i]);
+        }
+        
         return herbList;
     }
 
     public void openBtn()
     {
-        SceneManager.LoadScene("customerScene");
+        SceneManager.LoadScene("Potionmaking");
     }
 
     public void gopotion()
-    {
+    {   // 다시 제조실로 갈 때 리스트 비우기
+        if(Dragp.putgreds.Count > 0){
+            Dragp.putgreds.Clear();
+        }
+        if(Dragp.putherb.Count > 0){
+            Dragp.putherb.Clear();
+        }
+        if(Dragp.specialherb.Count > 0){
+            Dragp.specialherb.Clear();
+        }
+        if(Potion.potionnum > -1){
+            Potion.potionnum = 0;
+        }
+
         SceneManager.LoadScene("Potionmaking");
     }
 

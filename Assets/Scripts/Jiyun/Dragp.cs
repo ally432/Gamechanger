@@ -11,16 +11,23 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public static List<String> putherb = new List<string>();    // 넣은 허브(진짜인지 판별용)
     public static List<String> specialherb = new List<String>();    // 넣은 약초와 스페셜 부재료 리스트
     public GameObject leaf, spec1, spec2, spec3, spec4;
-    public List<String> getherb;   // 해금된 약초 리스트
+    public List<String> getherb = new List<string>();   // 해금된 약초 리스트
     public TextMeshProUGUI ctext;   // 소지금 텍스트
     public int cost;    // 소지금
     public int day; // 날짜
 
     void Start()
     {
+        day = customerManage.getDate();
+        Debug.Log("지윤=================changeday: " + day);
+
         leaf.SetActive(false);
 
         getherb = sellerManage.getHerbList();  // 해금된 약초들
+
+        for(int i = 0; i < getherb.Count; i++){
+            Debug.Log("jiyun"+getherb[i]);
+        }
 
         foreach(string herbtag in getherb){
 
@@ -32,7 +39,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         spec3.SetActive(false);
         spec4.SetActive(false);
 
-        day = customerManage.getDate();
+        
         if(day > 1){
             spec1.SetActive(true);
         }

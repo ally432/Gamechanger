@@ -12,7 +12,7 @@ public class Herbbook : MonoBehaviour
     public TextMeshProUGUI htext;   // 페이지
 
     void Start(){
-        day = 6;    // 시험
+        day = customerManage.getDate();    // 날짜 가져오기
         ShowPage(currentpage);
     }
 
@@ -31,8 +31,6 @@ public class Herbbook : MonoBehaviour
         foreach(GameObject herb in herbs){
             herb.SetActive(false);
         }
-
-        //int day = customerManage.getDate(); // 날짜 가져오기
 
         if(page == 0){  // 맨 첫장은 이전 버튼 안 보임  -> 속성 파트
             prev.SetActive(false);

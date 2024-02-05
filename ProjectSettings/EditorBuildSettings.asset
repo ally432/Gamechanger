@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Yura/morningScene.unity
     guid: b768b5e279a114594bd39d8498efe8d1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Yura/customerScene.unity
     guid: 0d2df3ba36ab745b68c2f84e169ec2e8
   - enabled: 1
