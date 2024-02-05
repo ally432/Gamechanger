@@ -9,6 +9,8 @@ public class TrashCan : MonoBehaviour
     public GameObject bottlePrefab; // Bottle prefab
     public Transform capSpawnLocation; // Cap spawn location
     public Transform bottleSpawnLocation; // Bottle spawn location
+    public List<GameObject> comLiq = new List<GameObject>();
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,23 +36,10 @@ public class TrashCan : MonoBehaviour
             // Make sure newCap and newBottle are visible
             newCap.SetActive(true);
             newBottle.SetActive(true);
+
+            // Clear the comLiq list
+            comLiq.Clear();
+            Debug.Log("comLiq list cleared.");
         }
     }
-/*    public string csvFileName;  // CSV 파일 이름
-    void Start()
-    {
-        ResetCSVFile(csvFileName);
-    }
-
-    void ResetCSVFile(string fileName)
-    {
-        string filePath = Path.Combine(Application.dataPath, fileName);
-
-        using (var writer = new StreamWriter(filePath))
-        {
-            writer.WriteLine("Drug grade,Drug type");  // CSV 파일의 헤더
-            // 이 시점에서 CSV 파일은 헤더만 남고 모든 데이터가 초기화됩니다.
-        }
-    }
-*/
 }

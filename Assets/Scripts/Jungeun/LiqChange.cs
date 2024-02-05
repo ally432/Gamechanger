@@ -16,16 +16,17 @@ public class ImageChanger : MonoBehaviour
 
     public void ChangeImage()
     {
-        oldImageComponent.enabled = false;
+        Debug.Log("ChangeImage 함수가 호출되었습니다.");
         newImageComponent.enabled = true;
-        doorButton.gameObject.SetActive(false);  // Door 버튼을 비활성화
         openDoorButton.gameObject.SetActive(true);  // Open Door 버튼을 활성화
+        oldImageComponent.enabled = false;
+        doorButton.gameObject.SetActive(false);  // Door 버튼을 비활성화
     }
     public void BackImage()
     {
-        newImageComponent.enabled = false;
         oldImageComponent.enabled = true;
         doorButton.gameObject.SetActive(true);  // Door 버튼을 활성화
+        newImageComponent.enabled = false;
         openDoorButton.gameObject.SetActive(false);  // Open Door 버튼을 비활성화
     }
 }
