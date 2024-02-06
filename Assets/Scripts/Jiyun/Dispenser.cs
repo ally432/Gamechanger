@@ -12,12 +12,15 @@ public class Dispenser : MonoBehaviour
     public static Image loadingbar2;
     public float speed;
     float currentValue, currentValue2;
+    public AudioSource btnsound;
 
     void Start()
     {
         closebtn.SetActive(false);
         openimg.SetActive(false);    
         yesbottle.SetActive(false);
+
+        btnsound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -54,6 +57,7 @@ public class Dispenser : MonoBehaviour
     }
 
     public void opening(){  // 열기
+        btnsound.Play();
         closeimg.SetActive(false);
         openimg.SetActive(true);
         openbtn.SetActive(false);
@@ -71,6 +75,7 @@ public class Dispenser : MonoBehaviour
     }
 
     public void closing(){  // 닫기
+        btnsound.Play();
         closebtn.SetActive(false);
         openimg.SetActive(false);
         closeimg.SetActive(true);
@@ -87,10 +92,11 @@ public class Dispenser : MonoBehaviour
     }
 
     public void gagestart(){    // 게이지 버튼
+        btnsound.Play();
         currentValue = 0f;
         currentValue2 = 0f;
         loadingbar.fillAmount = 0f;
-        loadingbar2.fillAmount = 0f;
+        //loadingbar2.fillAmount = 0f;
         gage = true;
         isDone = true;
     }

@@ -118,6 +118,11 @@ public class customerManage : MonoBehaviour
             
         }
 
+        if(crush){
+            customerBtn();
+            crush = false;
+        }
+
 
     }
 
@@ -127,7 +132,7 @@ public class customerManage : MonoBehaviour
     }
     private void Awake()
     {
-        time = 10;
+        time = 50;
         StartCoroutine(StartTimer());
     }
 
