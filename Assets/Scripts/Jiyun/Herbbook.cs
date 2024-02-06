@@ -20,7 +20,7 @@ public class Herbbook : MonoBehaviour
         panel.DOLocalMoveY(61, 1f).SetEase(Ease.OutBack);
     }
     public void Close(){    // 노트 닫기
-        panel.DOLocalMoveY(347, 1f).SetEase(Ease.InBack);
+        panel.DOLocalMoveY(-600, 1f).SetEase(Ease.InBack);
     }
 
     void ShowPage(int page){
