@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      herbPerson1_0: -8889288793798075189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
