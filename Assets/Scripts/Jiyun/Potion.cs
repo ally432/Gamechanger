@@ -51,6 +51,7 @@ public class Potion : MonoBehaviour
     void Move(){
         making.gameObject.SetActive(false);
         customer.gameObject.SetActive(true);
+        Dispenser.loadingbar2.fillAmount = 0f;
         makeover = true;
         ploadingbar.fillAmount = 0f;
     }

@@ -8,7 +8,8 @@ public class Dispenser : MonoBehaviour
     public static bool isDone2 = false;    // 완성된 병이 나왔는데 다시 닫으면.
     public static bool gage = false;
     public static bool isIn = false;   // 안에 있나?
-    public Image loadingbar, loadingbar2;
+    public Image loadingbar;
+    public static Image loadingbar2;
     public float speed;
     float currentValue, currentValue2;
 
