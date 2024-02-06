@@ -20,7 +20,7 @@ public class customerManage : MonoBehaviour
     public static int money = 0;
     public TextMeshProUGUI moneyText;
     public List<string> herbList = new List<string>(); // 계약한 진짜 약초들 리스트 (sellerManage에서 전달받음 )
-    public string potionGrade; //제조 완료 시 결정된 포션등급
+    public string potionGrade = "C"; //제조 완료 시 결정된 포션등급
 
     public List<int> customerList = new List<int>(); //손님들 중복방지 과거 손님 확인리스트
 
@@ -54,7 +54,7 @@ public class customerManage : MonoBehaviour
     bool specialcheck = true;
     bool special = false;
     bool moving = false;
-    public static bool crush = false;   // 손님과 부딪쳤을때
+    public static bool crush = false;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +80,7 @@ public class customerManage : MonoBehaviour
         showCustomerImg(Random.Range(0, 3));
         printOrderScript();
 
-          
+             
 
         making.gameObject.SetActive(false);
         customer.gameObject.SetActive(true);
@@ -94,6 +94,7 @@ public class customerManage : MonoBehaviour
 
         if (timeover)
         {
+            SceneManager.LoadScene("nightScene");
             if (specialcheck)
             {
                 specialPeople();
@@ -112,13 +113,9 @@ public class customerManage : MonoBehaviour
                 }
                 
             }
-
+            
             if (loadScene) nextBtn.SetActive(true);
             
-        }
-
-        if(crush){
-            customerBtn();
         }
 
 
@@ -130,10 +127,16 @@ public class customerManage : MonoBehaviour
     }
     private void Awake()
     {
-        time = 40;
+        time = 10;
         StartCoroutine(StartTimer());
     }
 
+    IEnumerator nextday()
+    {
+        yield return new WaitForSeconds(3.0f);
+
+
+    }
     IEnumerator StartTimer()
     {
         curTime = time;
@@ -190,7 +193,6 @@ public class customerManage : MonoBehaviour
         
         potionGradeCheck();
         StartCoroutine(nextCustomer());
-        crush = false;
         
     }
 
@@ -355,8 +357,6 @@ public class customerManage : MonoBehaviour
         string strMoney;
         int ranNumRe = Random.Range(0, 5);
 
-        potionGrade = Potion.Getpotiongrade();
-
         if (special)
         {
             if(potionGrade == "A" || potionGrade == "B")
@@ -443,7 +443,7 @@ public class customerManage : MonoBehaviour
     {
         List<Dictionary<string, object>> special_Dialog = CSVReader.Read("specialPerson");
 
-        if (date == 6)//6
+        if (date == 1)//6
         {
             specialPeopleNum = 63;
             person = special_Dialog[specialPeopleNum]["person"].ToString();
@@ -452,7 +452,7 @@ public class customerManage : MonoBehaviour
             showCustomerImg(3);
             printSpecialScript(person);
         }
-        else if (date == 15)//15
+        else if (date == 2)//15
         {
             specialPeopleNum = 131;
             person = special_Dialog[specialPeopleNum]["person"].ToString();
@@ -461,14 +461,14 @@ public class customerManage : MonoBehaviour
             showCustomerImg(4);
             printSpecialScript(person);
         }
-        else if (date == 17)//17
+        else if (date == 3)//17
         {
             specialPeopleNum = 154;
             person = special_Dialog[specialPeopleNum]["person"].ToString();
             showCustomerImg(5);
             printSpecialScript(person);
         }
-        else if (date == 19)//19
+        else if (date == 4)//19
         {
             special = true;
             specialPeopleNum = 161;
