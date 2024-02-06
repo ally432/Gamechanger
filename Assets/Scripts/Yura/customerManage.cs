@@ -133,6 +133,7 @@ public class customerManage : MonoBehaviour
     private void Awake()
     {
         time = 50;
+
         StartCoroutine(StartTimer());
     }
 
