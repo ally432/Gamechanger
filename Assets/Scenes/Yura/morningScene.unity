@@ -2106,8 +2106,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.235, y: 203.702}
-  m_SizeDelta: {x: 389.041, y: 327.036}
+  m_AnchoredPosition: {x: 1.925, y: 197.596}
+  m_SizeDelta: {x: 346.296, y: 314.823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646102958
 MonoBehaviour:
@@ -6119,11 +6119,11 @@ MonoBehaviour:
   choice2Text: {fileID: 1324021339}
   choice3Text: {fileID: 1238463496}
   sellerImgList:
-  - {fileID: 527502203815234708, guid: a70a0e4fa56a648ae96dcdcc6fc798a1, type: 3}
-  - {fileID: 2192020795508575673, guid: 74f8d20ef1d214378ab9afc36e486448, type: 3}
-  - {fileID: 2430838605061216541, guid: 002c0d7eed9444bdebab737ed8a90397, type: 3}
-  - {fileID: -1830951190747792216, guid: 8ccc0ce5e1c944dd1b5f3317c965491c, type: 3}
-  - {fileID: -5963945849417036405, guid: be4fa2b226a9146c3a55157d61fa0960, type: 3}
+  - {fileID: -8889288793798075189, guid: c458c5637c70e284b848edd15970a0bb, type: 3}
+  - {fileID: 2369188692026370072, guid: 07bd2d6be97c61f4386de26ce200448f, type: 3}
+  - {fileID: 5748746612713112000, guid: 3a24a87d285fa694ea19d331c7e02da5, type: 3}
+  - {fileID: 3515480448920490917, guid: 5a8931fbcb78d464688ebf77fb94034e, type: 3}
+  - {fileID: -7257092133280669112, guid: 2c38ac3d60ef9c14ca467c3013b1ca3e, type: 3}
   sellerImg: {fileID: 646102958}
   day1HerbImg: {fileID: 464276833}
   day2HerbImg1: {fileID: 988630831}
