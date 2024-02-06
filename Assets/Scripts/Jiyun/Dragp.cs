@@ -15,9 +15,12 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public TextMeshProUGUI ctext;   // 소지금 텍스트
     public int cost;    // 소지금
     public int day; // 날짜
+    public AudioSource putsound;
 
     void Start()
     {
+        putsound = GetComponent<AudioSource>();
+
         leaf.SetActive(false);
         spec1.SetActive(false);
         spec2.SetActive(false);
@@ -96,6 +99,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     void OnTriggerEnter2D(Collider2D other) // 충돌 발생
     {
         if(other.gameObject.tag.Equals("putzone")){
+            putsound.Play();
             putgreds.Add(gameObject.name);
             if(gameObject.tag.Equals("herb")){  // 넣은게 허브라면..
                 List<Dictionary<string, object>> data = CSVReader.Read("herbcost");
