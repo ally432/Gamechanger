@@ -46,6 +46,10 @@ public class Dispenser : MonoBehaviour
 
     void gagezero(){
         loadingbar.fillAmount = 0f;
+        openimg.SetActive(false);
+        closebtn.SetActive(false);
+        closeimg.SetActive(true);
+        openbtn.SetActive(true);
     }
 
     public void opening(){  // 열기
