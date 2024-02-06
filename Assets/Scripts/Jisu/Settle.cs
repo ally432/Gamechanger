@@ -16,7 +16,6 @@ public class SettleScript : MonoBehaviour
     int nowMoney = customerManage.getMoney();
     int interest = 300;
     int rent = 500;
-    public AudioSource btnsound;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +25,6 @@ public class SettleScript : MonoBehaviour
         int plus = (date/5) * 200;
         rent += plus;
         Invoke("SettleMoney", 0.5f);
-
-        btnsound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,8 +48,6 @@ public class SettleScript : MonoBehaviour
 
     public void NextScene()
     {
-        btnsound.Play();
-
         customerManage.money = nowMoney;
 
         if(customerManage.money >= 0)        
