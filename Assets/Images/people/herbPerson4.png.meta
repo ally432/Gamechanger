@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c5b9039e069e3b84a873d0806af73efe
+guid: bda2e1ad5a6c8b344aae3cc4523a9ee1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -464940152831189197
-    second: bankruptcyEnding_0
+      213: -6073726613091366726
+    second: herbPerson4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bankruptcyEnding_0
+      name: herbPerson4_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1871
         y: 0
-        width: 5625
-        height: 10000
+        width: 6710
+        height: 8893
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33f5ea4f4633c89f0800000000000000
-      internalID: -464940152831189197
+      spriteID: ab84adb43d9c5bba0800000000000000
+      internalID: -6073726613091366726
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      bankruptcyEnding_0: -464940152831189197
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
