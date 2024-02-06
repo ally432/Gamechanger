@@ -11,8 +11,7 @@ public class PotionBook : MonoBehaviour
     public TextMeshProUGUI ptext;   // 페이지
 
     void Start() {
-        Potion.plist.Add(2);      // -> 확인 완료!! 
-        ShowPage(currentpage);  
+        ShowPage(currentpage);
     }
     public void Open(){ // 노트 펼치기
         panel.DOLocalMoveY(0, 1f).SetEase(Ease.OutBack);
@@ -30,6 +29,10 @@ public class PotionBook : MonoBehaviour
         }
         if(page == 0){
             prev.SetActive(false);
+            if(Potion.plist.Count > 0){
+                Debug.Log("치유물약!");
+                potions[page].SetActive(true);
+            }
         }
         if(page == potions.Length - 1){
             next.SetActive(false);

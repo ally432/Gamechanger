@@ -17,10 +17,10 @@ public class Herbbook : MonoBehaviour
     }
 
     public void Open(){ // 노트 펼치기
-        panel.DOLocalMoveY(61, 1f).SetEase(Ease.OutBack);
+        panel.DOLocalMoveY(0, 1f).SetEase(Ease.OutBack);
     }
     public void Close(){    // 노트 닫기
-        panel.DOLocalMoveY(347, 1f).SetEase(Ease.InBack);
+        panel.DOLocalMoveY(-1100, 1f).SetEase(Ease.InBack);
     }
 
     void ShowPage(int page){
