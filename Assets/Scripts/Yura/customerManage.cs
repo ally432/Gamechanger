@@ -127,7 +127,7 @@ public class customerManage : MonoBehaviour
     }
     private void Awake()
     {
-        time = 10;
+        time = 60;
         StartCoroutine(StartTimer());
     }
 
