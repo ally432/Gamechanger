@@ -12,8 +12,6 @@ public class sellerManage : MonoBehaviour
 {
     int currentdate; // 현재 날짜. customerManage의 getDate 함수에서 얻어온다.
 
-    
-
     public TypeEffect sellerText; // 약초꾼 텍스트 말풍선.
     public GameObject gamecursor;
 
@@ -144,7 +142,7 @@ public class sellerManage : MonoBehaviour
     void Update()
     {
         gamecursor.SetActive(false);
-        
+
         if (specialDone)
         {
             showImg("seller");

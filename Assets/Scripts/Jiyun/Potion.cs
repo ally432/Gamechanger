@@ -22,12 +22,7 @@ public class Potion : MonoBehaviour
 
     public Canvas customer, making; // 손님오는 캔버스, 만드는 캔버스
     public static bool makeover = false;    // 제조버튼 누르고 돌아왔을 때
-    public AudioSource btnsound;    // 버튼 클릭 소리
 
-    void Start()
-    {
-        btnsound = GetComponent<AudioSource>();
-    }
 
     void Update()
     {
@@ -44,7 +39,6 @@ public class Potion : MonoBehaviour
     }
 
     public void End(){  // 제조 버튼 클릭
-        btnsound.Play();
         int num = customerManage.customerNum + 1;
         gradenum(num);
         Debug.Log(potionnum);
@@ -57,7 +51,6 @@ public class Potion : MonoBehaviour
     void Move(){
         making.gameObject.SetActive(false);
         customer.gameObject.SetActive(true);
-        Dispenser.loadingbar2.fillAmount = 0f;
         makeover = true;
         ploadingbar.fillAmount = 0f;
     }
@@ -228,7 +221,6 @@ public class Potion : MonoBehaviour
         }
     }
     public void Remove(){
-        btnsound.Play();
         Dragp.putgreds.Clear(); // 넣은 모든 재료들 초기화
         Dragp.putherb.Clear();  // 허브들 초기화
         Dragp.specialherb.Clear();  // 허브들과 부재료 리스트 초기화
