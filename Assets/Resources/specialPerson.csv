@@ -53,8 +53,8 @@
 52,n,herbGranpaC,"아무튼 중요한 사실은, 그들이 은빛불꽃풀을 가져왔다는 거지.",granpa,,,
 53,n,herbGranpaC,자세한 정보는 자네 약초노트에 적어두었다네!,granpa,,,
 54,n,herbGranpaC,잘 해보게나.,granpa,,,
-55,y,herbGranpaD,쿨럭쿨럭! 케엑! 퀙!,granpa,괜찮으세요?,어머..,혹시..코로나?!
-56,n,herbGranpaD,크흠! 큼! 잘 지냈나?,granpa,,,
+55,n,herbGranpaD,쿨럭쿨럭! 케엑! 퀙!,granpa,,,
+56,y,herbGranpaD,크흠! 큼! 잘 지냈나?,granpa,괜찮으세요?,어머..,혹시..코로나?!
 57,n,herbGranpaD,"아, 기침은 내가 와다닥고추를 먹어서 그렇네.",granpa,,,
 58,n,herbGranpaD,"저기, 바다를 봐봐.",granpa,,,
 59,n,herbGranpaD,엄청나게 큰 무역상선 보이지?,granpa,,,
@@ -67,9 +67,9 @@
 66,n,rebel1,동료가 많이 다쳤습니다.,rebel1,,,
 67,y,rebel1,치료물약 하나만 주시면 안되겠습니까?,rebel1,알겠습니다.,싫습니다.,none
 68,n,rebel1-1,"감사합니다, 감사합니다…",rebel1,,,
-69,n,reblel1-2,….,rebel1,,,
-70,n,reblel1-2,………….,rebel1,,,
-71,n,reblel1-2,앞으로 각오해야 할거야. ,rebel1,,,
+69,n,rebel1-2,….,rebel1,,,
+70,n,rebel1-2,………….,rebel1,,,
+71,n,rebel1-2,앞으로 각오해야 할거야. ,rebel1,,,
 72,n,herbGranpaE,안녕하신가.,granpa,,,
 73,n,herbGranpaE,어제 밤에 몬스터 토벌대가 돌아왔다네.,granpa,,,
 74,n,herbGranpaE,"내 손녀딸이 마녀라, 정부군이 차출해서 데려갔는데..",granpa,,,

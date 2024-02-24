@@ -56,6 +56,7 @@ public class customerManage : MonoBehaviour
     bool moving = false;
     public static bool crush = false;   // 손님과 부딪쳤을때
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +93,8 @@ public class customerManage : MonoBehaviour
         gamecursor.SetActive(false);
         moneyText.text = money.ToString();
 
+ 
+
         if (timeover)
         {
             if (specialcheck)
@@ -104,17 +107,20 @@ public class customerManage : MonoBehaviour
 
             if ((Input.GetMouseButtonDown(0) && !isMouseClicked) || choiceClicked)
             {
-                if (!isChoiceDisplayed && !moving)
+                if (!isChoiceDisplayed)
                 {
+                    
                     isMouseClicked = true;
                     choiceClicked = false;
+                    Debug.Log("다음 대사 진입");
                     printSpecialScript(person);
                 }
                 
             }
 
-            if (loadScene) nextBtn.SetActive(true);
-            
+            if (loadScene) StartCoroutine(MoveScene());
+
+
         }
 
         if(crush){
@@ -130,7 +136,7 @@ public class customerManage : MonoBehaviour
     }
     private void Awake()
     {
-        time = 40;
+        time = 5;
         StartCoroutine(StartTimer());
     }
 
@@ -154,6 +160,13 @@ public class customerManage : MonoBehaviour
         }
     }
 
+
+    IEnumerator MoveScene()
+    {
+        yield return new WaitForSeconds(3.0f);
+
+        SceneManager.LoadScene("nightScene");
+    }
 
     void showCustomerImg(int num)
     { 
@@ -230,10 +243,14 @@ public class customerManage : MonoBehaviour
 
     public void printSpecialScript(string person) // 스페셜손님 말씀 하십니다.
     {
+        Debug.Log(person + " 스페셜 스크립트 함수 진입");
         List<Dictionary<string, object>> special_Dialog = CSVReader.Read("specialPerson");
         if (person != special_Dialog[specialPeopleNum]["person"].ToString() || person == "none")
         {
-            loadScene = true;
+            Debug.Log(special_Dialog[specialPeopleNum]["person"].ToString());
+
+            Debug.Log("사람과 스페셜넘 다름");
+            
             return;
         }
         string content = special_Dialog[specialPeopleNum]["content"].ToString();
@@ -278,6 +295,8 @@ public class customerManage : MonoBehaviour
             sellerManage.rebelEvent = true;
             sellerManage.rebelLove += 5;
             //제조실 이동 버튼 넣어야됨.
+            specialPeopleNum = 67;
+            person = "rebel1-1";
             moving = true;
             moveBtn.SetActive(true);
         }
@@ -292,7 +311,6 @@ public class customerManage : MonoBehaviour
         }
         else if (specialPeopleNum == 165)
         {
-            sellerManage.govermentLove += 5;
             sellerManage.govermentLove += 5;
             moving = true;
             moveBtn.SetActive(true);
@@ -325,6 +343,7 @@ public class customerManage : MonoBehaviour
             //
         }
         BtnClear();
+        loadScene = true;
 
     }
     public void Btn3()
@@ -337,7 +356,9 @@ public class customerManage : MonoBehaviour
             sellerManage.rebelLove -= 5;
         }
         BtnClear();
+        loadScene = true;
     }
+
     void BtnClear()
     {
         choice1.SetActive(false);
@@ -359,13 +380,14 @@ public class customerManage : MonoBehaviour
 
         if (special)
         {
-            if(potionGrade == "A" || potionGrade == "B")
+            if(potionGrade == "A" || potionGrade == "B" || potionGrade == "C")
             {
                 if (customerNum == 159)
                 {
                     customerText.SetMsg("정말 고마워요!");
                     sellerManage.rebelLove += 5;
                     sellerManage.rebelEvent = true;
+                    
                 }
                 else if (customerNum == 160)
                 {
@@ -390,7 +412,7 @@ public class customerManage : MonoBehaviour
                 }
                 else if (customerNum == 160)
                 {
-                    customerText.SetMsg("이게 뭔.. 날 놀리는건가?");
+                    customerText.SetMsg("날 놀리는건가?");
                     sellerManage.rebelLove -= 5;
                     sellerManage.rebelEvent2 = true;
                 }
@@ -404,8 +426,10 @@ public class customerManage : MonoBehaviour
 
             special = false;
             moving = false;
+            StartCoroutine(MoveScene());
             return;
         }
+
         switch (potionGrade)
         {
             case "A":
