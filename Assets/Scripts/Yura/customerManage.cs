@@ -496,7 +496,7 @@ public class customerManage : MonoBehaviour
         return money;
     }
     public void potionmaking(){
-        making.gameObject.SetActive(!making.gameObject.activeSelf);
+        making.gameObject.SetActive(!making.gameObj6ect.activeSelf);
         customer.gameObject.SetActive(!customer.gameObject.activeSelf);
     }
 }
