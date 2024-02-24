@@ -14,8 +14,8 @@ public class SettleScript : MonoBehaviour
 
     int date = customerManage.getDate();
     int nowMoney = customerManage.getMoney();
-    int interest = 300;
-    int rent = 500;
+    int interest = 10;
+    int rent = 10;
 
     // Start is called before the first frame update
     void Start()

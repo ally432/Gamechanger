@@ -15,7 +15,7 @@ public class sellerManage : MonoBehaviour
     public TypeEffect sellerText; // 약초꾼 텍스트 말풍선.
     public GameObject gamecursor;
 
-    public GameObject contractBtn, denyBtn, choice1,choice2,choice3;
+    public GameObject contractBtn, denyBtn, choice1,choice2,choice3,openBtn;
     public Button choiceBtn1, choiceBtn2, choiceBtn3;
     public TextMeshProUGUI choice1Text, choice2Text, choice3Text;
 
@@ -68,6 +68,9 @@ public class sellerManage : MonoBehaviour
     static public bool rebelEvent = false;
     static public bool rebelEvent2 = false;
 
+
+    public Image fadeInImg;
+
     void Start()
     {
         Debug.Log(currentdate);
@@ -75,11 +78,13 @@ public class sellerManage : MonoBehaviour
         specialPersonList.Clear();
         inum = 0;
 
+        openBtn.SetActive(false);
         contractBtn.SetActive(false);
         denyBtn.SetActive(false);
         choice1.SetActive(false);
         choice2.SetActive(false);
         choice3.SetActive(false);
+        fadeInImg.enabled = false;
 
         day1HerbImg.enabled = false;
         day2HerbImg1.enabled = false;
@@ -131,6 +136,8 @@ public class sellerManage : MonoBehaviour
         {
             Debug.Log("else로 셀러 시작해야됨");
             showImg("seller");
+            openBtn.SetActive(true);
+
             showSellerTalk();
             sellerHerb();
             showSellerHerb();
@@ -145,6 +152,7 @@ public class sellerManage : MonoBehaviour
 
         if (specialDone)
         {
+            openBtn.SetActive(true);
             showImg("seller");
             showSellerTalk();
             sellerHerb();
@@ -174,6 +182,22 @@ public class sellerManage : MonoBehaviour
             StartCoroutine(seller());
 
         }
+    }
+
+    IEnumerator FadeCo()
+    {
+        Debug.Log("코루틴 진입");
+        fadeInImg.enabled = true;
+
+        float fadeCount = 0;
+        while(fadeCount < 1.0f)
+        {
+            fadeCount += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            fadeInImg.color = new Color(0, 0, 0, fadeCount);
+        }
+
+        SceneManager.LoadScene("Potionmaking");
     }
 
     void specialCustomer()
@@ -312,7 +336,7 @@ public class sellerManage : MonoBehaviour
 
     }
 
-    void Btn3()
+    public void Btn3()
     {
         if(excelnum == 120)
         {
@@ -361,6 +385,13 @@ public class sellerManage : MonoBehaviour
                 finalTrueHerbList.Add(realHerbList[i]);
             }
         }
+
+        if(sellerNum == 10)
+        {
+            Debug.Log("손님 10");
+            StartCoroutine(FadeCo());
+        }
+
         nextperson = true;
 
 
@@ -368,10 +399,14 @@ public class sellerManage : MonoBehaviour
 
     public void denyBtnClicked()
     {
-        if (sellerNum == 10 && !isContracted)
+        if (sellerNum == 10)
         {
-            noContracted = true;
+            if (!isContracted)
+            { 
+                noContracted = true;
+            }
             Debug.Log("계약안함");
+            StartCoroutine(FadeCo());   
         }
         contractBtn.SetActive(false);
         denyBtn.SetActive(false);
@@ -379,6 +414,9 @@ public class sellerManage : MonoBehaviour
         showSellerTalk();
         nextperson = true;
     }
+
+    
+    
 
     IEnumerator seller()
     {
@@ -691,10 +729,11 @@ public class sellerManage : MonoBehaviour
         return herbList;
     }
 
-    public void openBtn()
+    public void openBtnFn()
     {
-        SceneManager.LoadScene("Potionmaking");
+        StartCoroutine(FadeCo());
     }
+    
 
     public void gopotion()
     {   // 다시 제조실로 갈 때 리스트 비우기
