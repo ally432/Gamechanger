@@ -17,7 +17,7 @@ public class PotionBook : MonoBehaviour
         panel.DOLocalMoveY(0, 1f).SetEase(Ease.OutBack);
     }
     public void Close(){    // 노트 닫기
-        panel.DOLocalMoveY(-524, 1f).SetEase(Ease.InBack);
+        panel.DOLocalMoveY(-1200, 1f).SetEase(Ease.InBack);
     }
     void ShowPage(int page){
         prev.SetActive(true);
