@@ -888,6 +888,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 164088933}
+  - {fileID: 646102957}
   - {fileID: 1380588291}
   - {fileID: 1330222074}
   - {fileID: 459203246}
@@ -908,7 +909,6 @@ RectTransform:
   - {fileID: 1082638388}
   - {fileID: 63032761}
   - {fileID: 2101677125}
-  - {fileID: 646102957}
   - {fileID: 1875736227}
   - {fileID: 343811931}
   - {fileID: 622074396}
@@ -1181,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.228, y: 2.4317}
+  m_AnchoredPosition: {x: -8.228, y: 2.4317017}
   m_SizeDelta: {x: 544.338, y: 238.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427424999
@@ -2168,7 +2168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.235, y: 203.702}
+  m_AnchoredPosition: {x: -7.235, y: -126}
   m_SizeDelta: {x: 389.041, y: 327.036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646102958
@@ -4475,8 +4475,8 @@ Transform:
   m_GameObject: {fileID: 1380588290}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.062495258, y: -244.2895, z: -285.51132}
-  m_LocalScale: {x: 76.57163, y: 62.68906, z: 3.172348}
+  m_LocalPosition: {x: -5, y: -199.207, z: -285.51132}
+  m_LocalScale: {x: 76.57163, y: 77.85981, z: 3.172348}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 286013641}
@@ -5703,6 +5703,7 @@ MonoBehaviour:
   whatperson: 
   isChoiceDisplayed: 0
   specialPersonList: 
+  talkImage: {fileID: 1082638387}
   fadeInImg: {fileID: 928249289}
 --- !u!1 &2046386051
 GameObject:
