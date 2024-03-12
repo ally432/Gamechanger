@@ -25,8 +25,8 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         // eventData.position은 출력하고 싶은 스크린 좌표
         // Camera.main은 스크린 좌표와 연관된 카메라
         // localPos는 변환된 좌표를 저장한 변수
-        if(gameObject.name == "bottle" && eventData.position.y > 370){
-            eventData.position = new Vector2(eventData.position.x, 370f);
+        if(gameObject.name == "bottle" && eventData.position.y > 390){
+            eventData.position = new Vector2(eventData.position.x, 390f);
         }
         if(gameObject.name == "cap" && eventData.position.y > 500){
             eventData.position = new Vector2(eventData.position.x, 500f);
@@ -50,7 +50,7 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     }
 
     void put(){ // 위치고정
-        this.transform.position = new Vector3(3.3f, -3.3f, 0f);
+        this.transform.position = new Vector3(3.4f, -3.1f, 0f);
     }
 
     void put2(){
