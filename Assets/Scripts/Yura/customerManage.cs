@@ -136,7 +136,7 @@ public class customerManage : MonoBehaviour
     }
     private void Awake()
     {
-        time = 5;
+        time = 60;  // 잠깐 바꿈
         StartCoroutine(StartTimer());
     }
 
@@ -519,9 +519,16 @@ public class customerManage : MonoBehaviour
     {
         return money;
     }
-    public void potionmaking(){
+    public void potionmaking(){ // 제조실로 가는 버튼
         making.gameObject.SetActive(!making.gameObject.activeSelf);
         customer.gameObject.SetActive(!customer.gameObject.activeSelf);
+
+        // 리스트 초기화
+        Dragp.putgreds.Clear(); // 넣은 모든 재료들
+        Dragp.putherb.Clear();  // 넣은 허브
+        Dragp.specialherb.Clear();  // 넣은 허브와 특별 부재료
+        Potion.potionnum = 0;   // 만든 포션의 점수
+        Potion.potionname = null;   // 만든 포션의 이름
     }
 }
 
