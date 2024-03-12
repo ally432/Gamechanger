@@ -68,16 +68,23 @@ public class sellerManage : MonoBehaviour
     static public bool rebelEvent = false;
     static public bool rebelEvent2 = false;
 
+    public GameObject talkImage;
+
+
 
     public Image fadeInImg;
 
     void Start()
     {
+        sellerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
+
         Debug.Log(currentdate);
         finalTrueHerbList.Clear(); //최종 허브 리스트 초기화 
         specialPersonList.Clear();
         inum = 0;
 
+        
+        talkImage.SetActive(false); // 말풍선 초기 비활성화
         openBtn.SetActive(false);
         contractBtn.SetActive(false);
         denyBtn.SetActive(false);
@@ -111,7 +118,7 @@ public class sellerManage : MonoBehaviour
 
         addMoney = 0;
 
-        sellerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
+        
 
         currentdate = customerManage.getDate();
 
@@ -135,6 +142,7 @@ public class sellerManage : MonoBehaviour
         else
         {
             Debug.Log("else로 셀러 시작해야됨");
+            talkImage.SetActive(false);
             showImg("seller");
             openBtn.SetActive(true);
 
@@ -153,11 +161,19 @@ public class sellerManage : MonoBehaviour
         if (specialDone)
         {
             openBtn.SetActive(true);
-            showImg("seller");
-            showSellerTalk();
+            talkImage.SetActive(false);
+            sellerImg.transform.DOMoveY(-100, 1.0f).OnComplete(() =>
+            {
+                showImg("seller");
+                showSellerTalk();
+            });
+            
+            
             sellerHerb();
             showSellerHerb();
             specialDone = false;
+            
+
         }
 
         if ((Input.GetMouseButtonDown(0) && specialSituation && !isMouseClicked) || choiceClicked)
@@ -179,7 +195,9 @@ public class sellerManage : MonoBehaviour
         {
             nextperson = false;
             reactionNum = 0;
+            
             StartCoroutine(seller());
+            
 
         }
     }
@@ -215,7 +233,9 @@ public class sellerManage : MonoBehaviour
     void showSpecialTalk(string person)
     {
         List<Dictionary<string, object>> special_Dialog = CSVReader.Read("specialPerson");
-        
+        //talkImage.SetActive(true);
+
+
         if (person != special_Dialog[excelnum]["person"].ToString() || person == "none")
         {
             inum++;
@@ -397,6 +417,7 @@ public class sellerManage : MonoBehaviour
 
     }
 
+
     public void denyBtnClicked()
     {
         if (sellerNum == 10)
@@ -420,16 +441,26 @@ public class sellerManage : MonoBehaviour
 
     IEnumerator seller()
     {
+        
         yield return new WaitForSeconds(3.0f);
 
+        talkImage.SetActive(false);
+
+        sellerImg.transform.DOMoveY(-100, 0.5f).OnComplete(() => {
+        // 말풍선 unvisible
+        
+        Debug.Log("next people");
         showImg("seller");
         showSellerTalk();
         sellerHerb();
         showSellerHerb();
+        });
     }
 
     void showImg(string person)
     {
+        
+
         if (person == "seller")
         {
             int randomIndex = Random.Range(0, 3);
@@ -447,13 +478,16 @@ public class sellerManage : MonoBehaviour
         {
             sellerImg.sprite = sellerImgList[4];
         }
-
+        sellerImg.transform.DOMoveY(60, 0.5f).OnComplete(() => {
+            talkImage.SetActive(true);
+        });
     }
 
 
 
     void showSellerTalk()
     {
+        talkImage.SetActive(true);
         List<Dictionary<string, object>> seller_Dialog = CSVReader.Read("seller");
         int ranNum = Random.Range(reactionNum, reactionNum + 5);
         string content = seller_Dialog[ranNum]["content"].ToString();
