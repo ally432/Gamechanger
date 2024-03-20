@@ -290,8 +290,7 @@ public class customerManage : MonoBehaviour
     {
         if (specialPeopleNum == 67)
         {
-            sellerManage.rebelEvent = true;
-            sellerManage.rebelLove += 5;
+            
             //제조실 이동 버튼 넣어야됨.
             specialPeopleNum = 67;
             person = "rebel1-1";
@@ -300,16 +299,15 @@ public class customerManage : MonoBehaviour
         }
         else if (specialPeopleNum == 135)
         {
-            sellerManage.rebelEvent = true;
-            sellerManage.rebelLove += 5;
-            sellerManage.govermentLove += 5;
+            
+            
             moving = true;
             moveBtn.SetActive(true);
             //제조실 이동
         }
         else if (specialPeopleNum == 165)
         {
-            sellerManage.govermentLove += 5;
+            
             moving = true;
             moveBtn.SetActive(true);
 
@@ -323,21 +321,21 @@ public class customerManage : MonoBehaviour
         {
             specialPeopleNum = 68;
             person = "rebel1-2";
-            sellerManage.rebelEvent2 = false;
-            sellerManage.rebelLove -= 5;
+            sellerManage.rebelEvent = false;
+            sellerManage.rebelLove -= 1;
         }
         else if (specialPeopleNum == 135)
         {
             specialPeopleNum = 135;
             person = "rebel3-2";
             sellerManage.rebelEvent2 = true;
-            sellerManage.rebelLove -= 5;
+            sellerManage.rebelLove -= 1;
         }
         else if (specialPeopleNum == 165)
         {
             specialPeopleNum = 166;
             person = "goArmy3-2";
-            sellerManage.govermentLove -= 5;
+            sellerManage.govermentLove -= 1;
             //
         }
         BtnClear();
@@ -351,7 +349,7 @@ public class customerManage : MonoBehaviour
             specialPeopleNum = 135;
             person = "rebel3-2";
             sellerManage.rebelEvent2 = true;
-            sellerManage.rebelLove -= 5;
+            sellerManage.rebelLove -= 1;
         }
         BtnClear();
         loadScene = true;
@@ -383,20 +381,21 @@ public class customerManage : MonoBehaviour
                 if (customerNum == 159)
                 {
                     customerText.SetMsg("정말 고마워요!");
-                    sellerManage.rebelLove += 5;
+                    sellerManage.rebelLove += 1;
                     sellerManage.rebelEvent = true;
                     
                 }
                 else if (customerNum == 160)
                 {
                     customerText.SetMsg("아주 좋아!");
-                    sellerManage.rebelLove += 5;
+                    sellerManage.rebelLove += 1;
                     sellerManage.rebelEvent2 = false;
+
                 }
                 else if (customerNum == 161)
                 {
                     customerText.SetMsg("협조에 감사드립니다.");
-                    sellerManage.govermentLove += 5;
+                    sellerManage.govermentLove += 1;
                 }
 
             }
@@ -405,19 +404,19 @@ public class customerManage : MonoBehaviour
                 if (customerNum == 159)
                 {
                     customerText.SetMsg("이거 치유물약 맞아?!");
-                    sellerManage.rebelLove -= 5;
+                    sellerManage.rebelLove -= 1;
                     sellerManage.rebelEvent = false;
                 }
                 else if (customerNum == 160)
                 {
                     customerText.SetMsg("날 놀리는건가?");
-                    sellerManage.rebelLove -= 5;
+                    sellerManage.rebelLove -= 1;
                     sellerManage.rebelEvent2 = true;
                 }
                 else if (customerNum == 161)
                 {
                     customerText.SetMsg("이런 엉터리 물약을 주다니.");
-                    sellerManage.govermentLove -= 5;
+                    sellerManage.govermentLove -= 1;
                 }
 
             }
