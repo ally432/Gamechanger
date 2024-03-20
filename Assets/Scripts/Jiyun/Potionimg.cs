@@ -3,10 +3,12 @@ using UnityEngine.EventSystems;
 
 public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    public Vector2 bottlePos, capPos;
+    public Vector2 DefaultPos, bottlePos, capPos;
     public GameObject bottle, cap, finalbottle, afbottle;  // 병&뚜껑
     public GameObject[] completepotions;    // 완성된 물약들
     public string cpotion, grade;  // 물약 이름
+    public static bool putdis, ontable = false;   // 충돌없이 드래그가 끝났을 경우
+    public static bool trash = false;   // 쓰레기통에 버렸는가?
 
     void Start()
     {
@@ -17,7 +19,7 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)  // 드래그 시작
     {
-        
+        DefaultPos = this.transform.position;   // 처음 위치
     }
     void IDragHandler.OnDrag(PointerEventData eventData)    // 드래그 중
     {
@@ -38,34 +40,54 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         transform.localPosition = localPos;
     }
 
-    void IEndDragHandler.OnEndDrag(PointerEventData eventData) // 드래그 끝
+    void IEndDragHandler.OnEndDrag(PointerEventData eventData) // 드래그 끝(원위치로)
     {
-        if(gameObject.name == "bottle"){    // 빈 물병
-            Dispenser.isIn = true;
+        if(gameObject.name == "bottle" && putdis){  // 빈 물병이 디스펜서에 
             Invoke("put", .1f);
-        }
-        if(gameObject.name == "after"){ // 디스펜서에서 나온 물병
+            putdis = false;
+        }        
+
+        else if(gameObject.name == "after" && ontable){ // 디스펜서에서 나온 물병이 테이블에
             Invoke("put2", .1f);
+            ontable = false;
+        }
+
+        else{
+            this.transform.position = DefaultPos;    // 원위치
         }
     }
 
-    void put(){ // 위치고정
+    void put(){ // 디스펜서에 고정
         this.transform.position = new Vector3(3.4f, -3.1f, 0f);
     }
 
-    void put2(){
+    void put2(){    // 테이블에 고정
         this.transform.position = new Vector3(-0.5f, -3.1f, 0f);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.name == "change" && gameObject.name == "cap"){
+        if(other.gameObject.name == "odispenser" && gameObject.name == "bottle"){   // 빈 물병이 디스펜서에 들어갔으면
+            Dispenser.isIn = true;
+            putdis = true;
+        }
+
+        else if(other.gameObject.name == "table" && gameObject.name == "after"){ // 디스펜서에서 나온 병이 테이블에 올려지면
+            ontable = true;
+            Dispenser.isOut = true;
+        }
+
+        else if(other.gameObject.name == "change" && gameObject.name == "cap"){
             afbottle.SetActive(false);    // 디스팬서에서 나온 물병
             cap.SetActive(false);   // 뚜껑
-            complete();
-        }   
+            Dispenser.isOut = false;
+            Dispenser.isDone = false;
+            Dispenser.clear = true;
+            complete();             
+        }
 
-        if(other.gameObject.name == "Trashcan"){
+        else if(other.gameObject.name == "Trashcan"){   // 쓰레기통에 버린 경우
+            trash = true;
             gameObject.SetActive(false);
             gameObject.transform.position = new Vector3(0f, -3f, 0f);
             bottle.transform.position = new Vector3(0f, -6.4f, 0f); // 빈 물병
@@ -76,7 +98,7 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             reload();
         }
 
-        if(other.gameObject.name == "customerimg"){
+        else if(other.gameObject.name == "customerimg"){    // 손님한테 물약 줬을 때
             customerManage.crush = true;
             gameObject.SetActive(false);
             gameObject.transform.position = new Vector3(0f, -3f, 0f);
@@ -89,10 +111,17 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         }
     }
 
-    void reload(){
+    void reload(){  // 쓰레기통에 버려지거나 손님에게 줬을 때 리로딩
         Dispenser.isDone = false;
         Dispenser.isDone2 = false;
         Dispenser.isIn = false;
+        Dispenser.gage = false;
+        Dispenser.isOut = false;
+        Dispenser.clear = false;
+        Dispenser.isFirst = true;
+        
+        putdis = false;
+        ontable = false;
     }
 
     public void complete(){

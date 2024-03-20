@@ -874,6 +874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -1122,6 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -1821,6 +1823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -1993,6 +1996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -2165,6 +2169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -2937,6 +2942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -3339,6 +3345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -4147,6 +4154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -4319,6 +4327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -5188,6 +5197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -5831,6 +5841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -6320,6 +6331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -6804,6 +6816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -7044,6 +7057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -7851,6 +7865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -8507,6 +8522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -8755,6 +8771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -9002,6 +9019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -9310,6 +9328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -9521,6 +9540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -9693,6 +9713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -10344,6 +10365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -10516,6 +10538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -11152,6 +11175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -11460,6 +11484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -11765,6 +11790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -11937,6 +11963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -12109,6 +12136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -12935,6 +12963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -14644,6 +14673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -16431,6 +16461,7 @@ MonoBehaviour:
   closeimg: {fileID: 323412632}
   notbottle: {fileID: 1586022262}
   yesbottle: {fileID: 1910720996}
+  gagebtn: {fileID: 1597969497}
   loadingbar: {fileID: 1949256544}
   loadingbar2: {fileID: 1864825180}
   speed: 40
@@ -16612,6 +16643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -17611,6 +17643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -17952,6 +17985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -18199,6 +18233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -19009,6 +19044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -19606,7 +19642,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 113, y: 113}
   m_EdgeRadius: 0
 --- !u!114 &1586022267
 MonoBehaviour:
@@ -19658,6 +19694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -19962,6 +19999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -20134,6 +20172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -20179,8 +20218,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.75, y: -256}
-  m_SizeDelta: {x: 259.08, y: 222.48}
+  m_AnchoredPosition: {x: -12.07, y: -238.74}
+  m_SizeDelta: {x: 217.71, y: 187.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1611952947
 BoxCollider2D:
@@ -20226,7 +20265,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 130, y: 100}
+  m_Size: {x: 150, y: 120}
   m_EdgeRadius: 0
 --- !u!50 &1611952948
 Rigidbody2D:
@@ -20383,6 +20422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -21003,6 +21043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -21175,6 +21216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -22026,6 +22068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -22484,6 +22527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -22656,6 +22700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -22828,6 +22873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -23000,6 +23046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -23172,6 +23219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -23643,6 +23691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -24295,7 +24344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.59, y: 0}
+  m_AnchoredPosition: {x: 21.589996, y: 0}
   m_SizeDelta: {x: -47.32, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864825180
@@ -24499,6 +24548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -24892,6 +24942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -25139,6 +25190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -25160,6 +25212,8 @@ GameObject:
   - component: {fileID: 1910720999}
   - component: {fileID: 1910720998}
   - component: {fileID: 1910721000}
+  - component: {fileID: 1910721002}
+  - component: {fileID: 1910721001}
   m_Layer: 5
   m_Name: after
   m_TagString: Untagged
@@ -25237,6 +25291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -25246,6 +25301,79 @@ MonoBehaviour:
   completepotions: []
   cpotion: 
   grade: 
+--- !u!61 &1910721001
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910720996}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 100, y: 200}
+  m_EdgeRadius: 0
+--- !u!50 &1910721002
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910720996}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1938368586
 GameObject:
   m_ObjectHideFlags: 0
@@ -25559,6 +25687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -25867,6 +25996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -26039,6 +26169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -26548,6 +26679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1910720996}
@@ -26773,6 +26905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d773fb691e049e48a68db57ad32a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPos: {x: 0, y: 0}
   bottlePos: {x: 0, y: 0}
   capPos: {x: 0, y: 0}
   bottle: {fileID: 1586022262}
@@ -27076,6 +27209,8 @@ GameObject:
   - component: {fileID: 2121259729}
   - component: {fileID: 2121259731}
   - component: {fileID: 2121259730}
+  - component: {fileID: 2121259733}
+  - component: {fileID: 2121259732}
   m_Layer: 5
   m_Name: odispenser
   m_TagString: Untagged
@@ -27141,6 +27276,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121259728}
   m_CullTransparentMesh: 1
+--- !u!50 &2121259732
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121259728}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &2121259733
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121259728}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 40, y: 5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 170, y: 120}
+  m_EdgeRadius: 0
 --- !u!1 &2130600924
 GameObject:
   m_ObjectHideFlags: 0
