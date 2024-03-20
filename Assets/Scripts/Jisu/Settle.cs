@@ -17,6 +17,8 @@ public class SettleScript : MonoBehaviour
     int interest = 10;
     int rent = 10;
 
+    public static bool trueEnding = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,14 +52,37 @@ public class SettleScript : MonoBehaviour
     {
         customerManage.money = nowMoney;
 
-        if(customerManage.money >= 0)        
+        if (sellerManage.Bad1) SceneManager.LoadScene("endingScene");  
+
+        if (sellerManage.Bad2) SceneManager.LoadScene("endingScene");
+
+        if (customerManage.money >= 0)
         {
             customerManage.dateIncrese();
             SceneManager.LoadScene("SaveScene");
         }
         else        // 파산 엔딩
         {
-            SceneManager.LoadScene("BankruptcyEnding");
+            SceneManager.LoadScene("endingScene");
+        }
+
+
+        if (date == 17)
+        {
+            if(customerManage.money <= 5000) // 사채업자가 요구한 돈 갚지 못하면
+            {
+                SceneManager.LoadScene("endingScene"); //끝
+            }
+            else
+            {
+                customerManage.dateIncrese();
+                SceneManager.LoadScene("SaveScene");
+            }
+        }
+        else if (date == 20)
+        {
+            SceneManager.LoadScene("endingScene");
+            
         }
     }
 }

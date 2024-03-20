@@ -71,6 +71,9 @@ public class sellerManage : MonoBehaviour
     public GameObject talkImage;
 
 
+    //엔딩 플래그드
+    static public bool Bad1 = false;//bad1, 반동분자 플래그
+    static public bool Bad2 = false;//bad2, 정부의 끄나풀 플래그
 
     public Image fadeInImg;
 
@@ -296,23 +299,25 @@ public class sellerManage : MonoBehaviour
         {
             excelnum = 40; // 여긴 1 뺀 수로
             whatperson = "goArmy1-1";
-            govermentLove -= 5;
+            govermentLove -= 1;
         }
         else if (excelnum == 89)
         {
             excelnum = 89;
             whatperson = "rebel2-1-1";
+            rebelLove += 1;
         }
         else if(excelnum == 99)
         {
             excelnum = 99;///
             whatperson = "rebel2-2-1";
+            rebelLove += 1;
         }
         else if(excelnum == 120)
         {
             excelnum = 120;
             whatperson = "goArmy2-1";
-            govermentLove -= 5;
+            Bad1 = true;
         }
         
         BtnClear();
@@ -324,7 +329,7 @@ public class sellerManage : MonoBehaviour
         {
             excelnum = 43;
             whatperson = "goArmy1-2";
-            govermentLove += 5;
+            govermentLove += 1;
         }
         /*else if (excelnum == 67)
         {
@@ -337,17 +342,19 @@ public class sellerManage : MonoBehaviour
         {
             excelnum = 91;
             whatperson = "rebel2-1-2";
+            rebelLove -= 1;
         }
         else if(excelnum == 99)
         {
             excelnum = 100;
             whatperson = "rebel2-2-2";
+            Bad2 = true;
         }
         else if(excelnum == 120)
         {
             excelnum = 123;
             whatperson = "goArmy2-2";
-            govermentLove += 5;
+            govermentLove += 1;
         }
         
 
