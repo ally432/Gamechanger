@@ -56,7 +56,6 @@ public class customerManage : MonoBehaviour
     bool moving = false;
     public static bool crush = false;   // 손님과 부딪쳤을때
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +84,7 @@ public class customerManage : MonoBehaviour
 
         making.gameObject.SetActive(false);
         customer.gameObject.SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -199,12 +199,10 @@ public class customerManage : MonoBehaviour
     }
 
     public void customerBtn() //물약을 주면 등급에 맞는 반응, 손님 가고 다음손님옴. 나중에 물약 드래그되면 실행되는 함수로 변경하기
-    {
-        
+    {    
         potionGradeCheck();
         StartCoroutine(nextCustomer());
-        crush = false;
-        
+        //crush = false;
     }
 
     IEnumerator nextCustomer()
