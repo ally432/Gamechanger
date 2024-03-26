@@ -2,16 +2,23 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 
-public class PotionBook : MonoBehaviour
+public class Potionbook : MonoBehaviour
 {
     public RectTransform panel;
     public GameObject plock, prev, next;    // 잠금 이미지
     public GameObject[] potions;    // 해금된 물약 사진
     public int currentpage = 0;    // 현재 페이지
     public TextMeshProUGUI ptext;   // 페이지
+    public static bool newpotion = false;   // 새로운 A등급 포션이 생성되었는가
 
     void Start() {
         ShowPage(currentpage);
+    }
+    void Update() {
+        if(newpotion){
+            ShowPage(currentpage);
+            newpotion = false;
+        }    
     }
     public void Open(){ // 노트 펼치기
         panel.DOLocalMoveY(0, 1f).SetEase(Ease.OutBack);
