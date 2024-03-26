@@ -12,6 +12,7 @@ public class SettleScript : MonoBehaviour
     public TextMeshProUGUI txtRent;
     public TextMeshProUGUI txtFinalMoney;
 
+    public static int endingNum = 0;
     int date = customerManage.getDate();
     int nowMoney = customerManage.getMoney();
     int interest = 10;
@@ -52,9 +53,15 @@ public class SettleScript : MonoBehaviour
     {
         customerManage.money = nowMoney;
 
-        if (sellerManage.Bad1) SceneManager.LoadScene("endingScene");  
+        if (sellerManage.Bad1) {
+            SceneManager.LoadScene("endingScene");
+            endingNum = 2;
+        }
 
-        if (sellerManage.Bad2) SceneManager.LoadScene("endingScene");
+        if (sellerManage.Bad2) {
+            SceneManager.LoadScene("endingScene");
+            endingNum = 3;
+        }
 
         if (customerManage.money >= 0)
         {
@@ -63,6 +70,7 @@ public class SettleScript : MonoBehaviour
         }
         else        // 파산 엔딩
         {
+            endingNum = 5;
             SceneManager.LoadScene("endingScene");
         }
 
@@ -71,6 +79,7 @@ public class SettleScript : MonoBehaviour
         {
             if(customerManage.money <= 5000) // 사채업자가 요구한 돈 갚지 못하면
             {
+                endingNum = 4;
                 SceneManager.LoadScene("endingScene"); //끝
             }
             else
@@ -79,8 +88,25 @@ public class SettleScript : MonoBehaviour
                 SceneManager.LoadScene("SaveScene");
             }
         }
+
         else if (date == 20)
         {
+            if (sellerManage.govermentLove == sellerManage.rebelLove)
+            {
+                endingNum = 1;
+            }
+            else if (sellerManage.govermentLove >= 2 && sellerManage.govermentLove > sellerManage.rebelLove) 
+            {
+                endingNum = 6;
+            }
+            else if (sellerManage.rebelLove>=2 && sellerManage.rebelLove > sellerManage.govermentLove)
+            {
+                endingNum = 7;
+            }
+            else if (sellerManage.rebelLove == 3 && sellerManage.govermentLove == 3)
+            {
+                endingNum = 8;
+            }
             SceneManager.LoadScene("endingScene");
             
         }
