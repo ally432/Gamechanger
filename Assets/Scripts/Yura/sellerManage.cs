@@ -44,7 +44,7 @@ public class sellerManage : MonoBehaviour
     bool noContracted = false; //모든 약초꾼과 계약하지 않은 상황에 true.
     bool specialDone = false;
     bool specialSituation = false;
-    public int addMoney; //재계약시 추가금
+    public static int addMoney; //재계약시 추가금
 
     static public int excelnum;
     public int inum; // 특별손님수세기
@@ -70,6 +70,7 @@ public class sellerManage : MonoBehaviour
 
     public GameObject talkImage;
 
+    public GameObject day1;
 
     //엔딩 플래그드
     static public bool Bad1 = false;//bad1, 반동분자 플래그
@@ -80,13 +81,14 @@ public class sellerManage : MonoBehaviour
     void Start()
     {
         sellerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
+        
 
         Debug.Log(currentdate);
         finalTrueHerbList.Clear(); //최종 허브 리스트 초기화 
         specialPersonList.Clear();
         inum = 0;
 
-        
+        day1.SetActive(false);
         talkImage.SetActive(false); // 말풍선 초기 비활성화
         openBtn.SetActive(false);
         contractBtn.SetActive(false);
@@ -506,6 +508,7 @@ public class sellerManage : MonoBehaviour
     {
         if (currentdate <4)
         {
+            day1.SetActive(true);
             day1HerbImg.enabled = true;
             day1HerbImg.sprite = herbImgDecide("waterBerry");
         }
