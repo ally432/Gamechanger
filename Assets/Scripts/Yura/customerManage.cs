@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using DG.Tweening;
 
 public class customerManage : MonoBehaviour
 {
@@ -56,14 +57,20 @@ public class customerManage : MonoBehaviour
     bool moving = false;
     public static bool crush = false;   // 손님과 부딪쳤을때
 
+    public GameObject talkImage;
+
     // Start is called before the first frame update
     void Start()
     {
+        customerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
+        moneyText = GameObject.Find("txt_Money").GetComponent<TextMeshProUGUI>();
+
         choice1.SetActive(false);
         choice2.SetActive(false);
         choice3.SetActive(false);
         moveBtn.SetActive(true);
         nextBtn.SetActive(false);
+        talkImage.SetActive(false);
 
         Debug.Log("현재 날짜"+date);
         herbList = sellerManage.getTrueContractHerbList();
@@ -72,9 +79,9 @@ public class customerManage : MonoBehaviour
             for (int i = 0; i < herbList.Count; i++)
                 Debug.Log(herbList[i]);
         }
-        customerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
-        moneyText = GameObject.Find("txt_Money").GetComponent<TextMeshProUGUI>();
+        
 
+        
         maxcheck(date);
         customerPick();
         showCustomerImg(Random.Range(0, 3));
@@ -171,6 +178,10 @@ public class customerManage : MonoBehaviour
     void showCustomerImg(int num)
     { 
         customerImg.sprite = customerImgList[num];
+        customerImg.transform.DOMoveY(1.9f, 0.5f);
+        talkImage.SetActive(true);
+
+
     }
 
 
@@ -207,10 +218,16 @@ public class customerManage : MonoBehaviour
 
     IEnumerator nextCustomer()
     {
-            yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.0f);
+
+        talkImage.SetActive(false);
+        customerImg.transform.DOMoveY(-5, 0.5f).OnComplete(() =>
+        {
+
         showCustomerImg(Random.Range(0, 3));
         customerPick();
         printOrderScript();
+        });
     }
 
     public void customerPick()

@@ -23,7 +23,8 @@ public class sellerManage : MonoBehaviour
 
     List<bool> sellerList = new List<bool>(); // 진짜 약초꾼, 가짜 약초꾼 오는 순서 저장 리스트 (true,false로 구분)
 
-    public Sprite[] sellerImgList = new Sprite[5]; // 약초꾼 이미지들 
+    public Sprite[] sellerImgList = new Sprite[5]; // 약초꾼 이미지들
+    public Sprite[] specialImgList = new Sprite[2]; // 특별손님 이미지들 
     public Image sellerImg;
 
     public Image day1HerbImg, day2HerbImg1, day2HerbImg2, day3HerbImg1, day3HerbImg2, day3HerbImg3, day4HerbImg1, day4HerbImg2, day4HerbImg3, day4HerbImg4,
@@ -72,12 +73,17 @@ public class sellerManage : MonoBehaviour
 
     public GameObject day1;
 
+    public GameObject upDesk;
+
+    public GameObject herbImg;
+
     //엔딩 플래그드
     static public bool Bad1 = false;//bad1, 반동분자 플래그
     static public bool Bad2 = false;//bad2, 정부의 끄나풀 플래그
 
     public Image fadeInImg;
 
+    public bool peopleOut = false; // 사람 들어가고 나오는거 판.
     void Start()
     {
         sellerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
@@ -88,6 +94,7 @@ public class sellerManage : MonoBehaviour
         specialPersonList.Clear();
         inum = 0;
 
+        herbImg.SetActive(true);
         day1.SetActive(false);
         talkImage.SetActive(false); // 말풍선 초기 비활성화
         openBtn.SetActive(false);
@@ -96,7 +103,9 @@ public class sellerManage : MonoBehaviour
         choice1.SetActive(false);
         choice2.SetActive(false);
         choice3.SetActive(false);
+        upDesk.SetActive(true);
         fadeInImg.enabled = false;
+        
 
         day1HerbImg.enabled = false;
         day2HerbImg1.enabled = false;
@@ -151,9 +160,7 @@ public class sellerManage : MonoBehaviour
             showImg("seller");
             openBtn.SetActive(true);
 
-            showSellerTalk();
-            sellerHerb();
-            showSellerHerb();
+            
         }
 
     }
@@ -167,15 +174,17 @@ public class sellerManage : MonoBehaviour
         {
             openBtn.SetActive(true);
             talkImage.SetActive(false);
+            
             sellerImg.transform.DOMoveY(-100, 1.0f).OnComplete(() =>
             {
                 showImg("seller");
-                showSellerTalk();
+                
             });
             
             
-            sellerHerb();
-            showSellerHerb();
+            
+
+            
             specialDone = false;
             
 
@@ -453,16 +462,25 @@ public class sellerManage : MonoBehaviour
         
         yield return new WaitForSeconds(3.0f);
 
-        talkImage.SetActive(false);
 
-        sellerImg.transform.DOMoveY(-100, 0.5f).OnComplete(() => {
-        // 말풍선 unvisible
-        
-        Debug.Log("next people");
-        showImg("seller");
-        showSellerTalk();
-        sellerHerb();
-        showSellerHerb();
+        herbImg.transform.DOMoveY(55, 1.0f).OnComplete(() =>
+        {
+            upDesk.SetActive(true);
+
+            talkImage.SetActive(false);
+
+            sellerImg.transform.DOMoveY(-100, 0.5f).OnComplete(() =>
+            {
+                // 말풍선 unvisible
+
+
+                Debug.Log("next people");
+                showImg("seller");
+                
+                    
+                    
+                
+            });
         });
     }
 
@@ -474,21 +492,36 @@ public class sellerManage : MonoBehaviour
         {
             int randomIndex = Random.Range(0, 3);
             sellerImg.sprite = sellerImgList[randomIndex];
-            contractBtn.SetActive(true);
-            denyBtn.SetActive(true);
+            
         }
 
 
         else if (person == "granpa")
         {
-            sellerImg.sprite = sellerImgList[3];
+            sellerImg.sprite = specialImgList[0];
         }
         else if (person == "army")
         {
-            sellerImg.sprite = sellerImgList[4];
+            sellerImg.sprite = specialImgList[1];
         }
-        sellerImg.transform.DOMoveY(60, 0.5f).OnComplete(() => {
+
+        
+        sellerImg.transform.DOMoveY(35, 2.0f).OnComplete(() => {
             talkImage.SetActive(true);
+            if(person == "seller")
+            {
+                contractBtn.SetActive(true);
+                denyBtn.SetActive(true);
+                showSellerTalk();
+                sellerHerb();
+                showSellerHerb();
+                Debug.Log("이제 데스크 투명된다");
+                upDesk.SetActive(false);//////////
+                herbImg.transform.DOMoveY(-10, 0.5f);
+            }
+           
+            
+
         });
     }
 
