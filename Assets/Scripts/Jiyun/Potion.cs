@@ -215,9 +215,23 @@ public class Potion : MonoBehaviour
     void Info(){    // 해금된 물약도감
         List<Dictionary<string, object>> potionimg = CSVReader.Read("potioninfo");
         for (int i = 0; i < 17; i++){
-            if(potionname == potionimg[i]["name"].ToString()){
-                    plist.Add(i);   // 게임 오브젝트 배열은 1~17
+            bool samenum = false;   // 숫자 중복 확인
+            foreach(int n in plist){
+                if(n == i){
+                    samenum = true;
+                    break;  // foreach문 탈출
+                }
             }
+
+            if(!samenum && potionname == potionimg[i]["name"].ToString()){  // 중복되지 않는 숫자들만 추가
+                Potionbook.newpotion = true;
+                plist.Add(i);
+            }
+
+            /*if(potionname == potionimg[i]["name"].ToString()){
+                    plist.Add(i);   // 게임 오브젝트 배열은 1~17
+            }*/
+
         }
     }
     public void Remove(){
@@ -226,5 +240,6 @@ public class Potion : MonoBehaviour
         Dragp.specialherb.Clear();  // 허브들과 부재료 리스트 초기화
         potionnum = 0;
         potionname = null;
+        Controller.remake = true;   // 화력, 시간 초기 설정으로
     }
 }

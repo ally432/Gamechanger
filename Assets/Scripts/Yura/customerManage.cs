@@ -143,7 +143,7 @@ public class customerManage : MonoBehaviour
     }
     private void Awake()
     {
-        time = 60;  // 잠깐 바꿈
+        time = 50;  // 잠깐 바꿈
         StartCoroutine(StartTimer());
     }
 
@@ -543,6 +543,7 @@ public class customerManage : MonoBehaviour
         Dragp.specialherb.Clear();  // 넣은 허브와 특별 부재료
         Potion.potionnum = 0;   // 만든 포션의 점수
         Potion.potionname = null;   // 만든 포션의 이름
+        Controller.remake = true;   // 화력, 시간 원위치로
     }
 }
 
