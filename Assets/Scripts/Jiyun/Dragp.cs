@@ -102,7 +102,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 List<Dictionary<string, object>> data = CSVReader.Read("herbcost");
                 for (int i = 0; i < 6; i++){
                     if(data[i]["name"].ToString() == gameObject.name){  // 부딪힌 약초 이름을 엑셀에서 찾기
-                        cost -= int.Parse(data[i]["cost"].ToString());  // 잔액에서 약초값 빼기
+                        cost -= int.Parse(data[i]["cost"].ToString()) + sellerManage.addMoney;  // 잔액에서 약초값 빼기(중복 계약시 요금 더 나감)
                     }
                 } 
                 ctext.text = cost.ToString();   // 바뀐 금액 갱신
