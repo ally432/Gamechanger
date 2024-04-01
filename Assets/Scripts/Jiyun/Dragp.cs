@@ -29,12 +29,10 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         bowl4.SetActive(false);
         
         day = customerManage.getDate();
-        Debug.Log(day);
         
         if(day > 1){
             spec1.SetActive(true);
             bowl1.SetActive(true);
-            Debug.Log("bowl");
         }
         if(day > 5){
             spec1.SetActive(true);
