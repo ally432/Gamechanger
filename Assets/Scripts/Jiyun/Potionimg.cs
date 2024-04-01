@@ -83,7 +83,8 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             Dispenser.isOut = false;
             Dispenser.isDone = false;
             Dispenser.clear = true;
-            complete();             
+            Effect.effect = true;   // 펑 효과
+            Invoke("complete", .4f);           
         }
 
         else if(other.gameObject.name == "Trashcan"){   // 쓰레기통에 버린 경우
