@@ -227,11 +227,6 @@ public class Potion : MonoBehaviour
                 Potionbook.newpotion = true;
                 plist.Add(i);
             }
-
-            /*if(potionname == potionimg[i]["name"].ToString()){
-                    plist.Add(i);   // 게임 오브젝트 배열은 1~17
-            }*/
-
         }
     }
     public void Remove(){
