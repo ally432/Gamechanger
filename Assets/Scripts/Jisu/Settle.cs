@@ -11,23 +11,50 @@ public class SettleScript : MonoBehaviour
     public TextMeshProUGUI txtInterest;
     public TextMeshProUGUI txtRent;
     public TextMeshProUGUI txtFinalMoney;
+    public TextMeshProUGUI textDebt;
+
+
+    
+    public TextMeshProUGUI txtInterest2;
+    public TextMeshProUGUI txtRent2;
+    public TextMeshProUGUI txtFinalMoney2;
+    public TextMeshProUGUI textDebt2;
+
 
     public static int endingNum = 0;
     int date = customerManage.getDate();
     int nowMoney = customerManage.getMoney();
     int interest = 10;
     int rent = 10;
+    int debt = 5000;
 
     public static bool trueEnding = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        txtInterest2.enabled = false;
+        txtRent2.enabled = false;
+        txtFinalMoney2.enabled = false;
+        textDebt2.enabled = false;
+
+
+        txtInterest.enabled = false;
+        textDebt.enabled = false;
+        txtRent.enabled = false;
+
+
         txtDate.text = "DAY " + date;
         txtNowMoney.text = nowMoney + " 원";
         int plus = (date/5) * 200;
         rent += plus;
-        Invoke("SettleMoney", 0.5f);
+        StartCoroutine(SettleMoney());
+       
+
+        
+
+       
     }
 
     // Update is called once per frame
@@ -36,17 +63,43 @@ public class SettleScript : MonoBehaviour
 
     }
 
-    void SettleMoney()
+    IEnumerator SettleMoney()
     {
+        yield return new WaitForSeconds(0.5f);
+
+        txtInterest.enabled = true;
+        txtInterest2.enabled = true;
         txtInterest.text = interest + " 원";
+        StartCoroutine(RentMoney());
+
+    }
+    IEnumerator RentMoney()
+    {
+        yield return new WaitForSeconds(0.5f);
+        txtRent2.enabled = true;
+        txtRent.enabled = true;
         txtRent.text = rent + " 원";
         nowMoney -= (interest + rent);
-        Invoke("FinalMoney", 0.5f);
+        if (date == 17)
+        {
+            Invoke("DebtMoney", 1.0f);
+        }
+        Invoke("FinalMoney", 1.0f);
+
     }
 
     void FinalMoney()
     {
+        txtFinalMoney2.enabled = true;
         txtFinalMoney.text = nowMoney + " 원";      
+    }
+
+    void DebtMoney()
+    {
+        textDebt2.enabled = true;
+        textDebt.enabled = true;
+        textDebt.text = debt + " 원";
+        nowMoney -= 5000;
     }
 
     public void NextScene()

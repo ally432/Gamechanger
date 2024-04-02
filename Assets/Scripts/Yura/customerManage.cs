@@ -143,7 +143,7 @@ public class customerManage : MonoBehaviour
     }
     private void Awake()
     {
-        time = 50;  // 잠깐 바꿈
+        time = 30;  // 잠깐 바꿈
         StartCoroutine(StartTimer());
     }
 

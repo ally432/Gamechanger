@@ -71,7 +71,7 @@ public class sellerManage : MonoBehaviour
 
     public GameObject talkImage;
 
-    public GameObject day1;
+    public GameObject day1,day2,day3,day4,day5,day6;
 
     public GameObject upDesk;
 
@@ -96,6 +96,11 @@ public class sellerManage : MonoBehaviour
 
         herbImg.SetActive(true);
         day1.SetActive(false);
+        day2.SetActive(false);
+        day3.SetActive(false);
+        day4.SetActive(false);
+        day5.SetActive(false);
+        day6.SetActive(false);
         talkImage.SetActive(false); // 말풍선 초기 비활성화
         openBtn.SetActive(false);
         contractBtn.SetActive(false);
@@ -463,7 +468,7 @@ public class sellerManage : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
 
 
-        herbImg.transform.DOMoveY(55, 1.0f).OnComplete(() =>
+        herbImg.transform.DOMoveY(60, 1.0f).OnComplete(() =>
         {
             upDesk.SetActive(true);
 
@@ -517,7 +522,7 @@ public class sellerManage : MonoBehaviour
                 showSellerHerb();
                 Debug.Log("이제 데스크 투명된다");
                 upDesk.SetActive(false);//////////
-                herbImg.transform.DOMoveY(-10, 0.5f);
+                herbImg.transform.DOMoveY(-13, 0.5f);
             }
            
             
@@ -545,16 +550,18 @@ public class sellerManage : MonoBehaviour
             day1HerbImg.enabled = true;
             day1HerbImg.sprite = herbImgDecide("waterBerry");
         }
-        else if (currentdate <8)
+        else if (currentdate <6)
         {
+            day2.SetActive(true);
             day2HerbImg1.enabled = true;
             day2HerbImg2.enabled = true;
             day2HerbImg1.sprite = herbImgDecide("waterBerry");
             day2HerbImg2.sprite = herbImgDecide("silverFlame");
         }
 
-        else if (currentdate < 12)
+        else if (currentdate < 8)
         {
+            day3.SetActive(true);
             day3HerbImg1.enabled = true;
             day3HerbImg2.enabled = true;
             day3HerbImg3.enabled = true;
@@ -563,8 +570,9 @@ public class sellerManage : MonoBehaviour
             day3HerbImg3.sprite = herbImgDecide("wadadakPepper");
         }
 
-        else if (currentdate < 16)
+        else if (currentdate < 12)
         {
+            day4.SetActive(true);
             day4HerbImg1.enabled = true;
             day4HerbImg2.enabled = true;
             day4HerbImg3.enabled = true;
@@ -574,8 +582,9 @@ public class sellerManage : MonoBehaviour
             day4HerbImg3.sprite = herbImgDecide("wadadakPepper");
             day4HerbImg4.sprite = herbImgDecide("shadowHerb");
         }
-        else if (currentdate < 20)
+        else if (currentdate < 16)
         {
+            day5.SetActive(true);
             day5HerbImg1.enabled = true;
             day5HerbImg2.enabled = true;
             day5HerbImg3.enabled = true;
@@ -589,6 +598,7 @@ public class sellerManage : MonoBehaviour
         }
         else
         {
+            day6.SetActive(true);
             day6HerbImg1.enabled = true;
             day6HerbImg2.enabled = true;
             day6HerbImg3.enabled = true;

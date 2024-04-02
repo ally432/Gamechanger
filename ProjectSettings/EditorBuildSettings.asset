@@ -24,9 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Jisu/nightScene.unity
     guid: eb0b4e08ee97a4420bbe8628cf277f82
   - enabled: 1
+    path: Assets/Scenes/Yura/endingScene.unity
+    guid: b1cb6b995cf1c4a28add960ad07b7ba5
+  - enabled: 1
     path: Assets/Scenes/Jisu/SaveScene.unity
     guid: aa06f99b0a115e4429c0576470b20fe3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jisu/BankruptcyEnding.unity
     guid: 797dd3d189f64a348b0311d59b52cd48
   m_configObjects: {}
