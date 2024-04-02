@@ -693,7 +693,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!1 &90656556
 GameObject:
@@ -2310,7 +2309,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!212 &234117572
 SpriteRenderer:
@@ -2596,7 +2594,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!1 &245319020
 GameObject:
@@ -3585,7 +3582,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!50 &300290674
 Rigidbody2D:
@@ -6342,7 +6338,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!114 &527607264
 MonoBehaviour:
@@ -12556,7 +12551,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!1 &1109365968
 GameObject:
@@ -13526,7 +13520,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!222 &1164036458
 CanvasRenderer:
@@ -13758,7 +13751,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!212 &1171402807
 SpriteRenderer:
@@ -16281,7 +16273,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!222 &1376340511
 CanvasRenderer:
@@ -16723,7 +16714,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!212 &1435588173
 SpriteRenderer:
@@ -17175,8 +17165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0400391, y: 0}
-  m_SizeDelta: {x: -2.08, y: 0}
+  m_AnchoredPosition: {x: -122.57, y: 0}
+  m_SizeDelta: {x: -245.15, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1455782001
 GameObject:
@@ -18616,7 +18606,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!61 &1553637392
 BoxCollider2D:
@@ -20402,7 +20391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 406, y: -85}
+  m_AnchoredPosition: {x: 406, y: -85.00001}
   m_SizeDelta: {x: -427.48, y: -609.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633493588
@@ -21230,7 +21219,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!61 &1710733046
 BoxCollider2D:
@@ -25680,7 +25668,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!212 &2041981747
 SpriteRenderer:
@@ -27041,7 +27028,6 @@ MonoBehaviour:
   bowl4: {fileID: 1769601415}
   getherb: []
   ctext: {fileID: 825113900}
-  cost: 0
   day: 0
 --- !u!212 &2135758415
 SpriteRenderer:
