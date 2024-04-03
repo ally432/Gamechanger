@@ -12,7 +12,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public static List<String> specialherb = new List<String>();    // 넣은 약초와 스페셜 부재료 리스트
     public GameObject leaf, spec1, spec2, spec3, spec4, bowl1, bowl2, bowl3, bowl4;
     public List<String> getherb = new List<string>();   // 해금된 약초 리스트
-    public TextMeshProUGUI ctext;   // 소지금 텍스트
+    public TextMeshProUGUI ctext, popup;   // 소지금 텍스트
     public int day; // 날짜
 
     void Start()
@@ -93,12 +93,22 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     void OnTriggerEnter2D(Collider2D other) // 충돌 발생
     {
         if(other.gameObject.tag.Equals("putzone")){
+            if(putgreds != null){   // 이미 리스트에 들어있는지 확인
+                for(int i = 0; i < putgreds.Count; i++){
+                    if(putgreds[i].Contains(gameObject.name)){
+                        popup.text = "이미 들어간 재료입니다!";
+                        return;
+                    }
+                }
+            }
+                
+            // 사운드는 밑에만 넣기!
             putgreds.Add(gameObject.name);
             if(gameObject.tag.Equals("herb")){  // 넣은게 허브라면..
                 List<Dictionary<string, object>> data = CSVReader.Read("herbcost");
                 for (int i = 0; i < 6; i++){
                     if(data[i]["name"].ToString() == gameObject.name){  // 부딪힌 약초 이름을 엑셀에서 찾기
-                        customerManage.money -= int.Parse(data[i]["cost"].ToString()) + sellerManage.addMoney;  // 잔액에서 약초값 빼기
+                            customerManage.money -= int.Parse(data[i]["cost"].ToString()) + sellerManage.addMoney;  // 잔액에서 약초값 빼기
                     }
                 } 
                 ctext.text = customerManage.money.ToString();   // 바뀐 금액 갱신
@@ -108,7 +118,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 if(gameObject.tag.Equals("special")){
                     specialherb.Add(gameObject.name);   // 스페셜 부재료(seasoning1, 2, 3, 4)
                 }
-            }
+            }            
         }
     }
 }
