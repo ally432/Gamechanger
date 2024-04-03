@@ -143,7 +143,7 @@ public class customerManage : MonoBehaviour
     }
     private void Awake()
     {
-        time = 30;  // 잠깐 바꿈
+        time = 60;  // 잠깐 바꿈
         StartCoroutine(StartTimer());
     }
 
@@ -389,7 +389,7 @@ public class customerManage : MonoBehaviour
         string strMoney;
         int ranNumRe = Random.Range(0, 5);
 
-        potionGrade = Potion.Getpotiongrade();
+        potionGrade = Potionimg.finalPotionGrade();
 
         if (special)
         {
@@ -438,6 +438,8 @@ public class customerManage : MonoBehaviour
 
             }
 
+            Potion.differentPotion = false;
+            Potion.failPotion = false;
             special = false;
             moving = false;
             StartCoroutine(MoveScene());
@@ -472,8 +474,14 @@ public class customerManage : MonoBehaviour
                 break;
         }
 
+        
         reaction = customerReaction_Dialog[ranNumRe]["content"].ToString();
+        if (Potion.differentPotion) { reaction = "내가 원한 물약은 아니야..."; }
+        if (Potion.failPotion) { reaction = "내가 주문한 대로는 만들어 주지 않았네."; }
+        
         customerText.SetMsg(reaction);
+        Potion.differentPotion = false;
+        Potion.failPotion = false;
 
     }
 
@@ -485,7 +493,7 @@ public class customerManage : MonoBehaviour
         {
             specialPeopleNum = 63;
             person = special_Dialog[specialPeopleNum]["person"].ToString();
-            customerNum = 159;
+            customerNum = 1;
             special = true;
             showCustomerImg(3);
             printSpecialScript(person);
@@ -511,7 +519,7 @@ public class customerManage : MonoBehaviour
             special = true;
             specialPeopleNum = 161;
             person = special_Dialog[specialPeopleNum]["person"].ToString();
-            customerNum = 163;
+            customerNum = 161;
             showCustomerImg(6);
             printSpecialScript(person);
         }
