@@ -23,7 +23,7 @@ public class Potion : MonoBehaviour
     public Canvas customer, making; // 손님오는 캔버스, 만드는 캔버스
     public static bool makeover = false;    // 제조버튼 누르고 돌아왔을 때
     public static bool push = false;    // 제조 버튼 눌렀을 때
-    public GameObject resetbtn; // 리셋 버튼
+    public GameObject resetbtn, bubble; // 리셋 버튼, 버블 효과
 
     public static bool differentPotion = false;
     public static bool failPotion = false;
@@ -43,18 +43,25 @@ public class Potion : MonoBehaviour
     }
 
     public void End(){  // 제조 버튼 클릭
-        int num = customerManage.customerNum + 1;
-        gradenum(num);
-        Debug.Log(potionnum);
-        Debug.Log(Getpotiongrade().ToString());
-        Debug.Log(potionname);
-        currentValue = 0f;
-        ploadingbar.fillAmount = 0f;
+        if(!push){
+            resetbtn.SetActive(false);
+            bubble.SetActive(!bubble.activeSelf);   // 버블 활성화
+            int num = customerManage.customerNum + 1;
+            gradenum(num);
+            Debug.Log(potionnum);
+            Debug.Log(Getpotiongrade().ToString());
+            Debug.Log(potionname);
+            push = true;
+            currentValue = 0f;
+            ploadingbar.fillAmount = 0f;
+        }
     }
 
     void Move(){
         making.gameObject.SetActive(false);
         customer.gameObject.SetActive(true);
+        resetbtn.SetActive(true);
+        bubble.SetActive(!bubble.activeSelf);
         makeover = true;
         ploadingbar.fillAmount = 0f;
     }

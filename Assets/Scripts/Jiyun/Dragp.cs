@@ -97,6 +97,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 for(int i = 0; i < putgreds.Count; i++){
                     if(putgreds[i].Contains(gameObject.name)){
                         popup.text = "이미 들어간 재료입니다!";
+                        Invoke("None", 1f);
                         return;
                     }
                 }
@@ -120,5 +121,8 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 }
             }            
         }
+    }
+    void None(){
+        popup.text = "";
     }
 }
