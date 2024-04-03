@@ -552,6 +552,8 @@ public class customerManage : MonoBehaviour
         Potion.potionnum = 0;   // 만든 포션의 점수
         Potion.potionname = null;   // 만든 포션의 이름
         Controller.remake = true;   // 화력, 시간 원위치로
+
+        Potion.push = false;
     }
 }
 
