@@ -23,7 +23,7 @@ public class Potion : MonoBehaviour
     public Canvas customer, making; // 손님오는 캔버스, 만드는 캔버스
     public static bool makeover = false;    // 제조버튼 누르고 돌아왔을 때
     public static bool push = false;    // 제조 버튼 눌렀을 때
-    public GameObject resetbtn, bubble; // 리셋 버튼, 버블 효과
+    public GameObject resetbtn, bubble, fireflame; // 리셋 버튼, 버블, 불씨 효과
 
     public static bool differentPotion = false;
     public static bool failPotion = false;
@@ -46,11 +46,13 @@ public class Potion : MonoBehaviour
         if(!push){
             resetbtn.SetActive(false);
             bubble.SetActive(!bubble.activeSelf);   // 버블 활성화
+            fireflame.SetActive(!fireflame.activeSelf); // 불씨 활성화
             int num = customerManage.customerNum + 1;
             gradenum(num);
             Debug.Log(potionnum);
             Debug.Log(Getpotiongrade().ToString());
             Debug.Log(potionname);
+            Controller.isFadein = true; // 불 이미지
             push = true;
             currentValue = 0f;
             ploadingbar.fillAmount = 0f;
@@ -62,6 +64,8 @@ public class Potion : MonoBehaviour
         customer.gameObject.SetActive(true);
         resetbtn.SetActive(true);
         bubble.SetActive(!bubble.activeSelf);
+        fireflame.SetActive(!fireflame.activeSelf);
+        Controller.isFadein = false;    // 불 보여주는거 끝!
         makeover = true;
         ploadingbar.fillAmount = 0f;
     }

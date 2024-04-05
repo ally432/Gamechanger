@@ -12,9 +12,9 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public static List<String> specialherb = new List<String>();    // 넣은 약초와 스페셜 부재료 리스트
     public GameObject leaf, spec1, spec2, spec3, spec4, bowl1, bowl2, bowl3, bowl4;
     public List<String> getherb = new List<string>();   // 해금된 약초 리스트
-    public TextMeshProUGUI ctext, popup;   // 소지금 텍스트
+    public TextMeshProUGUI ctext, popup, change;   // 소지금 텍스트
     public int day; // 날짜
-    public bool tutorial = true;   // 튜토리얼
+    //public bool tutorial = true;   // 튜토리얼
 
     void Start()
     {
@@ -68,13 +68,6 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         ctext.text = customerManage.money.ToString();   // 초기금 보여주기
     }
 
-    void Update()
-    {
-        if(tutorial){
-
-        }
-    }
-
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)  // 드래그 시작
     {
         DefaultPos = this.transform.position;
@@ -105,7 +98,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 for(int i = 0; i < putgreds.Count; i++){
                     if(putgreds[i].Contains(gameObject.name)){
                         popup.text = "이미 들어간 재료입니다!";
-                        Invoke("None", 1f);
+                        Invoke("None1", 1f);
                         return;
                     }
                 }
@@ -118,6 +111,8 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 for (int i = 0; i < 6; i++){
                     if(data[i]["name"].ToString() == gameObject.name){  // 부딪힌 약초 이름을 엑셀에서 찾기
                             customerManage.money -= int.Parse(data[i]["cost"].ToString()) + sellerManage.addMoney;  // 잔액에서 약초값 빼기
+                            change.text = "-" + (int.Parse(data[i]["cost"].ToString()) + sellerManage.addMoney);    // 빠지는 돈 안내
+                            Invoke("None2", .5f);
                     }
                 } 
                 ctext.text = customerManage.money.ToString();   // 바뀐 금액 갱신
@@ -130,7 +125,10 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             }            
         }
     }
-    void None(){
+    void None1(){   // 이미 들어간 재료 안내
         popup.text = "";
+    }
+    void None2(){   // 빠지는 돈 안내
+        change.text = "";
     }
 }
