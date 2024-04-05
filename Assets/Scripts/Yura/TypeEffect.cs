@@ -44,9 +44,20 @@ public class TypeEffect : MonoBehaviour
             EffectEnd();
             return;
         }
+
+        if (targetMsg[index].Equals('#'))
+        {
+            //줄바꿈 하고
+            msgText.text += "\n";
+            
+
+        }
+        
         msgText.text += targetMsg[index];
         index++;
+            
         Invoke("Effecting", interval);
+
     }
     void EffectEnd()
     {

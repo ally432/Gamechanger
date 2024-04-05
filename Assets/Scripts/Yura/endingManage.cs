@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class endingManage : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class endingManage : MonoBehaviour
     public int excelNum = 0;
     string endingName;
     bool SceneEnd = false;
+    int endingNum = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,9 @@ public class endingManage : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !SceneEnd)
         {
+            Debug.Log("click");
             printScript();
+            
         }
         else
         {
@@ -35,23 +40,27 @@ public class endingManage : MonoBehaviour
         List<Dictionary<string, object>> Dialog = CSVReader.Read("endings");
         if (endingName != Dialog[excelNum]["ending"].ToString())
         {
+            Debug.Log("different");
             SceneEnd = true;
             return;
         }
         else
         {
             string content = Dialog[excelNum]["content"].ToString();
+            Debug.Log(content);
             script1.SetMsg(content);
+            excelNum++;
         }
     }
 
     void endingChoice()
     {
-        switch (SettleScript.endingNum)
+        switch (endingNum) //SettleScript.endingNum
         {
             case 1:
-                endingName = "극적인 균형";
+                endingName = "True:극적인 균형";
                 excelNum = findExcelNum(endingName);
+                Debug.Log(excelNum);
                 break;
             case 2:
                 endingName = "반동분자";
