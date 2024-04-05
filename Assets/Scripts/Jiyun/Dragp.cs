@@ -14,6 +14,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public List<String> getherb = new List<string>();   // 해금된 약초 리스트
     public TextMeshProUGUI ctext, popup;   // 소지금 텍스트
     public int day; // 날짜
+    public bool tutorial = true;   // 튜토리얼
 
     void Start()
     {
@@ -65,6 +66,13 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         }
 
         ctext.text = customerManage.money.ToString();   // 초기금 보여주기
+    }
+
+    void Update()
+    {
+        if(tutorial){
+
+        }
     }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)  // 드래그 시작
