@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class Controller : MonoBehaviour
 {
-    public GameObject arrow1, arrow2, arrow3, firefade1, firefade2, firefade3;    // plock은 잠금화면
+    public GameObject arrow1, arrow2, arrow3, firefade1, firefade2, firefade3, greenwater;    // plock은 잠금화면
     public GameObject[] clock;  // 스탑워치
     public int num = 0; // 몇 분?
     public static bool remake = false;  // reset 버튼 판단
@@ -25,6 +25,7 @@ public class Controller : MonoBehaviour
         firefade1.SetActive(false);
         firefade2.SetActive(false);
         firefade3.SetActive(false);
+        greenwater.SetActive(false);
     }
 
     void Update()
@@ -38,6 +39,7 @@ public class Controller : MonoBehaviour
             firefade1.SetActive(false);
             firefade2.SetActive(false);
             firefade3.SetActive(false);
+            greenwater.SetActive(false);
 
             time();
 
@@ -59,6 +61,8 @@ public class Controller : MonoBehaviour
             if(Potion.fire == "3"){
                 firefade3.SetActive(true);
             }
+
+            greenwater.SetActive(true);
 
             StartCoroutine(CoFadeIn());
         }
@@ -126,6 +130,8 @@ public class Controller : MonoBehaviour
             if(Potion.fire == "3"){
                 firefade3.GetComponent<CanvasRenderer>().SetAlpha(Mathf.Lerp(0f, 1f, elapsedTime));
             }
+
+            greenwater.GetComponent<CanvasRenderer>().SetAlpha(Mathf.Lerp(0f, 1f, elapsedTime));
 
             elapsedTime += Time.deltaTime;
             yield return null;
