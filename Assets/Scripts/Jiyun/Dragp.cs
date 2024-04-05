@@ -14,7 +14,6 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public List<String> getherb = new List<string>();   // 해금된 약초 리스트
     public TextMeshProUGUI ctext, popup, change;   // 소지금 텍스트
     public int day; // 날짜
-    //public bool tutorial = true;   // 튜토리얼
 
     void Start()
     {
@@ -105,6 +104,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             }
                 
             // 사운드는 밑에만 넣기!
+            Effect.wav = true;  // 파동 효과
             putgreds.Add(gameObject.name);
             if(gameObject.tag.Equals("herb")){  // 넣은게 허브라면..
                 List<Dictionary<string, object>> data = CSVReader.Read("herbcost");
@@ -122,7 +122,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 if(gameObject.tag.Equals("special")){
                     specialherb.Add(gameObject.name);   // 스페셜 부재료(seasoning1, 2, 3, 4)
                 }
-            }            
+            }   
         }
     }
     void None1(){   // 이미 들어간 재료 안내
