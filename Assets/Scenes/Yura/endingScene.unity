@@ -153,37 +153,37 @@ MonoBehaviour:
   endBut: {fileID: 1050272406}
   endingImgList:
   - {fileID: 0}
-  - {fileID: -2776288375179500265, guid: 3173ff03a230f4a69809a75cc54cdc95, type: 3}
+  - {fileID: -6156530456096434756, guid: df6f8879c63b043d99350368d999ff55, type: 3}
+  - {fileID: -830172166898604085, guid: ef70b25d2ebea4f64a0b15d210aac443, type: 3}
+  - {fileID: -3160262267662309836, guid: 484f0d8c5a0db43f699f113cb4d173b1, type: 3}
+  - {fileID: 1904817847255350478, guid: 76d35d8df86c54807848ae77af625d25, type: 3}
+  - {fileID: -8060889519244129801, guid: 28bad6156ed764dbb9e7dc6b858a8c03, type: 3}
+  - {fileID: -958755858239199594, guid: 0c6684fdffe4c40df8753e149107f712, type: 3}
+  - {fileID: -7182615086309441512, guid: 77e6f74c17c334dac8e1ddd86a6c355a, type: 3}
+  - {fileID: 7888603661124056903, guid: 83fe0056a22b9458d858f138decf6736, type: 3}
   - {fileID: -4969720197740269424, guid: 3c38d328e763a4104a0a75f50fb0a191, type: 3}
+  - {fileID: 7505430500711389170, guid: 4bd173bddd6c74d329671987f659a4aa, type: 3}
+  - {fileID: 3414695119748857952, guid: 4206b6121bf5b41c49706117cc5b4720, type: 3}
+  - {fileID: 1902010166610267310, guid: a86564d4cdad94f229db5c1a5c775fad, type: 3}
+  - {fileID: -9108338131253137664, guid: 89c2bbf8515174a66b200029817f15af, type: 3}
+  - {fileID: -9081219515942643943, guid: 9bda95c5cf9fd42e1beb60f3e8fa3234, type: 3}
+  - {fileID: 62434882099302598, guid: 443a95176225f43e5ba01f3777792daa, type: 3}
+  - {fileID: -2776288375179500265, guid: 3173ff03a230f4a69809a75cc54cdc95, type: 3}
+  - {fileID: 7888603661124056903, guid: 83fe0056a22b9458d858f138decf6736, type: 3}
+  - {fileID: 5604361209321468006, guid: 61ad4bfcc5eaa4e498e2ef177fe4cf94, type: 3}
   - {fileID: -2459102357500769003, guid: 3e13dab74e8ee4f7fa939e4a311a70ae, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4537411952604737018, guid: 9d27d67f64f6a40959eeeda57c24b6c9, type: 3}
+  - {fileID: 5604361209321468006, guid: 61ad4bfcc5eaa4e498e2ef177fe4cf94, type: 3}
+  - {fileID: -560330438439475714, guid: 29d689bc7c075444992a89ec2de125db, type: 3}
+  - {fileID: -4969720197740269424, guid: 3c38d328e763a4104a0a75f50fb0a191, type: 3}
+  - {fileID: 2827510829018746476, guid: 90ed02be06906472992e5c2b71f2b5a4, type: 3}
+  - {fileID: 7248854584365922635, guid: 6c27c78cc0dec4c13bc9d5bc28b10890, type: 3}
+  - {fileID: 4537411952604737018, guid: 9d27d67f64f6a40959eeeda57c24b6c9, type: 3}
+  - {fileID: -560330438439475714, guid: 29d689bc7c075444992a89ec2de125db, type: 3}
+  - {fileID: 2555367647144294544, guid: e812fae9d7d524cd4b1563fdc36b4b3b, type: 3}
+  - {fileID: -7182615086309441512, guid: 77e6f74c17c334dac8e1ddd86a6c355a, type: 3}
+  - {fileID: -7563013256997645702, guid: 2dc736b569a2f4c77a84c1a350f09eb1, type: 3}
+  - {fileID: 1904817847255350478, guid: 76d35d8df86c54807848ae77af625d25, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -797,7 +797,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1050272409}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 74342886}
+        m_TargetAssemblyTypeName: endingManage, Assembly-CSharp
+        m_MethodName: endButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1050272409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: 48}
-  m_SizeDelta: {x: 358, y: 380.8438}
+  m_AnchoredPosition: {x: -8.0195, y: 48}
+  m_SizeDelta: {x: 355.9922, y: 380.8438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109374924
 MonoBehaviour:
