@@ -119,6 +119,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &74342885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74342887}
+  - component: {fileID: 74342886}
+  m_Layer: 0
+  m_Name: endingManage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &74342886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74342885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171b155137fac4c079f0016641e3192c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script1: {fileID: 708774248}
+  excelNum: 0
+--- !u!4 &74342887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74342885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 220.84564, y: 562.2017, z: 151.1954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214954156
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,8 +553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.754395, y: -348}
-  m_SizeDelta: {x: 257.5088, y: 97.3602}
+  m_AnchoredPosition: {x: -4.2661, y: -359.00684}
+  m_SizeDelta: {x: 574.5062, y: 75.3465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &708774246
 MonoBehaviour:
@@ -564,8 +610,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -621,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a32555f37d09419babf9d37e84579e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharperSeconds: 0
+  CharperSeconds: 10
   targetMsg: 
   EndCursor: {fileID: 611862748}
 --- !u!1660057539 &9223372036854775807
@@ -631,3 +677,4 @@ SceneRoots:
   - {fileID: 214954159}
   - {fileID: 267660666}
   - {fileID: 296092830}
+  - {fileID: 74342887}
