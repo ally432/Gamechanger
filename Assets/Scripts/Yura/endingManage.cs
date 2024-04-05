@@ -13,9 +13,15 @@ public class endingManage : MonoBehaviour
     bool SceneEnd = false;
     int endingNum = 1;
 
+    public GameObject endBut;
+    public Sprite[] endingImgList = new Sprite[40];
+    public Image endingImg;
+
+    //1,2,3,4,5....
     // Start is called before the first frame update
     void Start()
     {
+        endBut.SetActive(false);
         script1 = GameObject.Find("script").GetComponent<TypeEffect>();
         endingChoice();
     }
@@ -27,10 +33,11 @@ public class endingManage : MonoBehaviour
         {
             Debug.Log("click");
             printScript();
-            
+
         }
-        else
+        else if(SceneEnd)
         {
+            endBut.SetActive(true);
             //버튼 활성화
         }
     }
@@ -46,11 +53,24 @@ public class endingManage : MonoBehaviour
         }
         else
         {
+            printImg(excelNum);
             string content = Dialog[excelNum]["content"].ToString();
             Debug.Log(content);
             script1.SetMsg(content);
             excelNum++;
         }
+    }
+
+    void printImg(int excelNum)
+    {
+        List<Dictionary<string, object>> Dialog = CSVReader.Read("endings");
+        int checkImg = int.Parse(Dialog[excelNum]["img"].ToString());
+
+        if (checkImg != 0)
+        {
+            endingImg.sprite = endingImgList[checkImg];
+        }
+
     }
 
     void endingChoice()
@@ -95,20 +115,20 @@ public class endingManage : MonoBehaviour
                 break;
 
         }
-            
-      
+
+
     }
 
     int findExcelNum(string endingName)
     {
         List<Dictionary<string, object>> Dialog = CSVReader.Read("endings");
 
-        for(int i = 0; i< 47; i++)
+        for (int i = 0; i < 47; i++)
         {
             if (endingName == Dialog[i]["ending"].ToString())
             {
                 return i;
-            }             
+            }
 
         }
 
