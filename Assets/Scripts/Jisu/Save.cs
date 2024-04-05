@@ -64,6 +64,9 @@ public class Save : MonoBehaviour
         // 플래그 저장
         PlayerPrefs.SetInt("SavedFlag1", System.Convert.ToInt16(sellerManage.rebelEvent));
         PlayerPrefs.SetInt("SavedFlag2", System.Convert.ToInt16(sellerManage.rebelEvent2));
+        PlayerPrefs.SetInt("SavedFlag3", System.Convert.ToInt16(sellerManage.Bad1));
+        PlayerPrefs.SetInt("SavedFlag4", System.Convert.ToInt16(sellerManage.Bad2));
+        
 
         Invoke("Saved", 1.0f);
     }

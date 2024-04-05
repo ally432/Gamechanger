@@ -23,42 +23,39 @@ public class TypeEffect : MonoBehaviour
     public void SetMsg(string msg)
     {
         targetMsg = msg;
-        EffectStart();
+        StartCoroutine(TypeText());
 
     }
 
 
-    void EffectStart()
+    IEnumerator TypeText()
     {
         msgText.text = "";
         index = 0;
         EndCursor.SetActive(false);
 
         interval = 0.5f / CharperSeconds;
-        Invoke("Effecting", interval);
-    }
-    void Effecting()
-    {
-        if (msgText.text == targetMsg)
+
+        while (index < targetMsg.Length)
         {
-            EffectEnd();
-            return;
+
+            if (targetMsg[index].Equals('#'))
+            {
+                // 줄바꿈 처리 코드
+                msgText.text += "\n";
+                index++;
+            }
+            else if (index < targetMsg.Length)
+            {
+                msgText.text += targetMsg[index];
+                index++;
+            }
+            yield return new WaitForSeconds(interval);
         }
 
-        if (index < targetMsg.Length && targetMsg[index].Equals('#'))
-        {
-            // 줄바꿈 처리 코드
-            msgText.text += "\n";
-            index++;
-        }
-        else if (index < targetMsg.Length)
-        {
-            msgText.text += targetMsg[index];
-            index++;
-        }
-        Invoke("Effecting", interval);
-
+        EffectEnd();
     }
+
     void EffectEnd()
     {
         EndCursor.SetActive(true);

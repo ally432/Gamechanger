@@ -14,6 +14,7 @@ public class sellerManage : MonoBehaviour
 
     public TypeEffect sellerText; // 약초꾼 텍스트 말풍선.
     public GameObject gamecursor;
+    public TextMeshProUGUI dateText;
 
     public GameObject contractBtn, denyBtn, choice1,choice2,choice3,openBtn;
     public Button choiceBtn1, choiceBtn2, choiceBtn3;
@@ -23,8 +24,8 @@ public class sellerManage : MonoBehaviour
 
     List<bool> sellerList = new List<bool>(); // 진짜 약초꾼, 가짜 약초꾼 오는 순서 저장 리스트 (true,false로 구분)
 
-    public Sprite[] sellerImgList = new Sprite[5]; // 약초꾼 이미지들
-    public Sprite[] specialImgList = new Sprite[2]; // 특별손님 이미지들 
+    public Sprite[] sellerImgList = new Sprite[15]; // 약초꾼 이미지들
+    public Sprite[] specialImgList = new Sprite[4]; // 특별손님 이미지들 
     public Image sellerImg;
 
     public Image day1HerbImg, day2HerbImg1, day2HerbImg2, day3HerbImg1, day3HerbImg2, day3HerbImg3, day4HerbImg1, day4HerbImg2, day4HerbImg3, day4HerbImg4,
@@ -87,7 +88,8 @@ public class sellerManage : MonoBehaviour
     void Start()
     {
         sellerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
-        
+        dateText = GameObject.Find("date").GetComponent<TextMeshProUGUI>();
+
 
         Debug.Log(currentdate);
         finalTrueHerbList.Clear(); //최종 허브 리스트 초기화 
@@ -140,6 +142,7 @@ public class sellerManage : MonoBehaviour
         
 
         currentdate = customerManage.getDate();
+        dateText.text = currentdate.ToString();
 
         specialPerson(); // 특별손님리스트 추{
 
@@ -273,6 +276,8 @@ public class sellerManage : MonoBehaviour
 
         Debug.Log("showspecialTalk" + excelnum);
         string content = special_Dialog[excelnum]["content"].ToString();
+        Debug.Log(content);
+        talkImage.SetActive(true);
         sellerText.SetMsg(content);
         
 
@@ -495,7 +500,7 @@ public class sellerManage : MonoBehaviour
 
         if (person == "seller")
         {
-            int randomIndex = Random.Range(0, 3);
+            int randomIndex = Random.Range(0, 14);
             sellerImg.sprite = sellerImgList[randomIndex];
             
         }
@@ -509,8 +514,15 @@ public class sellerManage : MonoBehaviour
         {
             sellerImg.sprite = specialImgList[1];
         }
+        else if (person == "rebel2")
+        {
+            sellerImg.sprite = specialImgList[2];
+        }
+        else if (person == "boy")
+        {
+            sellerImg.sprite = specialImgList[3];
+        }
 
-        
         sellerImg.transform.DOMoveY(35, 2.0f).OnComplete(() => {
             talkImage.SetActive(true);
             if(person == "seller")
