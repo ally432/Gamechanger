@@ -45,17 +45,17 @@ public class TypeEffect : MonoBehaviour
             return;
         }
 
-        if (targetMsg[index].Equals('#'))
+        if (index < targetMsg.Length && targetMsg[index].Equals('#'))
         {
-            //줄바꿈 하고
+            // 줄바꿈 처리 코드
             msgText.text += "\n";
-            
-
+            index++;
         }
-        
-        msgText.text += targetMsg[index];
-        index++;
-            
+        else if (index < targetMsg.Length)
+        {
+            msgText.text += targetMsg[index];
+            index++;
+        }
         Invoke("Effecting", interval);
 
     }
