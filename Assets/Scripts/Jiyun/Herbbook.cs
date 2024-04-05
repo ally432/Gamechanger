@@ -81,38 +81,8 @@ public class Herbbook : MonoBehaviour
             }
         }
         // 부재료 파트
-        if(page == 7){   // 아쿠아마린
-            if(day > 1){
-                herbs[page].SetActive(true);
-            }
-            else{
-                hlock.SetActive(true);
-            }
-        }
-        if(page == 8){   // 루비
-            if(day > 5){
-                herbs[page].SetActive(true);
-            }
-            else{
-                hlock.SetActive(true);
-            }
-        }
-        if(page == 9){   // 흑요석
-            if(day > 9){
-                herbs[page].SetActive(true);
-            }
-            else{
-                hlock.SetActive(true);
-            }
-        }
-        if(page == 10){   // 다이아, 마지막장은 다음 버튼 안 보임
-            next.SetActive(false);
-            if(day > 13){
-                herbs[page].SetActive(true);
-            }
-            else{
-                hlock.SetActive(true);
-            }
+        if(page == 7){ 
+            herbs[page].SetActive(true);
         }
           
         htext.text = (page+1).ToString();
