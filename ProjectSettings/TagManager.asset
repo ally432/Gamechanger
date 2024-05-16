@@ -3,18 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - floating mushroom
-  - putzone
-  - potiontag
-  - customertag
-  - bottle
-  - cap
-  - trash
-  - herb
-  - special
-  - simple
-  - one
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -51,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: New Layer 1
-    uniqueID: 516942347
-    locked: 0
-  - name: New Layer 2
-    uniqueID: 4191888849
     locked: 0
