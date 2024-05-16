@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Linq;
-using GooglePlayGames.BasicApi;
 using System;
 
 public class GameStart : MonoBehaviour
