@@ -10,8 +10,11 @@ public class Herbbook : MonoBehaviour
     public int currentpage = 0; // 현재 페이지
     public int day;
     public TextMeshProUGUI htext;   // 페이지
+    public AudioSource paper;
 
     void Start(){
+        paper = GetComponent<AudioSource>();
+
         day = customerManage.getDate();    // 날짜 가져오기
         ShowPage(currentpage);
     }
@@ -82,6 +85,7 @@ public class Herbbook : MonoBehaviour
         }
         // 부재료 파트
         if(page == 7){ 
+            next.SetActive(false);
             herbs[page].SetActive(true);
         }
           
@@ -89,6 +93,7 @@ public class Herbbook : MonoBehaviour
     }
 
     public void Prev(){ // 이전 페이지
+        paper.Play();
         currentpage--;
         
         if (currentpage >= 0){
@@ -96,6 +101,7 @@ public class Herbbook : MonoBehaviour
         }     
     }
     public void Next(){ // 다음 페이지
+        paper.Play();
         currentpage++;
 
         if(currentpage < herbs.Length){
@@ -104,14 +110,17 @@ public class Herbbook : MonoBehaviour
     }   
 
     public void attr(){ // 속성으로 가기
+        paper.Play();
         currentpage = 0;
         ShowPage(currentpage);
     }
     public void herb(){
+        paper.Play();
         currentpage = 1;
         ShowPage(currentpage);
     }
     public void spec(){
+        paper.Play();
         currentpage = 7;
         ShowPage(currentpage);
     }

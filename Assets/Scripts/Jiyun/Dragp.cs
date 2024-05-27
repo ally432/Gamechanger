@@ -14,6 +14,8 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public List<String> getherb = new List<string>();   // 해금된 약초 리스트
     public TextMeshProUGUI ctext, popup, change;   // 소지금 텍스트
     public int day; // 날짜
+    public AudioSource drag;    // 약초 뜯는 소리
+    public static bool putsound = false;    // 재료 넣는 소리 플래그
 
     void Start()
     {
@@ -69,6 +71,9 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)  // 드래그 시작
     {
+        drag = GetComponent<AudioSource>();
+
+        drag.Play();
         DefaultPos = this.transform.position;
     }
     void IDragHandler.OnDrag(PointerEventData eventData)    // 드래그 중
@@ -103,8 +108,8 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 }
             }
                 
-            // 사운드는 밑에만 넣기!
             Effect.wav = true;  // 파동 효과
+            putsound = true;
             putgreds.Add(gameObject.name);
             if(gameObject.tag.Equals("herb")){  // 넣은게 허브라면..
                 List<Dictionary<string, object>> data = CSVReader.Read("herbcost");

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,6 +29,14 @@ public class Potion : MonoBehaviour
     public static bool differentPotion = false;
     public static bool failPotion = false;
 
+    public static AudioSource click;
+    public static bool boil = false;    // 끓는 소리
+
+    void Start()
+    {
+        click = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (isFilling){
@@ -42,9 +51,16 @@ public class Potion : MonoBehaviour
         }
     }
 
+    public static void sound(){
+        click.Play();
+    }
+
     public void End(){  // 제조 버튼 클릭
         if(!push){
+            sound();
             resetbtn.SetActive(false);
+
+            boil = true;
             bubble.SetActive(!bubble.activeSelf);   // 버블 활성화
             fireflame.SetActive(!fireflame.activeSelf); // 불씨 활성화
             int num = customerManage.customerNum + 1;
@@ -253,6 +269,7 @@ public class Potion : MonoBehaviour
         }
     }
     public void Remove(){
+        sound();
         Dragp.putgreds.Clear(); // 넣은 모든 재료들 초기화
         Dragp.putherb.Clear();  // 허브들 초기화
         Dragp.specialherb.Clear();  // 허브들과 부재료 리스트 초기화
