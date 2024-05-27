@@ -10,11 +10,12 @@ public class GameStart : MonoBehaviour
 {
     public TextMeshProUGUI conStartResult;
     public GameObject title;
+    public AudioSource click;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        click = GetComponent<AudioSource>();        
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class GameStart : MonoBehaviour
     
     public void NewStart()
     {
+        click.Play();
         PlayerPrefs.DeleteAll();
         customerManage.date = 1;
         customerManage.money = 1000;
@@ -34,6 +36,7 @@ public class GameStart : MonoBehaviour
 
     public void ConStart()
     {
+        click.Play();
         // 저장한 데이터 가져오기
         if(PlayerPrefs.HasKey("SavedDate")) // Date로 저장된 값이 있다면
         {

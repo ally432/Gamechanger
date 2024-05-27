@@ -15,6 +15,8 @@ public class Dispenser : MonoBehaviour
     public float speed;
     float currentValue, currentValue2;
 
+    public AudioSource sound;   // 디스펜서 소리
+
     void Start()
     {
         openbtn.SetActive(false);   // 제조실 안 갔다오면 안 열림
@@ -22,6 +24,8 @@ public class Dispenser : MonoBehaviour
         openimg.SetActive(false);    
         yesbottle.SetActive(false);
         gagebtn.SetActive(false);
+
+        sound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -74,6 +78,7 @@ public class Dispenser : MonoBehaviour
     }
 
     public void opening(){  // 열기
+        sound.Play();
         closeimg.SetActive(false);
         openimg.SetActive(true);    // 열린 디스펜서
         openbtn.SetActive(false);
@@ -108,6 +113,7 @@ public class Dispenser : MonoBehaviour
     }
 
     public void closing(){  // 닫기
+        sound.Play();
         closebtn.SetActive(false);
         openimg.SetActive(false);
         closeimg.SetActive(true);
@@ -129,6 +135,7 @@ public class Dispenser : MonoBehaviour
 
     public void gagestart(){    // 게이지 버튼
         if(isFirst){
+            sound.Play();
             if(isIn){
                 currentValue = 0f;
                 currentValue2 = 0f;

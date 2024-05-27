@@ -85,8 +85,13 @@ public class sellerManage : MonoBehaviour
     public Image fadeInImg;
 
     public bool peopleOut = false; // 사람 들어가고 나오는거 판.
+
+    public AudioSource click;   // 버튼 클릭
+
     void Start()
     {
+        click = GetComponent<AudioSource>();
+
         sellerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
         dateText = GameObject.Find("date").GetComponent<TextMeshProUGUI>();
 
@@ -316,6 +321,8 @@ public class sellerManage : MonoBehaviour
 
     public void Btn1()
     {
+        click.Play();
+
         if (excelnum == 40) //여긴 원래대로 
         {
             excelnum = 40; // 여긴 1 뺀 수로
@@ -346,6 +353,8 @@ public class sellerManage : MonoBehaviour
     }
     public void Btn2()
     {
+        click.Play();
+
         if (excelnum == 40)
         {
             excelnum = 43;
@@ -386,6 +395,8 @@ public class sellerManage : MonoBehaviour
 
     public void Btn3()
     {
+        click.Play();
+        
         if(excelnum == 120)
         {
             excelnum = 125;

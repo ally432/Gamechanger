@@ -10,8 +10,9 @@ public class Potionbook : MonoBehaviour
     public int currentpage = 0;    // 현재 페이지
     public TextMeshProUGUI ptext;   // 페이지
     public static bool newpotion = false;   // 새로운 A등급 포션이 생성되었는가
-
+    public AudioSource paper;
     void Start() {
+        paper = GetComponent<AudioSource>();
         ShowPage(currentpage);
     }
     void Update() {
@@ -21,9 +22,11 @@ public class Potionbook : MonoBehaviour
         }    
     }
     public void Open(){ // 노트 펼치기
+        Potion.sound();
         panel.DOLocalMoveY(0, 1f).SetEase(Ease.OutBack);
     }
     public void Close(){    // 노트 닫기
+        Potion.sound();
         panel.DOLocalMoveY(-1200, 1f).SetEase(Ease.InBack);
     }
     void ShowPage(int page){
@@ -63,6 +66,8 @@ public class Potionbook : MonoBehaviour
             currentpage = potions.Length - 1;
             ShowPage(currentpage);
         }        
+
+        paper.Play();
     }
     public void Next(){ // 다음 페이지
         currentpage++;
@@ -74,5 +79,7 @@ public class Potionbook : MonoBehaviour
             currentpage = 0;    // 다시 첫 장으로
             ShowPage(currentpage);
         }
+
+        paper.Play();
     }
 }

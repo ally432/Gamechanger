@@ -59,9 +59,13 @@ public class customerManage : MonoBehaviour
 
     public GameObject talkImage;
 
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
+        click = GetComponent<AudioSource>();
+
         customerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
         moneyText = GameObject.Find("txt_Money").GetComponent<TextMeshProUGUI>();
 
@@ -305,6 +309,7 @@ public class customerManage : MonoBehaviour
 
     public void Btn1()
     {
+        click.Play();
         if (specialPeopleNum == 67)
         {
             
@@ -334,6 +339,7 @@ public class customerManage : MonoBehaviour
     }
     public void Btn2()
     {
+        click.Play();
         if (specialPeopleNum == 67)
         {
             specialPeopleNum = 68;
@@ -361,6 +367,7 @@ public class customerManage : MonoBehaviour
     }
     public void Btn3()
     {
+        click.Play();
         if (specialPeopleNum == 135)
         {
             specialPeopleNum = 135;
@@ -542,6 +549,8 @@ public class customerManage : MonoBehaviour
         return money;
     }
     public void potionmaking(){ // 제조실로 가는 버튼
+        click.Play();
+
         making.gameObject.SetActive(!making.gameObject.activeSelf);
         customer.gameObject.SetActive(!customer.gameObject.activeSelf);
 

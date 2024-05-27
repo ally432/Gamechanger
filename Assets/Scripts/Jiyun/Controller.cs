@@ -11,9 +11,13 @@ public class Controller : MonoBehaviour
     public static bool remake = false;  // reset 버튼 판단
     public static bool isFadein = false;   // true면 점점 진해짐
     private Action onCompleteCallback;  // fadein이나 fadeout 다음에 진행할 함수
+    public AudioSource click;
 
     void Start()
-    {   // 디폴트를 화력 1, 3분으로 설정 
+    {   
+        click = GetComponent<AudioSource>();
+
+        // 디폴트를 화력 1, 3분으로 설정 
         arrow2.SetActive(false);
         arrow3.SetActive(false);
 
@@ -70,18 +74,21 @@ public class Controller : MonoBehaviour
 
     // 화력 설정
     public void Set1(){
+        click.Play();
         arrow1.SetActive(true);
         arrow2.SetActive(false);
         arrow3.SetActive(false);
         Potion.fire = "1";
     }
     public void Set2(){
+        click.Play();
         arrow1.SetActive(false);
         arrow2.SetActive(true);
         arrow3.SetActive(false);
         Potion.fire = "2";
     }
     public void Set3(){
+        click.Play();
         arrow1.SetActive(false);
         arrow2.SetActive(false);
         arrow3.SetActive(true);
