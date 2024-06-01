@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 7cffefc4e3f9f48fc9b4bf1eb2b40c6e
+timeCreated: 1463876053
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 36619
+  packageName: Epic Positive Game Risers SFX
+  packageVersion: 1.1
+  assetPath: Assets/Epic Positive Game Risers SFX/Game Powerup Bling Riser 5.wav
+  uploadId: 118951
