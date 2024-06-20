@@ -16,6 +16,7 @@ public class Dispenser : MonoBehaviour
     float currentValue, currentValue2;
 
     public AudioSource sound;   // 디스펜서 소리
+    public static bool gagedone = false;    // 게이지가 다 채워졌나?
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class Dispenser : MonoBehaviour
                 openbtn.SetActive(true);    // 게이지 다 채워졌으면 열림
                 Invoke("gagezero", 4f);
                 isDone = true;
+                gagedone = true;
             }
         }
 
@@ -135,7 +137,6 @@ public class Dispenser : MonoBehaviour
 
     public void gagestart(){    // 게이지 버튼
         if(isFirst){
-            sound.Play();
             if(isIn){
                 currentValue = 0f;
                 currentValue2 = 0f;

@@ -9,6 +9,7 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     public string cpotion, grade;  // 물약 이름
     public static bool putdis, ontable = false;   // 충돌없이 드래그가 끝났을 경우
     public static bool trash = false;   // 쓰레기통에 버렸는가?
+    public static bool potiond = false; // 물약이 완성되었는가?
 
     void Start()
     {
@@ -83,6 +84,7 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             Dispenser.isOut = false;
             Dispenser.isDone = false;
             Dispenser.clear = true;
+            potiond = true;
             Effect.effect = true;   // 펑 효과
             Invoke("complete", .4f);           
         }
