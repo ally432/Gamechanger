@@ -29,6 +29,7 @@ public class SettleScript : MonoBehaviour
     int debt = 5000;
 
     public static bool trueEnding = false;
+    public AudioSource coin;
 
     // Start is called before the first frame update
     void Start()
@@ -51,10 +52,7 @@ public class SettleScript : MonoBehaviour
         rent += plus;
         StartCoroutine(SettleMoney());
        
-
-        
-
-       
+        coin = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,6 +67,7 @@ public class SettleScript : MonoBehaviour
 
         txtInterest.enabled = true;
         txtInterest2.enabled = true;
+        coin.Play();
         txtInterest.text = interest + " 원";
         StartCoroutine(RentMoney());
 
@@ -78,6 +77,7 @@ public class SettleScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         txtRent2.enabled = true;
         txtRent.enabled = true;
+        coin.Play();
         txtRent.text = rent + " 원";
         nowMoney -= (interest + rent);
         if (date == 17)
@@ -91,6 +91,7 @@ public class SettleScript : MonoBehaviour
     void FinalMoney()
     {
         txtFinalMoney2.enabled = true;
+        coin.Play();
         txtFinalMoney.text = nowMoney + " 원";      
     }
 
@@ -98,6 +99,7 @@ public class SettleScript : MonoBehaviour
     {
         textDebt2.enabled = true;
         textDebt.enabled = true;
+        coin.Play();
         textDebt.text = debt + " 원";
         nowMoney -= 5000;
     }
