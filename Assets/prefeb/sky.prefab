@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1062217659000191348}
-  - component: {fileID: 1507291243039045988}
+  - component: {fileID: 237858897081910683}
   m_Layer: 0
   m_Name: sky
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 3810227225288659982}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1507291243039045988
+--- !u!114 &237858897081910683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a895b41e731440878e625567b71b867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.2
-  deadLine: 2
+  moveSpeed: 0.1
+  deadLine: 7
 --- !u!1 &6775728423208005209
 GameObject:
   m_ObjectHideFlags: 0

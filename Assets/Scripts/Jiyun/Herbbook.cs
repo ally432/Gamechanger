@@ -11,6 +11,7 @@ public class Herbbook : MonoBehaviour
     public int day;
     public TextMeshProUGUI htext;   // 페이지
     public AudioSource paper;
+    
 
     void Start(){
         paper = GetComponent<AudioSource>();
@@ -23,7 +24,7 @@ public class Herbbook : MonoBehaviour
         panel.DOLocalMoveY(0, 1f).SetEase(Ease.OutBack);
     }
     public void Close(){    // 노트 닫기
-        panel.DOLocalMoveY(-1100, 1f).SetEase(Ease.InBack);
+        panel.DOLocalMoveY(-2000, 1f).SetEase(Ease.InBack);
     }
 
     void ShowPage(int page){

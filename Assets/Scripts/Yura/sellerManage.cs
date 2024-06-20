@@ -56,7 +56,7 @@ public class sellerManage : MonoBehaviour
 
     bool choiceClicked = false;
 
-    public bool isChoiceDisplayed = false;
+    static public bool isChoiceDisplayed = false;
     /**
     public bool grandpa = false;
 
@@ -90,6 +90,7 @@ public class sellerManage : MonoBehaviour
 
     void Start()
     {
+        
         click = GetComponent<AudioSource>();
 
         sellerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
@@ -188,35 +189,18 @@ public class sellerManage : MonoBehaviour
             openBtn.SetActive(true);
             talkImage.SetActive(false);
             
-            sellerImg.transform.DOMoveY(-100, 1.0f).OnComplete(() =>
+            sellerImg.transform.DOLocalMoveY(-500, 1.0f).OnComplete(() =>
             {
                 showImg("seller");
                 
             });
-            
-            
-            
-
-            
+             
             specialDone = false;
             
 
         }
 
-        if ((Input.GetMouseButtonDown(0) && specialSituation && !isMouseClicked) || choiceClicked)
-        {
-            if (!isChoiceDisplayed)
-            {
-                Debug.Log("업데이트문"+whatperson+excelnum);
-                isMouseClicked = true;
-                choiceClicked = false;
-                showSpecialTalk(whatperson);
-                
-                Debug.Log("다음 대사");
-                
-            }
-            
-        }
+        
 
         if (nextperson)
         {
@@ -319,6 +303,25 @@ public class sellerManage : MonoBehaviour
        
     }
 
+    public void talkNextBtn()
+    {
+        if ((specialSituation && !isMouseClicked) || choiceClicked)
+        {
+            if (!isChoiceDisplayed)
+            {
+                click.Play();
+                Debug.Log("업데이트문" + whatperson + excelnum);
+                isMouseClicked = true;
+                choiceClicked = false;
+                showSpecialTalk(whatperson);
+
+                Debug.Log("다음 대사");
+
+            }
+
+        }
+    }
+
     public void Btn1()
     {
         click.Play();
@@ -349,7 +352,8 @@ public class sellerManage : MonoBehaviour
         }
         
         BtnClear();
-        
+        talkNextBtn();
+
     }
     public void Btn2()
     {
@@ -386,9 +390,10 @@ public class sellerManage : MonoBehaviour
             whatperson = "goArmy2-2";
             govermentLove += 1;
         }
-        
 
+        
         BtnClear();
+        talkNextBtn();
 
 
     }
@@ -404,6 +409,7 @@ public class sellerManage : MonoBehaviour
         }
         
         BtnClear();
+        talkNextBtn();
 
     }
 
@@ -484,13 +490,13 @@ public class sellerManage : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
 
 
-        herbImg.transform.DOMoveY(60, 1.0f).OnComplete(() =>
+        herbImg.transform.DOLocalMoveY(300, 1.0f).OnComplete(() =>
         {
             upDesk.SetActive(true);
 
             talkImage.SetActive(false);
 
-            sellerImg.transform.DOMoveY(-100, 0.5f).OnComplete(() =>
+            sellerImg.transform.DOLocalMoveY(-500, 1.0f).OnComplete(() =>
             {
                 // 말풍선 unvisible
 
@@ -511,7 +517,7 @@ public class sellerManage : MonoBehaviour
 
         if (person == "seller")
         {
-            int randomIndex = Random.Range(0, 14);
+            int randomIndex = Random.Range(0, 15);
             sellerImg.sprite = sellerImgList[randomIndex];
             
         }
@@ -534,7 +540,7 @@ public class sellerManage : MonoBehaviour
             sellerImg.sprite = specialImgList[3];
         }
 
-        sellerImg.transform.DOMoveY(35, 2.0f).OnComplete(() => {
+        sellerImg.transform.DOLocalMoveY(200, 2.0f).OnComplete(() => {
             talkImage.SetActive(true);
             if(person == "seller")
             {
@@ -545,7 +551,7 @@ public class sellerManage : MonoBehaviour
                 showSellerHerb();
                 Debug.Log("이제 데스크 투명된다");
                 upDesk.SetActive(false);//////////
-                herbImg.transform.DOMoveY(-13, 0.5f);
+                herbImg.transform.DOLocalMoveY(-370, 0.5f);
             }
            
             

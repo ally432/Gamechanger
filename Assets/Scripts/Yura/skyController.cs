@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class skyController : MonoBehaviour
 {
-    public float moveSpeed = 1;
-    public float deadLine = 3;
+    public float moveSpeed = 0.1f;
+    public float deadLine = 3.5f;
     // Start is called before the first frame update
     void Start()
     {

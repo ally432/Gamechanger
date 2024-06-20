@@ -6,7 +6,7 @@ public class skyMoving : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject sky;
-    public float spawnRate = 5;
+    public float spawnRate = 120;
     public float timer = 0;
     public float defaultHeight = 3;
     // Start is called before the first frame update
