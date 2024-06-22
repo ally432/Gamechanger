@@ -10,17 +10,28 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     public static bool putdis, ontable = false;   // 충돌없이 드래그가 끝났을 경우
     public static bool trash = false;   // 쓰레기통에 버렸는가?
     public static bool potiond = false; // 물약이 완성되었는가?
+    public AudioSource glass;
+    public static bool isCap = false;   // 뚜껑을 들었나?
 
     void Start()
     {
         foreach(GameObject apotion in completepotions){
             apotion.SetActive(false);
         }
+
+        glass = GetComponent<AudioSource>();
     }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)  // 드래그 시작
     {
         DefaultPos = this.transform.position;   // 처음 위치
+
+        if(gameObject.name == "bottle" || gameObject.name == "after"){
+            glass.Play();
+        }
+        if(gameObject.name == "cap"){
+            isCap = true;
+        }
     }
     void IDragHandler.OnDrag(PointerEventData eventData)    // 드래그 중
     {
@@ -59,6 +70,7 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     }
 
     void put(){ // 디스펜서에 고정
+        glass.Play();
         this.transform.position = new Vector3(3.4f, -3.1f, 0f);
     }
 
@@ -105,8 +117,8 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             customerManage.crush = true;
             gameObject.SetActive(false);
             gameObject.transform.position = new Vector3(0f, -3f, 0f);
-            bottle.transform.position = new Vector3(0f, -6.4f, 0f); // 빈 물병
-            cap.transform.position = new Vector3(3.1f, -6.5f, 0f);  // 뚜껑
+            bottle.transform.position = new Vector3(0f, -7.75f, 0f); // 빈 물병
+            cap.transform.position = new Vector3(3.4f, -7.1f, 0f);  // 뚜껑
             afbottle.transform.position = new Vector3(3.5f, -3f, 0f);
             bottle.SetActive(true);
             cap.SetActive(true);

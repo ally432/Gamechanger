@@ -17,6 +17,7 @@ public class Dispenser : MonoBehaviour
 
     public AudioSource sound;   // 디스펜서 소리
     public static bool gagedone = false;    // 게이지가 다 채워졌나?
+    public static bool gageing = false;     // 게이지가 채워지고 있나?
 
     void Start()
     {
@@ -32,9 +33,9 @@ public class Dispenser : MonoBehaviour
     void Update()
     {
         if(gage){   // 게이지 버튼이 눌렸다면
+            gageing = true;
             currentValue += speed * Time.deltaTime;
             loadingbar.fillAmount = currentValue / 100;
-            currentValue2 -= speed * Time.deltaTime;    // 흘러들어온 액체는 나감
             loadingbar2.fillAmount = currentValue2 / 100;
 
             openbtn.SetActive(false);   // 게이지 다 안 채워졌으면 안 열림
@@ -42,6 +43,7 @@ public class Dispenser : MonoBehaviour
             if (currentValue >= 100f)   // 로딩바를 다 채웠다면
             {
                 gage = false;
+                currentValue2 = 0f;    // 흘러들어온 액체는 나감
                 openbtn.SetActive(true);    // 게이지 다 채워졌으면 열림
                 Invoke("gagezero", 4f);
                 isDone = true;
@@ -67,7 +69,6 @@ public class Dispenser : MonoBehaviour
 
         if(Potionimg.trash){
             openbtn.SetActive(false);
-            Potionimg.trash = false;
         }
     }
 
