@@ -11,6 +11,7 @@ public class gageb : MonoBehaviour
     void Update()
     {
         if(Dispenser.gagedone){
+            Dispenser.gageing = false;
             gagebtn.Play();
             Dispenser.gagedone = false;
         }

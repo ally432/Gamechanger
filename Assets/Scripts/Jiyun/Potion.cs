@@ -31,6 +31,7 @@ public class Potion : MonoBehaviour
 
     public static AudioSource click;
     public static bool boil = false;    // 끓는 소리
+    public static bool gagestart = false;   // 디스펜서로 들어가는 게이지
 
     void Start()
     {
@@ -84,6 +85,7 @@ public class Potion : MonoBehaviour
         Controller.isFadein = false;    // 불 보여주는거 끝!
         makeover = true;
         ploadingbar.fillAmount = 0f;
+        gagestart = true;
     }
 
     public void gradenum(int cusnum){ // 손님 번호로 엑셀 파일 읽고 내용과 일치하는지 확인하여 점수 매기기
