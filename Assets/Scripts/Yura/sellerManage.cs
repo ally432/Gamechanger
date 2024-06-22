@@ -88,19 +88,28 @@ public class sellerManage : MonoBehaviour
 
     public AudioSource click;   // 버튼 클릭
 
+    public GameObject touchIcon1;
+    TextMeshProUGUI touchIconText;
+    // 시간 게이
+    public GameObject touchIcon2;
+    public GameObject touchIcon3;
+
     void Start()
     {
         click = GetComponent<AudioSource>();
-
+        
         sellerText = GameObject.Find("Talk").GetComponent<TypeEffect>();
         dateText = GameObject.Find("date").GetComponent<TextMeshProUGUI>();
-
+        touchIconText = GameObject.Find("touchIconText").GetComponent<TextMeshProUGUI>();
 
         Debug.Log(currentdate);
         finalTrueHerbList.Clear(); //최종 허브 리스트 초기화 
         specialPersonList.Clear();
         inum = 0;
 
+        touchIconText.enabled = true;
+        touchIcon2.SetActive(false);
+        touchIcon3.SetActive(false);
         herbImg.SetActive(true);
         day1.SetActive(false);
         day2.SetActive(false);
@@ -182,6 +191,7 @@ public class sellerManage : MonoBehaviour
     void Update()
     {
         gamecursor.SetActive(false);
+        
 
         if (specialDone)
         {
@@ -263,15 +273,15 @@ public class sellerManage : MonoBehaviour
         //talkImage.SetActive(true);
 
 
-        if (person != special_Dialog[excelnum]["person"].ToString() || person == "none")
+        if (person != special_Dialog[excelnum]["person"].ToString() || person == "none") //person이 none 이거나,다음 줄 person 이 현재 person과 다르면
         {
             inum++;
-            if (inum < specialPersonList.Count)
+            if (inum < specialPersonList.Count) // 아직 등장할 special 인물 남았으면?
             {
-                specialCustomer();
+                specialCustomer(); //바뀐 person으로 인물 변경 -> excelnum 변경.
                 return;
             }
-            else
+            else // special 인물 전부 끝났으면
             {
                 specialDone = true;
                 specialSituation = false;
@@ -281,6 +291,7 @@ public class sellerManage : MonoBehaviour
 
         Debug.Log("showspecialTalk" + excelnum);
         string content = special_Dialog[excelnum]["content"].ToString();
+       
         Debug.Log(content);
         talkImage.SetActive(true);
         sellerText.SetMsg(content);
@@ -289,6 +300,11 @@ public class sellerManage : MonoBehaviour
         if (special_Dialog[excelnum]["choice"].ToString() == "y")
         {
             choiceDisplay(excelnum);
+        }
+        if (excelnum == 8 || excelnum == 11)
+        {
+            if (excelnum == 8) touchIcon2.SetActive(true);
+            else touchIcon3.SetActive(true);
         }
         excelnum++;
         isMouseClicked = false;
@@ -319,14 +335,42 @@ public class sellerManage : MonoBehaviour
        
     }
 
+<<<<<<< Updated upstream
     public void Btn1()
+=======
+    public void talkNextBtn()
+    {
+        touchIcon1.SetActive(false);
+        touchIconText.enabled = false;
+        touchIcon2.SetActive(false);
+        touchIcon3.SetActive(false);
+
+        if ((specialSituation && !isMouseClicked) || choiceClicked)
+        {
+            if (!isChoiceDisplayed)
+            {
+                click.Play();
+                Debug.Log("업데이트문" + whatperson + excelnum);
+                isMouseClicked = true;
+                choiceClicked = false;
+                showSpecialTalk(whatperson);
+
+                Debug.Log("다음 대사");
+
+            }
+
+        }
+    }
+
+    public void Btn1() // 선택지 버튼 1
+>>>>>>> Stashed changes
     {
         click.Play();
 
         if (excelnum == 40) //여긴 원래대로 
         {
             excelnum = 40; // 여긴 1 뺀 수로
-            whatperson = "goArmy1-1";
+            whatperson = "goArmy1-1"; 
             govermentLove -= 1;
         }
         else if (excelnum == 89)
@@ -351,10 +395,15 @@ public class sellerManage : MonoBehaviour
         BtnClear();
         
     }
-    public void Btn2()
+    public void Btn2() // 선택지 버튼 2
     {
         click.Play();
+        if (excelnum == 3)
+        {
+            excelnum = 20;
+            whatperson = "herbGranpaA-1";
 
+        }
         if (excelnum == 40)
         {
             excelnum = 43;
@@ -393,7 +442,7 @@ public class sellerManage : MonoBehaviour
 
     }
 
-    public void Btn3()
+    public void Btn3() //선택지 버튼 3
     {
         click.Play();
         

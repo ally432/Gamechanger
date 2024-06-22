@@ -11,6 +11,11 @@ public class Herbbook : MonoBehaviour
     public int day;
     public TextMeshProUGUI htext;   // 페이지
     public AudioSource paper;
+<<<<<<< Updated upstream
+=======
+    public GameObject touchIcon2;
+    
+>>>>>>> Stashed changes
 
     void Start(){
         paper = GetComponent<AudioSource>();
@@ -20,10 +25,15 @@ public class Herbbook : MonoBehaviour
     }
 
     public void Open(){ // 노트 펼치기
+        touchIcon2.SetActive(false);
         panel.DOLocalMoveY(0, 1f).SetEase(Ease.OutBack);
     }
     public void Close(){    // 노트 닫기
+<<<<<<< Updated upstream
         panel.DOLocalMoveY(-1100, 1f).SetEase(Ease.InBack);
+=======
+        panel.DOLocalMoveY(-4000, 1f).SetEase(Ease.InBack);
+>>>>>>> Stashed changes
     }
 
     void ShowPage(int page){
