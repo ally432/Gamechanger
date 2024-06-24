@@ -88,6 +88,11 @@ public class sellerManage : MonoBehaviour
 
     public AudioSource click;   // 버튼 클릭
 
+    public GameObject touchIcon1;
+    public GameObject touchIcon2;
+    public GameObject touchIcon3;
+
+
     void Start()
     {
         
@@ -102,6 +107,9 @@ public class sellerManage : MonoBehaviour
         specialPersonList.Clear();
         inum = 0;
 
+        touchIcon1.SetActive(true);
+        touchIcon2.SetActive(false);
+        touchIcon3.SetActive(false);
         herbImg.SetActive(true);
         day1.SetActive(false);
         day2.SetActive(false);
@@ -268,6 +276,14 @@ public class sellerManage : MonoBehaviour
         Debug.Log(content);
         talkImage.SetActive(true);
         sellerText.SetMsg(content);
+
+        if(excelnum == 8 || excelnum == 13)
+        {
+            if (excelnum == 8)
+                touchIcon2.SetActive(true);
+            else
+                touchIcon3.SetActive(true);
+        }
         
 
         if (special_Dialog[excelnum]["choice"].ToString() == "y")
@@ -305,6 +321,9 @@ public class sellerManage : MonoBehaviour
 
     public void talkNextBtn()
     {
+        touchIcon1.SetActive(false);
+        touchIcon3.SetActive(false);
+
         if ((specialSituation && !isMouseClicked) || choiceClicked)
         {
             if (!isChoiceDisplayed)
@@ -358,6 +377,11 @@ public class sellerManage : MonoBehaviour
     public void Btn2()
     {
         click.Play();
+        if(excelnum == 3)
+        {
+            excelnum = 20;
+            whatperson = "herbGranpaA-1";
+        }
 
         if (excelnum == 40)
         {
