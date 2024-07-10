@@ -16,7 +16,7 @@ public class customerManage : MonoBehaviour
     public GameObject gamecursor;
 
     public Image customerImg;
-    public Sprite[] customerImgList = new Sprite[7];
+    public Sprite[] customerImgList = new Sprite[25];
     public static int customerNum = 0; // 손님 식별번(엑셀로 기타 요구조건들 확인가능)
     public static int money = 0;
     public TextMeshProUGUI moneyText;
@@ -89,7 +89,7 @@ public class customerManage : MonoBehaviour
         maxcheck(date);
         customerPick();
         showCustomerImg(Random.Range(0, 3));
-        printOrderScript();
+        
 
           
 
@@ -180,10 +180,17 @@ public class customerManage : MonoBehaviour
     }
 
     void showCustomerImg(int num)
-    { 
-        customerImg.sprite = customerImgList[num];
-        customerImg.transform.DOMoveY(1.9f, 0.5f);
-        talkImage.SetActive(true);
+    {
+        if (special)
+        {
+            customerImg.sprite = specialImgList[num];
+        }
+        else
+            customerImg.sprite = customerImgList[num];
+        customerImg.transform.DOLocalMoveY(80, 0.5f).OnComplete(() => {
+            talkImage.SetActive(true);
+            printOrderScript();
+        });
 
 
     }
@@ -225,7 +232,7 @@ public class customerManage : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         talkImage.SetActive(false);
-        customerImg.transform.DOMoveY(-5, 0.5f).OnComplete(() =>
+        customerImg.transform.DOLocalMoveY(-500, 0.5f).OnComplete(() =>
         {
 
         showCustomerImg(Random.Range(0, 3));
@@ -502,7 +509,7 @@ public class customerManage : MonoBehaviour
             person = special_Dialog[specialPeopleNum]["person"].ToString();
             customerNum = 1;
             special = true;
-            showCustomerImg(3);
+            showCustomerImg(0);
             printSpecialScript(person);
         }
         else if (date == 15)//15
@@ -511,14 +518,14 @@ public class customerManage : MonoBehaviour
             person = special_Dialog[specialPeopleNum]["person"].ToString();
             customerNum = 160;
             special = true;
-            showCustomerImg(4);
+            showCustomerImg(1);
             printSpecialScript(person);
         }
         else if (date == 17)//17
         {
             specialPeopleNum = 154;
             person = special_Dialog[specialPeopleNum]["person"].ToString();
-            showCustomerImg(5);
+            showCustomerImg(2);
             printSpecialScript(person);
         }
         else if (date == 19)//19
@@ -527,7 +534,7 @@ public class customerManage : MonoBehaviour
             specialPeopleNum = 161;
             person = special_Dialog[specialPeopleNum]["person"].ToString();
             customerNum = 161;
-            showCustomerImg(6);
+            showCustomerImg(3);
             printSpecialScript(person);
         }
         else loadScene = true;
