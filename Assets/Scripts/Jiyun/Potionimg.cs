@@ -71,11 +71,11 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     void put(){ // 디스펜서에 고정
         glass.Play();
-        this.transform.position = new Vector3(3.4f, -3.1f, 0f);
+        this.transform.position = new Vector3(80, -90, 0f);
     }
 
     void put2(){    // 테이블에 고정
-        this.transform.position = new Vector3(-0.5f, -3.1f, 0f);
+        this.transform.position = new Vector3(0, -90, 0f);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -104,10 +104,10 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         else if(other.gameObject.name == "Trashcan"){   // 쓰레기통에 버린 경우
             trash = true;
             gameObject.SetActive(false);
-            gameObject.transform.position = new Vector3(0f, -3f, 0f);
-            bottle.transform.position = new Vector3(0f, -6.4f, 0f); // 빈 물병
-            cap.transform.position = new Vector3(3.1f, -6.5f, 0f);  // 뚜껑
-            afbottle.transform.position = new Vector3(3.5f, -3f, 0f);
+            gameObject.transform.position = new Vector3(0, -90, 0f);
+            bottle.transform.position = new Vector3(7, -195, 0f); // 빈 물병
+            cap.transform.position = new Vector3(88, -188, 0f);  // 뚜껑
+            afbottle.transform.position = new Vector3(80, -85, 0f);
             bottle.SetActive(true);
             cap.SetActive(true);
             reload();
@@ -116,10 +116,10 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         else if(other.gameObject.name == "customerimg"){    // 손님한테 물약 줬을 때
             customerManage.crush = true;
             gameObject.SetActive(false);
-            gameObject.transform.position = new Vector3(0f, -3f, 0f);
-            bottle.transform.position = new Vector3(0f, -7.75f, 0f); // 빈 물병
-            cap.transform.position = new Vector3(3.4f, -7.1f, 0f);  // 뚜껑
-            afbottle.transform.position = new Vector3(3.5f, -3f, 0f);
+            gameObject.transform.position = new Vector3(0, -90, 0f);
+            bottle.transform.position = new Vector3(7, -195, 0f); // 빈 물병
+            cap.transform.position = new Vector3(88, -188, 0f);  // 뚜껑
+            afbottle.transform.position = new Vector3(80, -85, 0f);
             bottle.SetActive(true);
             cap.SetActive(true);
             reload();
