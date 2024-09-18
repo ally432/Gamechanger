@@ -39,14 +39,14 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         // eventData.position은 출력하고 싶은 스크린 좌표
         // Camera.main은 스크린 좌표와 연관된 카메라
         // localPos는 변환된 좌표를 저장한 변수
-        if(gameObject.name == "bottle" && eventData.position.y > 390){
-            eventData.position = new Vector2(eventData.position.x, 390f);
+        if(gameObject.name == "bottle" && eventData.position.y > 550){
+            eventData.position = new Vector2(eventData.position.x, 550f);
         }
-        if(gameObject.name == "cap" && eventData.position.y > 500){
-            eventData.position = new Vector2(eventData.position.x, 500f);
+        if(gameObject.name == "cap" && eventData.position.y > 650){
+            eventData.position = new Vector2(eventData.position.x, 650f);
         }
-        if(gameObject.name == "after" && eventData.position.y > 370){
-            eventData.position = new Vector2(eventData.position.x, 370f);
+        if(gameObject.name == "after" && eventData.position.y > 550){
+            eventData.position = new Vector2(eventData.position.x, 550f);
         }
         RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)transform.parent, eventData.position, Camera.main, out Vector2 localPos);
         transform.localPosition = localPos;
@@ -105,7 +105,7 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             trash = true;
             gameObject.SetActive(false);
             gameObject.transform.position = new Vector3(0, -90, 0f);
-            bottle.transform.position = new Vector3(7, -195, 0f); // 빈 물병
+            bottle.transform.position = new Vector3(7, -188, 0f); // 빈 물병
             cap.transform.position = new Vector3(88, -188, 0f);  // 뚜껑
             afbottle.transform.position = new Vector3(80, -85, 0f);
             bottle.SetActive(true);
@@ -117,7 +117,7 @@ public class Potionimg : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             customerManage.crush = true;
             gameObject.SetActive(false);
             gameObject.transform.position = new Vector3(0, -90, 0f);
-            bottle.transform.position = new Vector3(7, -195, 0f); // 빈 물병
+            bottle.transform.position = new Vector3(7, -188, 0f); // 빈 물병
             cap.transform.position = new Vector3(88, -188, 0f);  // 뚜껑
             afbottle.transform.position = new Vector3(80, -85, 0f);
             bottle.SetActive(true);

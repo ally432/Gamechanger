@@ -21,6 +21,11 @@ public class Effect : MonoBehaviour
         if(wav){
             wave.SetBool("wav", true);
             wav = false;
+            Invoke("ResetBool", 2f);
         }
+    }
+
+    void ResetBool(){   // wave 효과가 계속 나올 수 있도록 false로 바꿔주기
+        wave.SetBool("wav", false);
     }
 }

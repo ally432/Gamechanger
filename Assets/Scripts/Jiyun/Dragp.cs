@@ -107,7 +107,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                     }
                 }
             }
-                
+            
             Effect.wav = true;  // 파동 효과
             putsound = true;
             putgreds.Add(gameObject.name);
@@ -127,7 +127,7 @@ public class Dragp : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 if(gameObject.tag.Equals("special")){
                     specialherb.Add(gameObject.name);   // 스페셜 부재료(seasoning1, 2, 3, 4)
                 }
-            }   
+            }
         }
     }
     void None1(){   // 이미 들어간 재료 안내

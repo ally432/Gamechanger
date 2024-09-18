@@ -26,7 +26,7 @@ public class Herbbook : MonoBehaviour
         touchIcon2.SetActive(false);
     }
     public void Close(){    // 노트 닫기
-        panel.DOLocalMoveY(-4000, 1f).SetEase(Ease.InBack);
+        panel.DOLocalMoveY(-5000, 1f).SetEase(Ease.InBack);
     }
 
     void ShowPage(int page){
