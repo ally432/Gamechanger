@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d0739c55f71f859439f90e0cb3ea5afd
+guid: 94de77c33f22841e2b03f15ebafb7d7e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3337038689812066966
-    second: pixil-frame-0_0
+      213: 2072643044381865038
+    second: blankPaper_ch_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -73,9 +73,22 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,43 +122,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0_0
+      name: blankPaper_ch_0
       rect:
         serializedVersion: 2
-        x: 1559
+        x: 0
         y: 0
-        width: 8114
-        height: 9984
+        width: 130
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6d4404fdf470b1d0800000000000000
-      internalID: -3337038689812066966
+      spriteID: e44b0961ed183cc10800000000000000
+      internalID: 2072643044381865038
       vertices: []
       indices: 
       edges: []
@@ -170,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pixil-frame-0_0: -3337038689812066966
+      blankPaper_ch_0: 2072643044381865038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
