@@ -1,6 +1,6 @@
 # 🧪 포션샵! : 위험한 약초 가게
 
-<img width="478" height="387" alt="image" src="https://github.com/user-attachments/assets/b0c7c01a-e487-4dd2-a4e4-f809c3d9fffb" />
+![포션샵](screenshots/로고.png)
 
 ---
 
@@ -55,17 +55,21 @@
 
 ## 📸 실제 플레이 화면
 
+![포션샵](screenshots/메인.png)
+![포션샵](screenshots/할아버지.png)
+
 ### 🌿 약초 시스템
-<img width="215" height="384" alt="image" src="https://github.com/user-attachments/assets/2d479c52-8df7-42f4-bd5f-ee45b0a1e77f" />
+![포션샵](screenshots/약초상.png)
 
 ### 🧙 손님 이벤트
-<img width="215" height="382" alt="image" src="https://github.com/user-attachments/assets/bf0ac174-922e-4b1d-8f91-8a79f09e9cf7" />
+![포션샵](screenshots/손님.png)
 
 ### 📚 도감
-<img width="217" height="381" alt="image" src="https://github.com/user-attachments/assets/3c6db48c-ca52-4344-ba9d-92c923569d33" />
+![포션샵](screenshots/노트.png)
 
 ### 🧪 물약 제조 시스템
-<img width="214" height="384" alt="image" src="https://github.com/user-attachments/assets/4827f708-7f96-41fa-bb2f-23dd628bc4b6" />
+![포션샵](screenshots/약물제조방.png)
+![포션샵](screenshots/약물제조중.png)
 
 ---
 
