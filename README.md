@@ -1,6 +1,6 @@
 # 🧪 포션샵! : 위험한 약초 가게
 
-![포션샵](screenshots/로고.png)
+<img src="screenshots/로고.png" alt="포션샵" width="500" />
 
 ---
 
@@ -55,21 +55,26 @@
 
 ## 📸 실제 플레이 화면
 
-![포션샵](screenshots/메인.png)
-![포션샵](screenshots/할아버지.png)
+<p>
+  <img src="screenshots/메인.png" alt="포션샵 메인화면" width="300"/>
+  <img src="screenshots/할아버지.png" alt="포션샵 할아버지" width="300"/>
+</p>
+
 
 ### 🌿 약초 시스템
-![포션샵](screenshots/약초상.png)
+<img src="screenshots/약초상.png" alt="포션샵 약초상" width="300"/>
 
 ### 🧙 손님 이벤트
-![포션샵](screenshots/손님.png)
+<img src="screenshots/손님.png" alt="포션샵 손님" width="300"/>
 
 ### 📚 도감
-![포션샵](screenshots/노트.png)
+<img src="screenshots/노트.png" alt="포션샵 노트" width="300"/>
 
 ### 🧪 물약 제조 시스템
-![포션샵](screenshots/약물제조방.png)
-![포션샵](screenshots/약물제조중.png)
+<p>
+  <img src="screenshots/약물제조방.png" alt="포션샵 약물제조방" width="300"/>
+  <img src="screenshots/약물제조중.png" alt="포션샵 약물제조중" width="300"/>
+</p>
 
 ---
 
